@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useProfileStore } from "@/stores/profile-store";
 import { useSessionStore } from "@/stores/session-store";
 import { useProgressStore } from "@/stores/progress-store";
+import { useHelpStore } from "@/stores/help-store";
 import { useSensoryAnimation } from "@/hooks/use-sensory-animation";
 import { loadModule, loadFeedbackTexts } from "@/lib/content-loader";
 import {
@@ -25,6 +26,8 @@ import { InputMultipleChoice } from "@/components/exercise/input-multiple-choice
 import { InputComparison } from "@/components/exercise/input-comparison";
 import { InputDragDrop } from "@/components/exercise/input-drag-drop";
 import { ToolToolbar } from "@/components/tools/tool-toolbar";
+import { HelpButton } from "@/components/help/help-button";
+import { HelpPanel } from "@/components/help/help-panel";
 import type { Schwierigkeit, FeedbackTexts } from "@/lib/types/exercise";
 
 interface ExerciseSessionProps {
@@ -46,6 +49,7 @@ export function ExerciseSession({
   const [currentFeedbackText, setCurrentFeedbackText] = useState("");
   const [currentErrorFeedback, setCurrentErrorFeedback] = useState<string | null>(null);
   const [endFeedback, setEndFeedback] = useState("");
+  const [helpOpen, setHelpOpen] = useState(false);
 
   const grade = useProfileStore((s) => s.grade);
   const ndSettings = useProfileStore((s) => s.ndSettings);
@@ -66,8 +70,15 @@ export function ExerciseSession({
   const nextExercise = useSessionStore((s) => s.nextExercise);
   const endSession = useSessionStore((s) => s.endSession);
   const markHilfeGenutzt = useSessionStore((s) => s.markHilfeGenutzt);
+  const markHelpExhausted = useSessionStore((s) => s.markHelpExhausted);
+  const finishHelpTracking = useHelpStore((s) => s.finishTracking);
 
   const { duration } = useSensoryAnimation();
+
+  // Close help panel when moving to next exercise
+  useEffect(() => {
+    setHelpOpen(false);
+  }, [currentIndex]);
 
   // Initialize session (or resume persisted one)
   useEffect(() => {
@@ -143,6 +154,13 @@ export function ExerciseSession({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modul, schwierigkeit, aufgabenAnzahl]);
+
+  // Finish help tracking when entering feedback phase
+  useEffect(() => {
+    if (phase === "feedback" && lastAnswerCorrect !== null) {
+      finishHelpTracking(lastAnswerCorrect);
+    }
+  }, [phase, lastAnswerCorrect, finishHelpTracking]);
 
   // Generate feedback text when entering feedback phase
   useEffect(() => {
@@ -361,15 +379,26 @@ export function ExerciseSession({
         </CardContent>
       </Card>
 
-      {/* Dyskalkulie Tools (AC-4.19) */}
+      {/* Werkzeuge - tools do NOT count as help (AC-5.13) */}
       {grade && (ndSettings.permanentTools || phase === "active") && (
         <ToolToolbar
           grade={grade}
           permanent={ndSettings.permanentTools}
           modul={modul}
-          onToolUsed={markHilfeGenutzt}
         />
       )}
+
+      {/* Help System (PROJ-5) - AC-5.1: visible help button on every exercise */}
+      <HelpButton onClick={() => setHelpOpen(true)} />
+      <HelpPanel
+        open={helpOpen}
+        onClose={() => setHelpOpen(false)}
+        hilfe={currentAufgabe.hilfe}
+        modul={modul}
+        onHelpUsed={markHilfeGenutzt}
+        onAllStagesUsed={markHelpExhausted}
+        exerciseId={currentAufgabe.id}
+      />
     </div>
   );
 }

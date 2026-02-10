@@ -20,6 +20,7 @@ const ND_LABELS: Record<string, string> = {
   readAloud: "Vorlesefunktion (LRS)",
   permanentTools: "Werkzeuge dauerhaft sichtbar (Dyskalkulie)",
   lowStimulusWordProblems: "Reizarme Sachaufgaben (ASS)",
+  helpAllStagesImmediate: "Alle Hilfe-Stufen sofort verfuegbar",
 };
 
 export function SummaryStep({ onComplete }: SummaryStepProps) {

@@ -10,6 +10,7 @@ export interface NdSettings {
   readAloud: boolean;
   permanentTools: boolean;
   lowStimulusWordProblems: boolean;
+  helpAllStagesImmediate: boolean;
 }
 
 export interface ProfileState {
@@ -37,6 +38,7 @@ const defaultNdSettings: NdSettings = {
   readAloud: false,
   permanentTools: false,
   lowStimulusWordProblems: false,
+  helpAllStagesImmediate: false,
 };
 
 export const useProfileStore = create<ProfileState>()(
@@ -80,7 +82,21 @@ export const useProfileStore = create<ProfileState>()(
     }),
     {
       name: "mathe-app-profile",
-      version: 1,
+      version: 2,
+      migrate: (persisted: unknown, version: number) => {
+        const state = persisted as Record<string, unknown>;
+        if (version < 2) {
+          const nd = (state.ndSettings ?? {}) as Record<string, unknown>;
+          return {
+            ...state,
+            ndSettings: {
+              ...nd,
+              helpAllStagesImmediate: nd.helpAllStagesImmediate ?? false,
+            },
+          };
+        }
+        return state;
+      },
     }
   )
 );

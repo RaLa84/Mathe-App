@@ -19,6 +19,7 @@ export interface SessionState {
   pendingAnswer: string | null;
   lastAnswerCorrect: boolean | null;
   hilfeGenutztCurrent: boolean;
+  helpExhausted: boolean;
   previousAnswers: string[];
   frustrationTriggered: boolean;
 
@@ -39,6 +40,7 @@ export interface SessionState {
   endSession: () => void;
   resetCurrentSession: () => void;
   markHilfeGenutzt: () => void;
+  markHelpExhausted: () => void;
 }
 
 export const useSessionStore = create<SessionState>()(
@@ -51,6 +53,7 @@ export const useSessionStore = create<SessionState>()(
       pendingAnswer: null,
       lastAnswerCorrect: null,
       hilfeGenutztCurrent: false,
+      helpExhausted: false,
       previousAnswers: [],
       frustrationTriggered: false,
 
@@ -75,6 +78,7 @@ export const useSessionStore = create<SessionState>()(
           pendingAnswer: null,
           lastAnswerCorrect: null,
           hilfeGenutztCurrent: false,
+          helpExhausted: false,
           previousAnswers: [],
           frustrationTriggered: false,
         }),
@@ -91,6 +95,7 @@ export const useSessionStore = create<SessionState>()(
       setPendingAnswer: (answer: string | null) => set({ pendingAnswer: answer }),
 
       markHilfeGenutzt: () => set({ hilfeGenutztCurrent: true }),
+      markHelpExhausted: () => set({ helpExhausted: true }),
 
       confirmAnswer: () => {
         const state = get();
@@ -103,10 +108,12 @@ export const useSessionStore = create<SessionState>()(
         const newPreviousAnswers = [...state.previousAnswers, state.pendingAnswer];
 
         // BUG-10: Detect repeated identical wrong answers (frustration)
+        // BUG-5: Also detect frustration when all help stages exhausted + wrong answer
         const sameWrongCount = !richtig
           ? newPreviousAnswers.filter((a) => a === state.pendingAnswer).length
           : 0;
-        const isFrustrated = sameWrongCount >= 3;
+        const isFrustrated =
+          sameWrongCount >= 3 || (!richtig && state.helpExhausted && newAttempts >= 2);
 
         const ergebnis: AufgabenErgebnis = {
           aufgabenId: aufgabe.id,
@@ -175,6 +182,7 @@ export const useSessionStore = create<SessionState>()(
             pendingAnswer: null,
             lastAnswerCorrect: null,
             hilfeGenutztCurrent: false,
+            helpExhausted: false,
             previousAnswers: [],
             frustrationTriggered: false,
           });
@@ -200,6 +208,7 @@ export const useSessionStore = create<SessionState>()(
           pendingAnswer: null,
           lastAnswerCorrect: null,
           hilfeGenutztCurrent: false,
+          helpExhausted: false,
           previousAnswers: [],
           frustrationTriggered: false,
         });
@@ -214,6 +223,7 @@ export const useSessionStore = create<SessionState>()(
           pendingAnswer: null,
           lastAnswerCorrect: null,
           hilfeGenutztCurrent: false,
+          helpExhausted: false,
           previousAnswers: [],
           frustrationTriggered: false,
         }),

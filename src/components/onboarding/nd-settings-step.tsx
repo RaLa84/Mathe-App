@@ -51,6 +51,13 @@ const ND_OPTIONS: {
     description:
       "Sachaufgaben ohne komplexe soziale Szenarien. Klare, direkte Formulierungen.",
   },
+  {
+    key: "helpAllStagesImmediate",
+    label: "Alle Hilfe-Stufen sofort verfuegbar",
+    tag: "Hilfe",
+    description:
+      "Tipp, Bild und Schritt-fuer-Schritt sind sofort sichtbar, ohne erst Stufe fuer Stufe freizuschalten.",
+  },
 ];
 
 export function NdSettingsStep({ onNext }: NdSettingsStepProps) {

@@ -29,7 +29,7 @@ export function NumberLine({
 
   return (
     <div className="w-full overflow-x-auto py-2" aria-label="Zahlenstrahl">
-      <div className="flex items-end gap-0 min-w-fit mx-auto px-2">
+      <div className="relative flex items-end gap-0 min-w-fit mx-auto px-2">
         {numbers.map((n) => {
           const isHighlighted = highlights.includes(n);
           const isSelected = selected === n;

@@ -6,14 +6,16 @@ import { Button } from "@/components/ui/button";
 import { NumberLine } from "@/components/tools/number-line";
 import { TenFrame } from "@/components/tools/ten-frame";
 import { HundredChart } from "@/components/tools/hundred-chart";
+import { PlaceValueTable } from "@/components/tools/place-value-table";
 import type { Grade } from "@/stores/profile-store";
 import { cn } from "@/lib/utils";
+
+type ToolId = "numberline" | "tenframe" | "hundredchart" | "placevalue";
 
 interface ToolToolbarProps {
   grade: Grade;
   permanent: boolean;
   modul?: string;
-  onToolUsed?: () => void;
 }
 
 function getNumberLineRange(modul?: string): { min: number; max: number } {
@@ -33,27 +35,23 @@ function getNumberLineRange(modul?: string): { min: number; max: number } {
   }
 }
 
-export function ToolToolbar({ grade, permanent, modul, onToolUsed }: ToolToolbarProps) {
+export function ToolToolbar({ grade, permanent, modul }: ToolToolbarProps) {
   const [isOpen, setIsOpen] = useState(permanent);
-  const [activeTool, setActiveTool] = useState<
-    "numberline" | "tenframe" | "hundredchart" | null
-  >(null);
+  const [activeTool, setActiveTool] = useState<ToolId | null>(null);
 
-  const tools = [
-    { id: "numberline" as const, label: "Zahlenstrahl", minGrade: 1 },
-    { id: "tenframe" as const, label: "Zehnerfeld", minGrade: 1 },
-    { id: "hundredchart" as const, label: "Hundertertafel", minGrade: 2 },
+  const tools: { id: ToolId; label: string; minGrade: number }[] = [
+    { id: "numberline", label: "Zahlenstrahl", minGrade: 1 },
+    { id: "tenframe", label: "Zehnerfeld", minGrade: 1 },
+    { id: "hundredchart", label: "Hundertertafel", minGrade: 2 },
+    { id: "placevalue", label: "Stellenwerttafel", minGrade: 2 },
   ];
 
   const availableTools = tools.filter((t) => grade >= t.minGrade);
   const range = getNumberLineRange(modul);
+  const showHundreds = grade >= 3;
 
-  function handleToolSelect(toolId: typeof activeTool) {
-    const newTool = activeTool === toolId ? null : toolId;
-    setActiveTool(newTool);
-    if (newTool !== null) {
-      onToolUsed?.();
-    }
+  function handleToolSelect(toolId: ToolId) {
+    setActiveTool(activeTool === toolId ? null : toolId);
   }
 
   return (
@@ -105,6 +103,9 @@ export function ToolToolbar({ grade, permanent, modul, onToolUsed }: ToolToolbar
             )}
             {activeTool === "tenframe" && <TenFrame />}
             {activeTool === "hundredchart" && <HundredChart />}
+            {activeTool === "placevalue" && (
+              <PlaceValueTable showHundreds={showHundreds} />
+            )}
             {activeTool === null && (
               <p className="text-sm text-muted-foreground text-center py-2">
                 Waehle ein Werkzeug aus
