@@ -1,0 +1,97 @@
+{
+  "klasse1": [
+    {
+      "id": "M1.1",
+      "klassenstufe": 1,
+      "name": "Zahlen kennenlernen",
+      "beschreibung": "Zahlen von 1 bis 10 entdecken und zaehlen",
+      "voraussetzungen": [],
+      "position": 1,
+      "hasContent": true
+    },
+    {
+      "id": "M1.2",
+      "klassenstufe": 1,
+      "name": "Mengen und Zahlen",
+      "beschreibung": "Mengen erkennen und Zahlen zuordnen",
+      "voraussetzungen": ["M1.1"],
+      "position": 2,
+      "hasContent": true
+    },
+    {
+      "id": "M1.3",
+      "klassenstufe": 1,
+      "name": "Addition bis 10",
+      "beschreibung": "Plusaufgaben im Zahlenraum bis 10",
+      "voraussetzungen": ["M1.2"],
+      "position": 3,
+      "hasContent": true
+    },
+    {
+      "id": "M1.4",
+      "klassenstufe": 1,
+      "name": "Subtraktion bis 10",
+      "beschreibung": "Minusaufgaben im Zahlenraum bis 10",
+      "voraussetzungen": ["M1.2"],
+      "position": 4,
+      "hasContent": true
+    },
+    {
+      "id": "M1.5",
+      "klassenstufe": 1,
+      "name": "Umkehraufgaben",
+      "beschreibung": "Zusammenhang zwischen Plus und Minus verstehen",
+      "voraussetzungen": ["M1.3", "M1.4"],
+      "position": 5,
+      "hasContent": true
+    },
+    {
+      "id": "M1.6",
+      "klassenstufe": 1,
+      "name": "Zahlenraum bis 20",
+      "beschreibung": "Zahlen bis 20 kennenlernen und vergleichen",
+      "voraussetzungen": ["M1.3", "M1.4"],
+      "position": 6,
+      "hasContent": true
+    },
+    {
+      "id": "M1.7",
+      "klassenstufe": 1,
+      "name": "Addition mit Zehnuebergang",
+      "beschreibung": "Plusaufgaben ueber den Zehner hinaus",
+      "voraussetzungen": ["M1.6"],
+      "position": 7,
+      "hasContent": true
+    },
+    {
+      "id": "M1.8",
+      "klassenstufe": 1,
+      "name": "Subtraktion mit Zehnuebergang",
+      "beschreibung": "Minusaufgaben ueber den Zehner hinaus",
+      "voraussetzungen": ["M1.6"],
+      "position": 8,
+      "hasContent": true
+    },
+    {
+      "id": "M1.9",
+      "klassenstufe": 1,
+      "name": "Verdoppeln und Halbieren",
+      "beschreibung": "Zahlen verdoppeln und halbieren lernen",
+      "voraussetzungen": ["M1.7", "M1.8"],
+      "position": 9,
+      "hasContent": true
+    },
+    {
+      "id": "M1.10",
+      "klassenstufe": 1,
+      "name": "Sachaufgaben bis 20",
+      "beschreibung": "Textaufgaben im Zahlenraum bis 20 loesen",
+      "voraussetzungen": ["M1.9"],
+      "position": 10,
+      "hasContent": true
+    }
+  ],
+  "klasse2": [],
+  "klasse3": [],
+  "klasse4": []
+}

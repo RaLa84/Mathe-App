@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useProfileStore } from "@/stores/profile-store";
 import { useSessionStore } from "@/stores/session-store";
+import { useProgressStore } from "@/stores/progress-store";
 import { useSensoryAnimation } from "@/hooks/use-sensory-animation";
 import { loadModule, loadFeedbackTexts } from "@/lib/content-loader";
 import {
@@ -188,17 +189,34 @@ export function ExerciseSession({
     retryExercise();
   }, [retryExercise]);
 
+  const saveProgress = useCallback(() => {
+    const session = useSessionStore.getState().currentSession;
+    if (!session || session.ergebnisse.length === 0) return;
+
+    const richtige = session.ergebnisse.filter((e) => e.richtig).length;
+    useProgressStore
+      .getState()
+      .updateAfterSession(
+        session.modul,
+        session.schwierigkeit,
+        richtige,
+        session.ergebnisse.length
+      );
+  }, []);
+
   const handleWeiterUeben = useCallback(() => {
+    saveProgress();
     endSession();
     // Re-trigger init by resetting loading state
     setLoading(true);
     setError(null);
-  }, [endSession]);
+  }, [saveProgress, endSession]);
 
   const handleZurueck = useCallback(() => {
+    saveProgress();
     endSession();
     onExit();
-  }, [endSession, onExit]);
+  }, [saveProgress, endSession, onExit]);
 
   // Loading state
   if (loading) {

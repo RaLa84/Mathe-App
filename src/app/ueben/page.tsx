@@ -73,7 +73,7 @@ function UebenContent() {
           modul={modul}
           schwierigkeit={schwierigkeit}
           aufgabenAnzahl={anzahl}
-          onExit={() => router.push("/")}
+          onExit={() => router.push("/learn")}
         />
       </div>
     );

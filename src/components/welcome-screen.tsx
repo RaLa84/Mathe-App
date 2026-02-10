@@ -54,7 +54,7 @@ export function WelcomeScreen() {
             <Button
               size="lg"
               className="mt-4 text-xl px-10 py-7 h-auto"
-              onClick={() => router.push("/ueben?modul=M1.3&stufe=Bronze")}
+              onClick={() => router.push("/learn")}
             >
               Weiter ueben!
             </Button>

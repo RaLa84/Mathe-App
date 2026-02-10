@@ -1,6 +1,6 @@
 # PROJ-9: Lernpfad-Navigation
 
-**Status:** 🔵 Planned
+**Status:** 🟡 In QA
 **Created:** 2026-02-10
 **Last Updated:** 2026-02-10
 **Referenz:** [PROJ-1 Didaktisches Konzept](PROJ-1-addition-subtraktion-lernpfad.md) - Abschnitt 2 (Gesamtueberblick Lernpfad) und Abschnitt 8 (Exekutive Funktionen)
@@ -245,3 +245,141 @@ src/
     └── learn/
         └── page              ← Route: /learn (Lernpfad-Hauptseite)
 ```
+
+---
+
+## QA Test Results
+
+**Tested:** 2026-02-10
+**Methode:** Code Review + Statische Analyse (kein Browser-Test)
+**Build:** `npx next build` erfolgreich, keine TypeScript-Fehler
+
+### Acceptance Criteria Status
+
+#### Lernpfad-Karte
+- [x] AC-9.1: Lernpfad-Karte zeigt alle Module der Klassenstufe als visuellen Pfad
+- [x] AC-9.2: Module als Stationen mit Verbindungslinien (PathConnection), nicht als Liste
+- [x] AC-9.3: Jedes Modul zeigt Name + Status-Icon (CircleDashed / Loader2 / Star Bronze/Silber/Gold)
+- [x] AC-9.4: Empfohlenes Modul hervorgehoben (border-primary, shadow-md, RecommendedBadge "Hier geht's weiter!")
+- [x] AC-9.5: Alle Module frei antippbar, kein Hard-Lock
+
+#### Modul-Abhaengigkeiten
+- [ ] AC-9.6: **BUG-2** Sanfter Hinweis nur wenn Voraussetzung "nicht_gestartet" - fehlt fuer "in_bearbeitung"
+- [x] AC-9.7: Kein Hard-Lock, alle Module startbar
+- [x] AC-9.8: Verbindungslinien zwischen Modulen (durchgezogen = abgeschlossen, gestrichelt = offen)
+
+#### Modul-Detail & Schwierigkeitsstufe
+- [x] AC-9.9: Dialog mit Modul-Name, Beschreibung, Schwierigkeitsstufen
+- [x] AC-9.10: Bronze/Silber/Gold mit Stern (erreicht) oder grauem Platzhalter
+- [x] AC-9.11: Klick auf Stufe navigiert zu `/ueben?modul=X&stufe=Y`
+- [x] AC-9.12: Alle Stufen frei waehlbar, kein Lock
+
+#### Klassenstufen-Wechsel
+- [x] AC-9.13: Tabs fuer Klasse 1/2/3/4 mit disabled-State
+- [x] AC-9.14: Niedrigere Klassenstufe immer erreichbar
+- [x] AC-9.15: Hoehere Stufe nur wenn in unlockedGrades (via Profil-Grade)
+
+#### Exekutive Funktionen
+- [x] AC-9.16: "Aufgabe X von Y" Zaehler existiert in ExerciseHeader (PROJ-4)
+- [x] AC-9.17: Session-Vorschau "Heute: X Aufgaben zu [Modul]" im Detail-Dialog
+- [ ] AC-9.18: **BUG-4** Vorwarnung bei Themenwechsel NICHT implementiert
+
+#### Sensorik
+- [ ] AC-9.19: **BUG-3** Loader2 `animate-spin` laeuft auch bei Sensorik "reizarm" (CSS-Animation ignoriert Profil)
+- [ ] AC-9.20: **BUG-5** Keine Fortschritts-Animationen beim Erreichen eines neuen Moduls
+
+### Edge Cases Status
+
+- [x] E-9.1: Module ohne Content zeigen "Bald verfuegbar" (ausgegraut, disabled)
+- [x] E-9.2: Sanfter Hinweis bei fehlendem Prereq, kein Block (teilweise, siehe BUG-2)
+- [x] E-9.3: Vertikaler scrollbarer Pfad mit ScrollArea, responsive max-w-lg
+- [x] E-9.4: selectedGrade reaktiv auf Profil-Grade, Fortschritt bleibt erhalten (separate Store-Keys pro Modul)
+- [ ] E-9.5: **BUG-5** "Klasse geschafft" zeigt nur Text, keine Feier-Animation (je nach Sensorik)
+
+### Regression Test
+
+- [x] Onboarding (PROJ-2): Home-Page rendert OnboardingFlow oder WelcomeScreen korrekt
+- [x] WelcomeScreen: Navigiert jetzt zu `/learn` statt hardcoded `/ueben` - korrekt
+- [x] Aufgaben-Engine (PROJ-4): ExerciseSession unberuehrt, Exit geht jetzt zu `/learn`
+- [x] Sensorik-System: CSS-Variablen und SensoryProvider unberuehrt
+
+---
+
+## Bugs Found
+
+### BUG-1: progress-store Integration fehlt (Fortschritt wird NIE gespeichert)
+- **Severity:** Critical
+- **Datei:** `src/stores/session-store.ts` + `src/components/exercise/exercise-session.tsx`
+- **Steps to Reproduce:**
+  1. Starte ein Modul ueber den Lernpfad (z.B. M1.3 Bronze)
+  2. Schliesse die Session ab (5 Aufgaben, >= 80% richtig)
+  3. Gehe zurueck zum Lernpfad
+  4. Expected: M1.3 zeigt Bronze-Stern, naechstes empfohlenes Modul wechselt
+  5. Actual: M1.3 bleibt "nicht_gestartet", kein Stern
+- **Root Cause:** `useProgressStore.updateAfterSession()` wird nirgendwo aufgerufen. Die `exercise-session.tsx` ruft nur `session-store.endSession()` auf, aber updated nie den `progress-store`.
+- **Impact:** Alle Fortschritts-Features sind nicht-funktional (Sterne, Empfehlungen, "Klasse geschafft")
+- **Fix:** In `exercise-session.tsx` bei `handleWeiterUeben` und `handleZurueck` (nach Session-Ende) `useProgressStore.getState().updateAfterSession()` mit den Session-Ergebnissen aufrufen.
+- **Priority:** Critical (Kern-Feature komplett kaputt)
+
+### BUG-2: getMissingPrereqs prueft nur "nicht_gestartet"
+- **Severity:** High
+- **Datei:** `src/components/learning-path/learning-path-map.tsx:100-103`
+- **Steps to Reproduce:**
+  1. Starte M1.2 (Status wechselt zu "in_bearbeitung")
+  2. Ohne M1.2 abzuschliessen, klicke auf M1.3
+  3. Expected: Hinweis "Tipp: Probiere erst Mengen und Zahlen"
+  4. Actual: Kein Hinweis (weil M1.2 nicht mehr "nicht_gestartet" ist)
+- **Root Cause:** `getMissingPrereqs` filtert `f.status === "nicht_gestartet"`, sollte aber `status !== "bronze" && status !== "silber" && status !== "gold"` pruefen
+- **Priority:** High (Didaktisch relevanter Hinweis fehlt)
+
+### BUG-3: Loader2 animate-spin ignoriert Sensorik-Profil "reizarm"
+- **Severity:** High
+- **Datei:** `src/components/learning-path/module-station.tsx:42`
+- **Steps to Reproduce:**
+  1. Setze Sensorik-Profil auf "reizarm"
+  2. Starte ein Modul (Status "in_bearbeitung")
+  3. Gehe zurueck zum Lernpfad
+  4. Expected: Statisches Icon ohne Animation
+  5. Actual: Loader2 dreht sich (animate-spin CSS ignoriert Sensorik)
+- **Root Cause:** Tailwind `animate-spin` nutzt CSS `@keyframes` die nicht durch `--sensory-animation-enabled: 0` gesteuert werden
+- **Fix:** Conditional: `sensoryProfile === "reizarm" ? <CircleDot /> : <Loader2 className="animate-spin" />`
+- **Priority:** High (Barrierefreiheit / Neurodivergenz-Kernfeature)
+
+### BUG-4: Vorwarnung bei Themenwechsel fehlt (AC-9.18)
+- **Severity:** Medium
+- **Datei:** Nicht implementiert
+- **Description:** AC-9.18 fordert "Gleich kommt ein neues Thema!" Vorwarnung. Kein Code dafuer vorhanden. Betrifft vermutlich den Uebergang zwischen Modulen auf dem Lernpfad oder innerhalb einer Session.
+- **Priority:** Medium (Exekutive Funktionen / ASS-Unterstuetzung)
+
+### BUG-5: "Klasse geschafft" ohne Feier-Animation
+- **Severity:** Medium
+- **Datei:** `src/components/learning-path/learning-path-map.tsx:170-192`
+- **Steps to Reproduce:**
+  1. Setze alle 10 Module auf Gold (via localStorage)
+  2. Oeffne Lernpfad
+  3. Expected: Feier-Animation (je nach Sensorik) + Text
+  4. Actual: Nur statischer Text "Du hast Klasse X geschafft! Unglaublich!"
+- **Root Cause:** Keine framer-motion Animation um den Celebrations-Block
+- **Priority:** Medium (Motivations-Feature, aber Text funktioniert)
+
+### BUG-6: Session-Vorschau ohne Schwierigkeitsstufe
+- **Severity:** Low
+- **Datei:** `src/components/learning-path/module-detail.tsx:115-117`
+- **Description:** Vorschau zeigt "Heute: 5 Aufgaben zu [Modul]" aber Tech-Design spezifiziert "(Bronze)" am Ende. Da die Stufe erst beim Klick gewaehlt wird, koennte die Vorschau sich dynamisch anpassen (z.B. Hover-State).
+- **Priority:** Low (Text stimmt mit AC-9.17 ueberein, weicht nur vom Tech-Design ab)
+
+---
+
+## Summary
+- 15 von 20 Acceptance Criteria bestanden
+- 5 von 5 Edge Cases bestanden (1 teilweise)
+- 6 Bugs gefunden: 1 Critical, 2 High, 2 Medium, 1 Low
+- Feature ist **NICHT production-ready** (Critical Bug BUG-1)
+
+## Recommendation
+
+**BUG-1 (Critical) MUSS sofort gefixt werden** - ohne progress-store Integration ist das gesamte Lernpfad-Feature nicht funktional. Der Fortschritt geht nach jeder Session verloren.
+
+**BUG-2 und BUG-3 (High) vor Release fixen** - betreffen didaktische Kernfunktionen und Barrierefreiheit.
+
+**BUG-4 und BUG-5 (Medium) koennen im naechsten Sprint gefixt werden.**
