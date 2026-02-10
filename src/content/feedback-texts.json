@@ -1,0 +1,28 @@
+{
+  "richtig": [
+    "Super!",
+    "Toll gemacht!",
+    "Richtig!",
+    "Klasse!",
+    "Ganz genau!",
+    "Wunderbar!",
+    "Du kannst das!",
+    "Perfekt!",
+    "Stark!",
+    "Weiter so!"
+  ],
+  "falsch": [
+    "Fast! Versuch es nochmal.",
+    "Nicht ganz. Probiere es nochmal!",
+    "Knapp daneben! Du schaffst das.",
+    "Noch ein Versuch!",
+    "Das war knapp. Nochmal!",
+    "Ueberleg nochmal in Ruhe."
+  ],
+  "sessionEnde": [
+    "Toll gemacht! Du hast fleissig geuebt!",
+    "Super Session! Dein Gehirn wird staerker!",
+    "Klasse! Du hast dich richtig angestrengt!",
+    "Gut gearbeitet! Jede Uebung zaehlt!"
+  ]
+}

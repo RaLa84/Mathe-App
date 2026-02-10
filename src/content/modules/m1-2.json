@@ -1,0 +1,393 @@
+{
+  "modul": "M1.2",
+  "name": "Mengen und Zaehlen",
+  "aufgaben": [
+    {
+      "id": "m1-2-b-001",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Wie viele Sterne siehst du?\n\n* * * * *",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Zaehle die Sterne einen nach dem anderen. Zeige mit dem Finger auf jeden Stern.",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle von links nach rechts: 1, 2, 3, 4, 5. Es sind 5 Sterne."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Fast! Zaehle nochmal ganz langsam. Zeige auf jeden Stern."
+        },
+        {
+          "falsch": "6",
+          "feedback": "Das sind ein bisschen zu viele. Zaehle nochmal genau."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-002",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Zaehle die Kreise:\n\no o o o o o o",
+      "korrekt": ["7"],
+      "antwortOptionen": ["6", "7", "8"],
+      "hilfe": {
+        "stufe1": "Zaehle die Kreise langsam von links nach rechts.",
+        "stufe2": "tenframe",
+        "stufe3": "Gehe Schritt fuer Schritt: o (1), o (2), o (3), o (4), o (5), o (6), o (7). Es sind 7 Kreise."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "6",
+          "feedback": "Ups, ein Kreis wurde vergessen! Zaehle nochmal genau."
+        },
+        {
+          "falsch": "8",
+          "feedback": "Fast richtig! Hast du vielleicht einen doppelt gezaehlt?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-003",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "DragDrop",
+      "aufgabentext": "Ziehe die richtige Zahl zu den Punkten:\n\no o o",
+      "korrekt": ["3"],
+      "dragItems": ["2", "3", "4"],
+      "dropZones": ["Anzahl"],
+      "hilfe": {
+        "stufe1": "Zaehle die Punkte. Wie viele sind es? Ziehe diese Zahl in das Feld.",
+        "stufe2": "tenframe",
+        "stufe3": "Es gibt 3 Punkte: o (1), o (2), o (3). Ziehe die Zahl 3 in das Feld."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "2",
+          "feedback": "Schau nochmal genau hin. Sind es wirklich nur 2 Punkte?"
+        },
+        {
+          "falsch": "4",
+          "feedback": "Das sind zu viele. Zaehle die Punkte nochmal."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-004",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Wie viele Sterne sind hier?\n\n* * * * * * * * *",
+      "korrekt": ["9"],
+      "hilfe": {
+        "stufe1": "Das sind viele Sterne! Zaehle ganz langsam und zeige auf jeden Stern.",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle von links nach rechts: 1, 2, 3, 4, 5, 6, 7, 8, 9. Es sind 9 Sterne."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "8",
+          "feedback": "Fast! Du hast einen Stern vergessen. Zaehle nochmal genau."
+        },
+        {
+          "falsch": "10",
+          "feedback": "Das sind ein bisschen zu viele. Zaehle langsam von vorne."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-005",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Zaehle die Punkte:\n\no\no o\no o o",
+      "korrekt": ["6"],
+      "antwortOptionen": ["5", "6", "7"],
+      "hilfe": {
+        "stufe1": "Die Punkte stehen untereinander. Zaehle alle zusammen.",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle Zeile fuer Zeile: Erste Zeile hat 1 Punkt, zweite Zeile hat 2 Punkte, dritte Zeile hat 3 Punkte. Zusammen: 1 + 2 + 3 = 6 Punkte."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "5",
+          "feedback": "Fast! Zaehle nochmal alle Punkte, auch die in der obersten Zeile."
+        },
+        {
+          "falsch": "7",
+          "feedback": "Das sind ein bisschen zu viele. Zaehle jede Zeile einzeln."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-s-001",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "Wo sind mehr Sterne?\n\nLinks: * * * * *\nRechts: * * *",
+      "korrekt": ["links"],
+      "antwortOptionen": ["links", "rechts", "gleich viel"],
+      "hilfe": {
+        "stufe1": "Zaehle die Sterne auf beiden Seiten. Wo sind mehr?",
+        "stufe2": "tenframe",
+        "stufe3": "Links sind 5 Sterne, rechts sind 3 Sterne. 5 ist mehr als 3. Also sind links mehr Sterne."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "rechts",
+          "feedback": "Schau nochmal genau hin. Zaehle die Sterne auf beiden Seiten."
+        },
+        {
+          "falsch": "gleich viel",
+          "feedback": "Nein, auf einer Seite sind mehr. Zaehle nochmal."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-s-002",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Lisa hat 7 Aepfel. Tom hat 4 Aepfel. Wer hat mehr Aepfel?",
+      "korrekt": ["Lisa"],
+      "antwortOptionen": ["Lisa", "Tom", "beide gleich viel"],
+      "hilfe": {
+        "stufe1": "Vergleiche die Zahlen 7 und 4. Welche Zahl ist groesser?",
+        "stufe2": "numberline",
+        "stufe3": "Lisa hat 7 Aepfel, Tom hat 4 Aepfel. 7 ist groesser als 4. Also hat Lisa mehr Aepfel."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "Tom",
+          "feedback": "Hmm, schau nochmal genau: Lisa hat 7, Tom hat 4. Wer hat mehr?"
+        },
+        {
+          "falsch": "beide gleich viel",
+          "feedback": "Nein, sie haben unterschiedlich viele. Vergleiche 7 und 4."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-s-003",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "DragDrop",
+      "aufgabentext": "Sortiere die Mengen: Welche ist die kleinste?\n\nA: * * * * * *\nB: * * *\nC: * * * * * * * *",
+      "korrekt": ["B"],
+      "dragItems": ["A", "B", "C"],
+      "dropZones": ["Kleinste Menge"],
+      "hilfe": {
+        "stufe1": "Zaehle die Sterne in jeder Gruppe. Die Gruppe mit den wenigsten Sternen ist die kleinste.",
+        "stufe2": "tenframe",
+        "stufe3": "Gruppe A hat 6 Sterne, Gruppe B hat 3 Sterne, Gruppe C hat 8 Sterne. Die kleinste Zahl ist 3. Also ist B die kleinste Menge."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "A",
+          "feedback": "A hat mehr Sterne als eine andere Gruppe. Zaehle nochmal alle."
+        },
+        {
+          "falsch": "C",
+          "feedback": "C hat die meisten Sterne! Welche Gruppe hat die wenigsten?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-s-004",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "Vergleiche die Mengen:\n\nOben: o o o o o o\nUnten: o o o o o o",
+      "korrekt": ["gleich viel"],
+      "antwortOptionen": ["oben mehr", "unten mehr", "gleich viel"],
+      "hilfe": {
+        "stufe1": "Zaehle die Kreise oben und unten. Haben beide gleich viele?",
+        "stufe2": "tenframe",
+        "stufe3": "Oben sind 6 Kreise, unten sind auch 6 Kreise. 6 = 6, also gleich viel."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "oben mehr",
+          "feedback": "Zaehle nochmal genau. Beide Reihen haben die gleiche Anzahl."
+        },
+        {
+          "falsch": "unten mehr",
+          "feedback": "Zaehle nochmal genau. Beide Reihen haben die gleiche Anzahl."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-s-005",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Wo sind weniger Punkte?\n\nLinks: o o o o o o o o\nRechts: o o o o o",
+      "korrekt": ["rechts"],
+      "antwortOptionen": ["links", "rechts", "gleich viel"],
+      "hilfe": {
+        "stufe1": "Zaehle die Punkte auf beiden Seiten. Wo sind weniger?",
+        "stufe2": "tenframe",
+        "stufe3": "Links sind 8 Punkte, rechts sind 5 Punkte. 5 ist weniger als 8. Also sind rechts weniger Punkte."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "links",
+          "feedback": "Links sind mehr Punkte! Die Frage ist: Wo sind weniger?"
+        },
+        {
+          "falsch": "gleich viel",
+          "feedback": "Nein, auf einer Seite sind weniger. Zaehle nochmal."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-g-001",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Ich habe 8 Sterne. Ich teile sie in zwei Gruppen:\n\n* * * *    und    * * * *\n\nWie viele Sterne sind in der zweiten Gruppe?",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Zaehle die Sterne in der zweiten Gruppe (rechts).",
+        "stufe2": "tenframe",
+        "stufe3": "Die zweite Gruppe hat 4 Sterne. Du kannst sie zaehlen: *, *, *, * = 4 Sterne."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "8",
+          "feedback": "8 ist die Gesamtzahl. Aber wie viele sind nur in der zweiten Gruppe?"
+        },
+        {
+          "falsch": "3",
+          "feedback": "Fast! Zaehle die Sterne in der zweiten Gruppe nochmal."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-g-002",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "DragDrop",
+      "aufgabentext": "Ich habe 7 Kreise. Ich teile sie auf: 3 Kreise in die erste Gruppe. Wie viele kommen in die zweite Gruppe?",
+      "korrekt": ["4"],
+      "dragItems": ["3", "4", "5", "7"],
+      "dropZones": ["Zweite Gruppe"],
+      "hilfe": {
+        "stufe1": "Du hast 7 Kreise insgesamt. 3 sind schon in der ersten Gruppe. Wie viele fehlen noch?",
+        "stufe2": "numberline",
+        "stufe3": "Von 7 Kreisen sind 3 in der ersten Gruppe. 7 - 3 = 4. Also kommen 4 Kreise in die zweite Gruppe."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "3",
+          "feedback": "3 sind schon in der ersten Gruppe. Wie viele bleiben fuer die zweite Gruppe uebrig?"
+        },
+        {
+          "falsch": "7",
+          "feedback": "7 ist die Gesamtzahl. Aber 3 sind schon verteilt. Wie viele bleiben?"
+        },
+        {
+          "falsch": "5",
+          "feedback": "Fast! Rechne nochmal: 7 insgesamt, 3 in der ersten Gruppe. Was bleibt?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-g-003",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Anna hat 5 rote Stifte und 3 blaue Stifte. Wie viele Stifte hat sie insgesamt?",
+      "korrekt": ["8"],
+      "antwortOptionen": ["7", "8", "9"],
+      "hilfe": {
+        "stufe1": "Fuege beide Mengen zusammen: 5 rote und 3 blaue. Wie viele sind es zusammen?",
+        "stufe2": "numberline",
+        "stufe3": "5 rote Stifte + 3 blaue Stifte = 8 Stifte insgesamt."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "7",
+          "feedback": "Fast! Zaehle nochmal genau: 5 und 3 zusammen."
+        },
+        {
+          "falsch": "9",
+          "feedback": "Das sind ein bisschen zu viele. Rechne nochmal: 5 + 3."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-g-004",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Auf dem Tisch liegen 10 Bonbons. Tim nimmt 4 Bonbons weg. Wie viele Bonbons liegen noch auf dem Tisch?",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Du startest mit 10 Bonbons. 4 werden weggenommen. Wie viele bleiben uebrig?",
+        "stufe2": "numberline",
+        "stufe3": "10 Bonbons - 4 Bonbons = 6 Bonbons. Es bleiben 6 Bonbons auf dem Tisch."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "14",
+          "feedback": "Achtung! Tim nimmt Bonbons weg, er legt keine dazu. Rechne nochmal."
+        },
+        {
+          "falsch": "5",
+          "feedback": "Fast! Rechne nochmal genau: 10 - 4."
+        },
+        {
+          "falsch": "4",
+          "feedback": "4 Bonbons wurden weggenommen. Aber wie viele bleiben noch uebrig?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-g-005",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "DragDrop",
+      "aufgabentext": "Ich habe 9 Sterne. Ich moechte sie in zwei gleich grosse Gruppen teilen. Wie viele Sterne kommen in jede Gruppe?",
+      "korrekt": ["nicht moeglich"],
+      "dragItems": ["3", "4", "5", "nicht moeglich"],
+      "dropZones": ["Antwort"],
+      "hilfe": {
+        "stufe1": "Versuche 9 Sterne in zwei gleiche Gruppen zu teilen. Klappt das?",
+        "stufe2": "tenframe",
+        "stufe3": "9 kann man nicht in zwei gleiche Gruppen teilen. Du wuerdest 4 und 5 bekommen, das ist nicht gleich. Also ist es nicht moeglich."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Wenn eine Gruppe 4 hat, dann hat die andere 5. Das ist nicht gleich!"
+        },
+        {
+          "falsch": "5",
+          "feedback": "Wenn eine Gruppe 5 hat, dann hat die andere 4. Das ist nicht gleich!"
+        },
+        {
+          "falsch": "3",
+          "feedback": "3 + 3 = 6, nicht 9. Ueberlege nochmal."
+        }
+      ],
+      "vorlesen": true
+    }
+  ]
+}

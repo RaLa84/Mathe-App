@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useProfileStore } from "@/stores/profile-store";
 import { motion, useReducedMotion } from "framer-motion";
 
 export function WelcomeScreen() {
+  const router = useRouter();
   const name = useProfileStore((s) => s.name);
   const sensoryProfile = useProfileStore((s) => s.sensoryProfile);
   const shouldReduceMotion = useReducedMotion();
-  const [showPlaceholder, setShowPlaceholder] = useState(false);
 
   function getAnimationProps() {
     if (shouldReduceMotion || sensoryProfile === "reizarm") {
@@ -54,15 +54,10 @@ export function WelcomeScreen() {
             <Button
               size="lg"
               className="mt-4 text-xl px-10 py-7 h-auto"
-              onClick={() => setShowPlaceholder(true)}
+              onClick={() => router.push("/ueben?modul=M1.3&stufe=Bronze")}
             >
               Weiter ueben!
             </Button>
-            {showPlaceholder && (
-              <p className="text-sm text-muted-foreground" role="status">
-                Die Lernmodule werden bald freigeschaltet!
-              </p>
-            )}
           </CardContent>
         </Card>
       </motion.div>

@@ -1,0 +1,378 @@
+{
+  "modul": "M1.1",
+  "name": "Zahlen kennenlernen (1-10)",
+  "aufgaben": [
+    {
+      "id": "m1-1-b-001",
+      "modul": "M1.1",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Wie viele Aepfel siehst du?",
+      "korrekt": ["3"],
+      "hilfe": {
+        "stufe1": "Zaehle die Aepfel einzeln mit dem Finger.",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle jeden Apfel: 1, 2, 3. Es sind 3 Aepfel."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "2",
+          "feedback": "Fast! Zaehle nochmal ganz genau. Hast du alle Aepfel gezaehlt?"
+        },
+        {
+          "falsch": "4",
+          "feedback": "Das ist knapp daneben. Zaehle jeden Apfel einzeln mit dem Finger."
+        }
+      ],
+      "vorlesen": true,
+      "antwortOptionen": ["2", "3", "4", "5"]
+    },
+    {
+      "id": "m1-1-b-002",
+      "modul": "M1.1",
+      "schwierigkeit": "Bronze",
+      "typ": "DragDrop",
+      "aufgabentext": "Ziehe die richtige Zahl zu den Baellen.",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Zaehle die Baelle. Welche Zahl passt?",
+        "stufe2": "tenframe",
+        "stufe3": "Es sind 5 Baelle. Ziehe die Zahl 5 zu den Baellen."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Zaehle nochmal genau. Sind es wirklich 4 Baelle?"
+        },
+        {
+          "falsch": "6",
+          "feedback": "Das ist zu viel. Zaehle jeden Ball einzeln."
+        }
+      ],
+      "vorlesen": true,
+      "dragItems": ["3", "4", "5", "6"],
+      "dropZones": ["Baelle"]
+    },
+    {
+      "id": "m1-1-b-003",
+      "modul": "M1.1",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Wie viele Finger siehst du?",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Zaehle die Finger. Eine Hand hat 5 Finger.",
+        "stufe2": "tenframe",
+        "stufe3": "Eine Hand hat 5 Finger, die andere 2 Finger. 5 und 2 sind zusammen 7."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "6",
+          "feedback": "Fast richtig! Zaehle nochmal ganz langsam."
+        },
+        {
+          "falsch": "8",
+          "feedback": "Das ist etwas zu viel. Zaehle jeden Finger einzeln."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-b-004",
+      "modul": "M1.1",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl kommt nach der 4?",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Zaehle weiter: 1, 2, 3, 4 und dann?",
+        "stufe2": "numberline",
+        "stufe3": "Die Zahlen gehen so: 1, 2, 3, 4, 5. Nach der 4 kommt die 5."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "3",
+          "feedback": "Die 3 kommt VOR der 4. Wir suchen die Zahl NACH der 4."
+        },
+        {
+          "falsch": "6",
+          "feedback": "Die 6 kommt spaeter. Welche Zahl kommt direkt nach der 4?"
+        }
+      ],
+      "vorlesen": true,
+      "antwortOptionen": ["3", "5", "6", "7"]
+    },
+    {
+      "id": "m1-1-b-005",
+      "modul": "M1.1",
+      "schwierigkeit": "Bronze",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Zahlen von klein nach gross: 3, 1, 2",
+      "korrekt": ["1", "2", "3"],
+      "hilfe": {
+        "stufe1": "Welche Zahl ist die kleinste? Fange damit an.",
+        "stufe2": "numberline",
+        "stufe3": "Die 1 ist am kleinsten, dann kommt die 2, dann die 3."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "3, 2, 1",
+          "feedback": "Du hast von gross nach klein sortiert. Wir wollen von KLEIN nach GROSS."
+        },
+        {
+          "falsch": "1, 3, 2",
+          "feedback": "Die 1 ist richtig am Anfang! Aber was kommt nach der 1? Die 2 oder die 3?"
+        }
+      ],
+      "vorlesen": true,
+      "dragItems": ["1", "2", "3"],
+      "dropZones": ["Platz 1", "Platz 2", "Platz 3"]
+    },
+    {
+      "id": "m1-1-s-001",
+      "modul": "M1.1",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "Welche Zahl ist groesser: 7 oder 4?",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Groessere Zahlen kommen spaeter beim Zaehlen.",
+        "stufe2": "numberline",
+        "stufe3": "Zaehle: 1, 2, 3, 4, 5, 6, 7. Die 7 kommt nach der 4, also ist 7 groesser."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Die 4 ist kleiner. Welche Zahl kommt beim Zaehlen spaeter?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-s-002",
+      "modul": "M1.1",
+      "schwierigkeit": "Silber",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Zahlen von gross nach klein: 8, 5, 9, 6",
+      "korrekt": ["9", "8", "6", "5"],
+      "hilfe": {
+        "stufe1": "Welche Zahl ist am groessten? Die kommt zuerst.",
+        "stufe2": "numberline",
+        "stufe3": "Die groesste Zahl ist 9, dann 8, dann 6, dann 5."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "5, 6, 8, 9",
+          "feedback": "Du hast von klein nach gross sortiert. Wir wollen von GROSS nach KLEIN."
+        },
+        {
+          "falsch": "9, 6, 8, 5",
+          "feedback": "Die 9 ist richtig am Anfang! Aber was ist groesser: 6 oder 8?"
+        }
+      ],
+      "vorlesen": true,
+      "dragItems": ["5", "6", "8", "9"],
+      "dropZones": ["Platz 1", "Platz 2", "Platz 3", "Platz 4"]
+    },
+    {
+      "id": "m1-1-s-003",
+      "modul": "M1.1",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl liegt zwischen 5 und 7?",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Zaehle von 5 weiter: 5, dann?, dann 7.",
+        "stufe2": "numberline",
+        "stufe3": "Die Zahlen gehen so: 5, 6, 7. Die 6 liegt zwischen 5 und 7."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Die 4 kommt VOR der 5. Wir suchen die Zahl zwischen 5 und 7."
+        },
+        {
+          "falsch": "8",
+          "feedback": "Die 8 kommt NACH der 7. Wir suchen die Zahl zwischen 5 und 7."
+        }
+      ],
+      "vorlesen": true,
+      "antwortOptionen": ["4", "6", "8", "5"]
+    },
+    {
+      "id": "m1-1-s-004",
+      "modul": "M1.1",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "Setze das richtige Zeichen ein: 3 __ 8",
+      "korrekt": ["<"],
+      "hilfe": {
+        "stufe1": "Ist 3 kleiner oder groesser als 8?",
+        "stufe2": "numberline",
+        "stufe3": "3 ist kleiner als 8, also: 3 < 8. Das Zeichen zeigt zur kleineren Zahl."
+      },
+      "fehlermuster": [
+        {
+          "falsch": ">",
+          "feedback": "Das Zeichen zeigt zur falschen Seite. Die kleinere Zahl ist die 3."
+        },
+        {
+          "falsch": "=",
+          "feedback": "3 und 8 sind nicht gleich. Welche Zahl ist kleiner?"
+        }
+      ],
+      "vorlesen": true,
+      "antwortOptionen": ["<", ">", "="]
+    },
+    {
+      "id": "m1-1-s-005",
+      "modul": "M1.1",
+      "schwierigkeit": "Silber",
+      "typ": "DragDrop",
+      "aufgabentext": "Sortiere die Zahlen nach Groesse: 10, 2, 6, 4, 8",
+      "korrekt": ["2", "4", "6", "8", "10"],
+      "hilfe": {
+        "stufe1": "Beginne mit der kleinsten Zahl. Welche ist am kleinsten?",
+        "stufe2": "numberline",
+        "stufe3": "Von klein nach gross: 2, 4, 6, 8, 10."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "10, 8, 6, 4, 2",
+          "feedback": "Du hast von gross nach klein sortiert. Wir wollen von klein nach gross."
+        },
+        {
+          "falsch": "2, 6, 4, 8, 10",
+          "feedback": "Die 2 ist richtig am Anfang! Aber kommt die 4 vor oder nach der 6?"
+        }
+      ],
+      "vorlesen": true,
+      "dragItems": ["2", "4", "6", "8", "10"],
+      "dropZones": ["Platz 1", "Platz 2", "Platz 3", "Platz 4", "Platz 5"]
+    },
+    {
+      "id": "m1-1-g-001",
+      "modul": "M1.1",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Welche Zahl ist der Vorgaenger von 7?",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Der Vorgaenger kommt direkt VOR einer Zahl.",
+        "stufe2": "numberline",
+        "stufe3": "Zaehle rueckwaerts von 7: 7, 6. Die 6 kommt vor der 7, also ist 6 der Vorgaenger."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "8",
+          "feedback": "Die 8 kommt NACH der 7. Das ist der Nachfolger. Wir suchen den Vorgaenger."
+        },
+        {
+          "falsch": "5",
+          "feedback": "Die 5 kommt vor der 7, aber nicht direkt davor. Welche Zahl kommt direkt vor der 7?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-g-002",
+      "modul": "M1.1",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl fehlt in der Reihe: 3, 4, __, 6, 7?",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Zaehle die Zahlen: 3, 4, dann?, dann 6.",
+        "stufe2": "numberline",
+        "stufe3": "Die Zahlen gehen: 3, 4, 5, 6, 7. Die 5 fehlt."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Die 4 ist schon da. Welche Zahl kommt zwischen 4 und 6?"
+        },
+        {
+          "falsch": "6",
+          "feedback": "Die 6 ist schon da. Schau nochmal genau hin."
+        }
+      ],
+      "vorlesen": true,
+      "antwortOptionen": ["4", "5", "6", "8"]
+    },
+    {
+      "id": "m1-1-g-003",
+      "modul": "M1.1",
+      "schwierigkeit": "Gold",
+      "typ": "DragDrop",
+      "aufgabentext": "Vervollstaendige die Zahlenreihe: __, 2, 3, __, 5, __, 7",
+      "korrekt": ["1", "4", "6"],
+      "hilfe": {
+        "stufe1": "Zaehle von 1 bis 7. Welche Zahlen fehlen?",
+        "stufe2": "numberline",
+        "stufe3": "Die Reihe geht: 1, 2, 3, 4, 5, 6, 7. Es fehlen: 1, 4 und 6."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "1, 3, 6",
+          "feedback": "Die 1 und 6 sind richtig! Aber die 3 ist schon da. Welche Zahl fehlt zwischen 3 und 5?"
+        },
+        {
+          "falsch": "0, 4, 6",
+          "feedback": "Die 4 und 6 sind richtig! Aber wir zaehlen ab 1, nicht ab 0."
+        }
+      ],
+      "vorlesen": true,
+      "dragItems": ["1", "4", "6", "8", "0"],
+      "dropZones": ["Luecke 1", "Luecke 2", "Luecke 3"]
+    },
+    {
+      "id": "m1-1-g-004",
+      "modul": "M1.1",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Welche Zahl ist der Nachfolger von 9?",
+      "korrekt": ["10"],
+      "hilfe": {
+        "stufe1": "Der Nachfolger kommt direkt NACH einer Zahl.",
+        "stufe2": "numberline",
+        "stufe3": "Zaehle weiter von 9: 9, 10. Die 10 kommt nach der 9, also ist 10 der Nachfolger."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "8",
+          "feedback": "Die 8 kommt VOR der 9. Das ist der Vorgaenger. Wir suchen den Nachfolger."
+        },
+        {
+          "falsch": "11",
+          "feedback": "Die 11 kommt nach der 9, aber nicht direkt danach. Welche Zahl kommt direkt nach der 9?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-g-005",
+      "modul": "M1.1",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl passt NICHT in die Reihe: 2, 4, 6, 7, 8, 10?",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Schau dir die Zahlen genau an. Welche Zahl passt nicht zum Muster?",
+        "stufe2": "numberline",
+        "stufe3": "Die Reihe sind gerade Zahlen: 2, 4, 6, 8, 10. Die 7 ist ungerade und passt nicht."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "2",
+          "feedback": "Die 2 ist eine gerade Zahl und passt. Schau nochmal genau hin."
+        },
+        {
+          "falsch": "10",
+          "feedback": "Die 10 ist eine gerade Zahl und passt. Welche Zahl ist ungerade?"
+        }
+      ],
+      "vorlesen": true,
+      "antwortOptionen": ["2", "7", "8", "10"]
+    }
+  ]
+}
