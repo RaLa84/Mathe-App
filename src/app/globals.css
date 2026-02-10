@@ -83,3 +83,144 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* === SENSORY PROFILE SYSTEM === */
+
+:root {
+  --sensory-bg: 210 40% 98%;
+  --sensory-surface: 0 0% 100%;
+  --sensory-accent: 217 91% 60%;
+  --sensory-success: 142 71% 45%;
+  --sensory-text: 222 47% 11%;
+  --sensory-text-muted: 215 16% 47%;
+  --sensory-border: 214 32% 91%;
+  --sensory-radius: 0.75rem;
+  --sensory-animation-duration: 300ms;
+  --sensory-animation-enabled: 1;
+  --sensory-transition: all 300ms ease;
+}
+
+/* REIZARM: Pastell, keine Animationen, ruhig */
+[data-sensory="reizarm"] {
+  --sensory-bg: 210 20% 96%;
+  --sensory-surface: 210 20% 99%;
+  --sensory-accent: 210 30% 55%;
+  --sensory-success: 142 30% 55%;
+  --sensory-text: 220 20% 25%;
+  --sensory-text-muted: 220 10% 55%;
+  --sensory-border: 210 15% 88%;
+  --sensory-radius: 0.5rem;
+  --sensory-animation-duration: 0ms;
+  --sensory-animation-enabled: 0;
+  --sensory-transition: none;
+
+  --primary: 210 30% 55%;
+  --primary-foreground: 0 0% 100%;
+  --background: 210 20% 96%;
+  --foreground: 220 20% 25%;
+  --card: 210 20% 99%;
+  --card-foreground: 220 20% 25%;
+  --secondary: 210 15% 92%;
+  --secondary-foreground: 220 20% 25%;
+  --muted: 210 15% 92%;
+  --muted-foreground: 220 10% 55%;
+  --accent: 210 15% 92%;
+  --accent-foreground: 220 20% 25%;
+  --border: 210 15% 88%;
+  --input: 210 15% 88%;
+  --ring: 210 30% 55%;
+}
+
+/* STANDARD: Klar, freundlich, sanfte Animationen */
+[data-sensory="standard"] {
+  --sensory-bg: 210 40% 98%;
+  --sensory-surface: 0 0% 100%;
+  --sensory-accent: 217 91% 60%;
+  --sensory-success: 142 71% 45%;
+  --sensory-text: 222 47% 11%;
+  --sensory-text-muted: 215 16% 47%;
+  --sensory-border: 214 32% 91%;
+  --sensory-radius: 0.75rem;
+  --sensory-animation-duration: 300ms;
+  --sensory-animation-enabled: 1;
+  --sensory-transition: all 300ms ease;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --secondary: 214 32% 95%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 214 32% 95%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 214 32% 95%;
+  --accent-foreground: 222 47% 11%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 60%;
+}
+
+/* REIZREICH: Kraeftig, bunt, expressive Animationen */
+[data-sensory="reizreich"] {
+  --sensory-bg: 270 50% 97%;
+  --sensory-surface: 0 0% 100%;
+  --sensory-accent: 262 83% 58%;
+  --sensory-success: 142 76% 36%;
+  --sensory-text: 263 70% 15%;
+  --sensory-text-muted: 260 20% 45%;
+  --sensory-border: 260 40% 85%;
+  --sensory-radius: 1rem;
+  --sensory-animation-duration: 500ms;
+  --sensory-animation-enabled: 1;
+  --sensory-transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 100%;
+  --background: 270 50% 97%;
+  --foreground: 263 70% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 263 70% 15%;
+  --secondary: 262 40% 93%;
+  --secondary-foreground: 263 70% 15%;
+  --muted: 262 40% 93%;
+  --muted-foreground: 260 20% 45%;
+  --accent: 262 40% 93%;
+  --accent-foreground: 263 70% 15%;
+  --border: 260 40% 85%;
+  --input: 260 40% 85%;
+  --ring: 262 83% 58%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  [data-sensory="standard"],
+  [data-sensory="reizreich"] {
+    --sensory-animation-duration: 0ms;
+    --sensory-animation-enabled: 0;
+    --sensory-transition: none;
+  }
+}
+
+@layer utilities {
+  .sensory-animate {
+    transition: var(--sensory-transition);
+  }
+
+  .sensory-bg {
+    background-color: hsl(var(--sensory-bg));
+  }
+
+  .sensory-surface {
+    background-color: hsl(var(--sensory-surface));
+  }
+
+  .sensory-accent {
+    color: hsl(var(--sensory-accent));
+  }
+
+  .sensory-text {
+    color: hsl(var(--sensory-text));
+  }
+}
