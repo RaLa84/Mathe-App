@@ -20,6 +20,7 @@ export interface NdSettings {
   lowStimulusWordProblems: boolean;
   helpAllStagesImmediate: boolean;
   hyperfokusMode: boolean;
+  surpriseRewards: boolean;
   pauseInterval: PauseInterval;
   frustrationThresholds: FrustrationThresholds;
 }
@@ -57,6 +58,7 @@ const defaultNdSettings: NdSettings = {
   lowStimulusWordProblems: false,
   helpAllStagesImmediate: false,
   hyperfokusMode: false,
+  surpriseRewards: false,
   pauseInterval: 10,
   frustrationThresholds: { warn: 2, offer: 3, auto: 5 },
 };
@@ -100,8 +102,8 @@ export const useProfileStore = create<ProfileState>()(
         set({
           name: "",
           grade: null,
-          sensoryProfile: "standard",
-          fontSize: "normal",
+          sensoryProfile: "standard" as const,
+          fontSize: "normal" as const,
           preferredSessionLength: 5,
           ndSettings: { ...defaultNdSettings },
           onboardingCompleted: false,
@@ -110,7 +112,7 @@ export const useProfileStore = create<ProfileState>()(
     }),
     {
       name: "mathe-app-profile",
-      version: 3,
+      version: 4,
       migrate: (persisted: unknown, version: number) => {
         const state = persisted as Record<string, unknown>;
         if (version < 2) {
@@ -121,6 +123,7 @@ export const useProfileStore = create<ProfileState>()(
               ...nd,
               helpAllStagesImmediate: nd.helpAllStagesImmediate ?? false,
               hyperfokusMode: false,
+              surpriseRewards: false,
               pauseInterval: 10,
               frustrationThresholds: { warn: 2, offer: 3, auto: 5 },
             },
@@ -133,8 +136,19 @@ export const useProfileStore = create<ProfileState>()(
             ndSettings: {
               ...nd,
               hyperfokusMode: nd.hyperfokusMode ?? false,
+              surpriseRewards: false,
               pauseInterval: nd.pauseInterval ?? 10,
               frustrationThresholds: nd.frustrationThresholds ?? { warn: 2, offer: 3, auto: 5 },
+            },
+          };
+        }
+        if (version < 4) {
+          const nd = (state.ndSettings ?? {}) as Record<string, unknown>;
+          return {
+            ...state,
+            ndSettings: {
+              ...nd,
+              surpriseRewards: nd.surpriseRewards ?? false,
             },
           };
         }

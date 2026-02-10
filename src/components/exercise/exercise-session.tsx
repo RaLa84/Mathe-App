@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -9,6 +9,7 @@ import { useSessionStore } from "@/stores/session-store";
 import { useProgressStore } from "@/stores/progress-store";
 import { useHelpStore } from "@/stores/help-store";
 import { usePauseStore } from "@/stores/pause-store";
+import { useRewardStore } from "@/stores/reward-store";
 import { useSensoryAnimation } from "@/hooks/use-sensory-animation";
 import { loadModule, loadFeedbackTexts } from "@/lib/content-loader";
 import {
@@ -17,6 +18,18 @@ import {
   getErrorFeedback,
   getSessionEndFeedback,
 } from "@/lib/exercise-engine";
+import {
+  handleCorrectAnswer,
+  handleWrongAnswer,
+  handleHelpThenCorrect,
+  handleSessionStart,
+  checkSessionEndMilestones,
+} from "@/lib/milestone-checker";
+import { MilestoneCelebration } from "@/components/rewards/milestone-celebration";
+import { InstantFeedback } from "@/components/rewards/instant-feedback";
+import { PredictableProgress } from "@/components/rewards/predictable-progress";
+import { getRandomRewardText } from "@/lib/milestone-checker";
+import type { ErreichterMeilenstein } from "@/stores/reward-store";
 import { ExerciseHeader } from "@/components/exercise/exercise-header";
 import { ExerciseDisplay } from "@/components/exercise/exercise-display";
 import { FeedbackDisplay } from "@/components/exercise/feedback-display";
@@ -59,6 +72,10 @@ export function ExerciseSession({
   const [helpOpen, setHelpOpen] = useState(false);
   const [showFrustrationDialog, setShowFrustrationDialog] = useState(false);
   const [showReminder, setShowReminder] = useState(false);
+  const [instantFeedbackText, setInstantFeedbackText] = useState("");
+  const [showInstantFeedback, setShowInstantFeedback] = useState(false);
+  const [pendingMilestone, setPendingMilestone] = useState<ErreichterMeilenstein | null>(null);
+  const sessionStartHandled = useRef(false);
 
   const grade = useProfileStore((s) => s.grade);
   const ndSettings = useProfileStore((s) => s.ndSettings);
@@ -249,6 +266,78 @@ export function ExerciseSession({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modul, schwierigkeit, aufgabenAnzahl]);
 
+  // PROJ-6: Handle session start milestones (Einstieg, Streak)
+  useEffect(() => {
+    if (currentSession && !sessionStartHandled.current) {
+      sessionStartHandled.current = true;
+      handleSessionStart(modul);
+    }
+  }, [currentSession, modul]);
+
+  // Reset sessionStartHandled when loading changes (re-init)
+  useEffect(() => {
+    if (loading) {
+      sessionStartHandled.current = false;
+    }
+  }, [loading]);
+
+  // PROJ-6: Handle reward system on answer feedback
+  useEffect(() => {
+    if (phase === "feedback" && lastAnswerCorrect !== null && currentSession) {
+      // Track daily exercise count (AC-6.22)
+      useRewardStore.getState().incrementAufgabenHeute();
+
+      if (lastAnswerCorrect) {
+        // Correct answer: update series, check milestones (AC-6.2, AC-6.3)
+        const milestones = handleCorrectAnswer(currentSession.modul);
+
+        // Check if help was used and then correct (AC-6.7)
+        const hilfeGenutzt = useSessionStore.getState().hilfeGenutztCurrent;
+        if (hilfeGenutzt) {
+          const helpMilestones = handleHelpThenCorrect();
+          milestones.push(...helpMilestones);
+        }
+
+        // ADHS surprise stars (AC-6.14) - only if enabled in profile
+        if (ndSettings.surpriseRewards) {
+          const adhdSurprise = useRewardStore.getState().incrementAufgabenSeitBonus();
+          if (adhdSurprise) {
+            setInstantFeedbackText(getRandomRewardText("fuenferSerie"));
+            setShowInstantFeedback(true);
+          }
+        }
+
+        // Show sensory-adapted instant feedback on correct answer (AC-6.10, US-6.2)
+        if (!showInstantFeedback) {
+          const feedbackPool = [
+            "Super!", "Toll!", "Richtig!", "Klasse!", "Weiter so!", "Genau!",
+          ];
+          setInstantFeedbackText(feedbackPool[Math.floor(Math.random() * feedbackPool.length)]);
+          setShowInstantFeedback(true);
+        }
+
+        // Show instant milestone celebration if triggered
+        if (milestones.length > 0) {
+          const first = useRewardStore.getState().popCelebration();
+          if (first) {
+            setPendingMilestone(first);
+          }
+        }
+      } else {
+        // Wrong answer: reset series (no penalty - AC-6.20)
+        handleWrongAnswer();
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, lastAnswerCorrect]);
+
+  // Auto-hide instant feedback after a short delay (BUG-5 fix)
+  useEffect(() => {
+    if (!showInstantFeedback) return;
+    const timer = setTimeout(() => setShowInstantFeedback(false), 1500);
+    return () => clearTimeout(timer);
+  }, [showInstantFeedback]);
+
   // Finish help tracking when entering feedback phase
   useEffect(() => {
     if (phase === "feedback" && lastAnswerCorrect !== null) {
@@ -357,6 +446,14 @@ export function ExerciseSession({
         richtige,
         session.ergebnisse.length
       );
+
+    // PROJ-6: Check session-end milestones (stars, module master, etc.)
+    checkSessionEndMilestones(
+      session.modul,
+      session.schwierigkeit,
+      richtige,
+      session.ergebnisse.length
+    );
   }, []);
 
   const handleWeiterUeben = useCallback(() => {
@@ -442,6 +539,12 @@ export function ExerciseSession({
 
       <Card className="mt-4">
         <CardContent className="pt-6 space-y-6">
+          {/* PROJ-6: ASS-Modus predictable progress (AC-6.13) */}
+          <PredictableProgress
+            currentCorrect={currentSession.ergebnisse.filter((e) => e.richtig).length}
+            totalRequired={currentSession.aufgabenAnzahl}
+          />
+
           {/* Task display - always visible (AC-4.2) */}
           <ExerciseDisplay aufgabe={currentAufgabe} />
 
@@ -516,6 +619,9 @@ export function ExerciseSession({
             )}
           </AnimatePresence>
 
+          {/* PROJ-6: Sensory-adapted instant feedback (BUG-5 fix, AC-6.10, US-6.2) */}
+          <InstantFeedback show={showInstantFeedback} text={instantFeedbackText} />
+
           {/* ADHD Confirmation Dialog (AC-4.17) */}
           {ndSettings.confirmationStep && pendingAnswer !== null && (
             <ConfirmationDialog
@@ -568,6 +674,14 @@ export function ExerciseSession({
         isFirstExercise={currentIndex === 0}
         onAction={handleFrustrationAction}
       />
+
+      {/* PROJ-6: Milestone Celebration Overlay (AC-6.10, AC-6.12) */}
+      {pendingMilestone && (
+        <MilestoneCelebration
+          milestone={pendingMilestone}
+          onDone={() => setPendingMilestone(null)}
+        />
+      )}
     </div>
   );
 }

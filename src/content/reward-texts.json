@@ -1,0 +1,74 @@
+{
+  "einstieg": [
+    "Los geht's! Du startest ein neues Thema!",
+    "Toll, du probierst etwas Neues!",
+    "Auf geht's in ein neues Abenteuer!",
+    "Super, du bist neugierig! Das ist klasse!"
+  ],
+  "ersteRichtige": [
+    "Deine erste richtige Antwort! Weiter so!",
+    "Du hast es verstanden! Toll gemacht!",
+    "Die erste ist geschafft! Das wird super!",
+    "Richtig! Du kannst das!"
+  ],
+  "fuenferSerie": [
+    "5 richtige in Folge! Du bist auf Feuer!",
+    "Wow, 5 hintereinander! Unglaublich!",
+    "Fuenf richtige! Du bist ein Mathe-Star!",
+    "5er-Serie! Das ist echt stark!"
+  ],
+  "bronzeStern": [
+    "Du hast den Bronze-Stern geschafft!",
+    "Bronze! Ein super Anfang!",
+    "Dein erster Stern leuchtet! Bronze!",
+    "Bronze-Stern verdient! Gut gemacht!"
+  ],
+  "silberStern": [
+    "Silber-Stern! Du wirst immer besser!",
+    "Wow, Silber geschafft! Toll!",
+    "Der Silber-Stern gehoert dir!",
+    "Silber! Du bist richtig gut geworden!"
+  ],
+  "goldStern": [
+    "GOLD! Du bist ein Mathe-Champion!",
+    "Gold-Stern! Das ist die Spitze!",
+    "Wow, Gold! Du hast alles gemeistert!",
+    "Der goldene Stern! Unglaublich!"
+  ],
+  "hilfeProfi": [
+    "Hilfe-Profi! Du nutzt Tipps richtig schlau!",
+    "5x Hilfe genutzt und dann richtig! Clever!",
+    "Hilfe holen ist schlau - du bist ein Profi!",
+    "Du weisst, wann du Tipps brauchst. Super!"
+  ],
+  "durchhalteHeld": [
+    "3 Tage in Folge geuebt! Du bist ein Held!",
+    "Durchhalte-Held! 3 Tage hintereinander!",
+    "Du bleibst dran! 3 Tage am Stueck!",
+    "Wow, 3 Tage! Das zeigt echten Willen!"
+  ],
+  "modulMeister": [
+    "Modul-Meister! Alle 3 Sterne gesammelt!",
+    "Du hast dieses Thema komplett gemeistert!",
+    "Bronze, Silber, Gold - alles deins!",
+    "Perfekt! Du bist Meister dieses Moduls!"
+  ],
+  "ueberraschungsStern": [
+    "Ueberraschung! Ein Bonus-Stern fuer dich!",
+    "Wow, ein Extra-Stern! Das hast du verdient!",
+    "Ueberraschungs-Stern! Weiter so!",
+    "Bonus! Ein Stern nur fuer dich!"
+  ],
+  "wiederholtGeschafft": [
+    "Du hast es nochmal geschafft! Toll!",
+    "Nochmal gemeistert! Du bist stabil!",
+    "Wieder geschafft - du vergisst nichts!",
+    "Klasse! Du kannst es immer noch!"
+  ],
+  "willkommenZurueck": [
+    "Willkommen zurueck! Schoen, dass du da bist!",
+    "Hey, da bist du ja wieder! Lass uns loslegen!",
+    "Willkommen zurueck! Lass uns eine neue Serie starten!",
+    "Schoen dich wiederzusehen! Auf geht's!"
+  ]
+}

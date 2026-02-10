@@ -1,12 +1,17 @@
 "use client";
 
-import { Check, X, Trophy } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Check, X, Trophy, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useSensoryAnimation } from "@/hooks/use-sensory-animation";
+import { useRewardStore } from "@/stores/reward-store";
+import { StarDisplay } from "@/components/rewards/star-display";
+import { MilestoneCelebration } from "@/components/rewards/milestone-celebration";
 import type { Session } from "@/lib/types/exercise";
+import type { ErreichterMeilenstein } from "@/stores/reward-store";
 import { cn } from "@/lib/utils";
 
 interface SessionSummaryProps {
@@ -25,6 +30,27 @@ export function SessionSummary({
   const { duration, intensity } = useSensoryAnimation();
   const richtigeAnzahl = session.ergebnisse.filter((e) => e.richtig).length;
   const total = session.ergebnisse.length;
+  const sternErreicht = total > 0 && richtigeAnzahl / total >= 0.8;
+
+  // PROJ-6: Show pending milestone celebrations on summary
+  const [pendingMilestone, setPendingMilestone] = useState<ErreichterMeilenstein | null>(null);
+  const pendingCelebrations = useRewardStore((s) => s.pendingCelebrations);
+  const popCelebration = useRewardStore((s) => s.popCelebration);
+  const getModulSterne = useRewardStore((s) => s.getModulSterne);
+
+  const sterne = getModulSterne(session.modul);
+  const stufe = session.schwierigkeit.toLowerCase() as "bronze" | "silber" | "gold";
+
+  useEffect(() => {
+    // Show any pending celebrations with a short delay
+    if (pendingCelebrations.length > 0) {
+      const timer = setTimeout(() => {
+        const next = popCelebration();
+        if (next) setPendingMilestone(next);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [pendingCelebrations.length, popCelebration]);
 
   return (
     <div className="flex flex-col items-center gap-6 py-4">
@@ -49,6 +75,30 @@ export function SessionSummary({
           {richtigeAnzahl} von {total} richtig!
         </h2>
         <p className="text-lg text-muted-foreground mt-2">{endFeedback}</p>
+      </div>
+
+      {/* PROJ-6: Star earned indicator (AC-6.4-6.6) */}
+      {sternErreicht && (
+        <motion.div
+          initial={intensity !== "none" ? { opacity: 0, y: 10 } : undefined}
+          animate={intensity !== "none" ? { opacity: 1, y: 0 } : undefined}
+          transition={{ delay: 0.3, duration }}
+          className="flex items-center gap-2"
+        >
+          <StarDisplay stufe={stufe} erreicht={true} size="md" />
+          <span className="font-semibold text-sm">
+            {stufe === "bronze" && "Bronze-Stern verdient!"}
+            {stufe === "silber" && "Silber-Stern verdient!"}
+            {stufe === "gold" && "Gold-Stern verdient!"}
+          </span>
+        </motion.div>
+      )}
+
+      {/* Module star overview */}
+      <div className="flex gap-2">
+        <StarDisplay stufe="bronze" erreicht={!!sterne.bronze} size="sm" animate={false} />
+        <StarDisplay stufe="silber" erreicht={!!sterne.silber} size="sm" animate={false} />
+        <StarDisplay stufe="gold" erreicht={!!sterne.gold} size="sm" animate={false} />
       </div>
 
       {/* Results list */}
@@ -105,6 +155,14 @@ export function SessionSummary({
           Weiter ueben!
         </Button>
       </div>
+
+      {/* PROJ-6: Milestone Celebration Overlay (AC-6.10) */}
+      {pendingMilestone && (
+        <MilestoneCelebration
+          milestone={pendingMilestone}
+          onDone={() => setPendingMilestone(null)}
+        />
+      )}
     </div>
   );
 }

@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Trophy } from "lucide-react";
+import { Trophy, Star } from "lucide-react";
 import { useProfileStore } from "@/stores/profile-store";
 import { useProgressStore } from "@/stores/progress-store";
+import { useRewardStore } from "@/stores/reward-store";
 import { useSensoryAnimation } from "@/hooks/use-sensory-animation";
 import type { Grade } from "@/stores/profile-store";
 import { GradeSelector } from "./grade-selector";
@@ -12,7 +13,9 @@ import { ModuleStation } from "./module-station";
 import type { ModulDefinition } from "./module-station";
 import { PathConnection } from "./path-connection";
 import { ModuleDetail } from "./module-detail";
+import { StreakDisplay } from "@/components/rewards/streak-display";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Card, CardContent } from "@/components/ui/card";
 import moduleData from "@/content/module-definitions.json";
 
 type GradeKey = "klasse1" | "klasse2" | "klasse3" | "klasse4";
@@ -36,7 +39,11 @@ function getRecommendedModuleId(
   return null;
 }
 
-export function LearningPathMap() {
+interface LearningPathMapProps {
+  onShowRewards?: () => void;
+}
+
+export function LearningPathMap({ onShowRewards }: LearningPathMapProps) {
   const grade = useProfileStore((s) => s.grade);
   const name = useProfileStore((s) => s.name);
   const [selectedGrade, setSelectedGrade] = useState<Grade>(grade ?? 1);
@@ -48,6 +55,9 @@ export function LearningPathMap() {
 
   const fortschritt = useProgressStore((s) => s.fortschritt);
   const getModulFortschritt = useProgressStore((s) => s.getModulFortschritt);
+  const getTotalSterne = useRewardStore((s) => s.getTotalSterne);
+  const aufgabenHeute = useRewardStore((s) => s.aufgabenHeute);
+  const aufgabenGestern = useRewardStore((s) => s.aufgabenGestern);
   const { enabled: animEnabled, duration: animDuration, intensity } = useSensoryAnimation();
 
   useEffect(() => {
@@ -144,6 +154,33 @@ export function LearningPathMap() {
           <h1 className="text-2xl font-bold">Hallo {name}!</h1>
           <p className="text-sm text-muted-foreground">Dein Lernpfad</p>
         </div>
+
+        {/* PROJ-6: Streak & Stars summary (AC-6.18, AC-6.22) */}
+        <Card>
+          <CardContent className="py-3 px-4">
+            <div className="flex items-center justify-between">
+              <StreakDisplay compact />
+              <button
+                type="button"
+                onClick={onShowRewards}
+                className="flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+              >
+                <Star className="h-4 w-4 text-yellow-500" fill="currentColor" />
+                {getTotalSterne()} {getTotalSterne() === 1 ? "Stern" : "Sterne"}
+              </button>
+            </div>
+            {/* AC-6.22: Daily comparison */}
+            {(aufgabenHeute > 0 || aufgabenGestern > 0) && (
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                {aufgabenGestern > 0 && aufgabenHeute > 0
+                  ? `Gestern ${aufgabenGestern}, heute ${aufgabenHeute} Aufgaben!`
+                  : aufgabenHeute > 0
+                    ? `Heute ${aufgabenHeute} ${aufgabenHeute === 1 ? "Aufgabe" : "Aufgaben"} geschafft!`
+                    : `Gestern ${aufgabenGestern} ${aufgabenGestern === 1 ? "Aufgabe" : "Aufgaben"} geschafft!`}
+              </p>
+            )}
+          </CardContent>
+        </Card>
 
         {/* Grade Selector */}
         <GradeSelector
