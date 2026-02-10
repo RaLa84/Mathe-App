@@ -1,14 +1,14 @@
-# AI Coding Starter Kit
+# Mathe-App: Neuroinklusive Grundschulmathematik
 
-> A Next.js template with an AI-powered development workflow using 6 specialized agents
+> Eine Lern-App fuer Addition & Subtraktion (Klasse 1-4) nach Universal Design for Learning, speziell fuer neurodivergente Kinder
 
 ## Vision
-Build web applications faster with AI agents handling Requirements, Architecture, Development, QA, and Deployment. Each agent has clear responsibilities and a human-in-the-loop workflow for quality control.
+Eine Mathe-Lern-App, die neurodivergente Kinder (ADHS, Dyskalkulie, ASS, LRS, Hochbegabung) mit individuellen Lernpfaden, multimodalen Zugaengen und waehlbaren Sensorik-Profilen beim Erlernen von Addition und Subtraktion unterstuetzt.
 
 ---
 
 ## Aktueller Status
-Template ready - Start by defining your first feature!
+Requirements Phase - Feature Specs geschrieben, bereit fuer Solution Architect
 
 ---
 
@@ -32,16 +32,29 @@ Template ready - Start by defining your first feature!
 
 ## Features Roadmap
 
-### Your Features Will Appear Here
+### Didaktisches Fundament
+- [PROJ-1] Didaktisches Konzept: Addition & Subtraktion Lernpfad Klasse 1-4 → 🔵 Planned → [Spec](/features/PROJ-1-addition-subtraktion-lernpfad.md)
 
-Start by defining your first feature using the Requirements Engineer agent:
-```
-Read .claude/agents/requirements-engineer.md and create a feature spec for [your feature idea]
-```
+### Core Features (MVP)
+- [PROJ-2] Onboarding & Profil-Setup → 🔵 Planned → [Spec](/features/PROJ-2-onboarding-profil-setup.md)
+- [PROJ-3] Einstufungstest → 🔵 Planned → [Spec](/features/PROJ-3-einstufungstest.md)
+- [PROJ-4] Aufgaben-Engine (Core) → 🔵 Planned → [Spec](/features/PROJ-4-aufgaben-engine.md)
+- [PROJ-5] Hilfe-System (3 Stufen) → 🔵 Planned → [Spec](/features/PROJ-5-hilfe-system.md)
+- [PROJ-6] Belohnungs- & Meilenstein-System → 🔵 Planned → [Spec](/features/PROJ-6-belohnungssystem.md)
+- [PROJ-7] Pausen & Selbstregulation → 🔵 Planned → [Spec](/features/PROJ-7-pausen-selbstregulation.md)
+- [PROJ-8] Elternbereich → 🔵 Planned → [Spec](/features/PROJ-8-elternbereich.md)
+- [PROJ-9] Lernpfad-Navigation → 🔵 Planned → [Spec](/features/PROJ-9-lernpfad-navigation.md)
 
-Example roadmap structure:
-- [PROJ-1] Your First Feature → 🔵 Planned → [Spec](/features/PROJ-1-feature-name.md)
-- [PROJ-2] Your Second Feature → ⚪ Backlog
+### Content
+- [PROJ-10] Content: Klasse 1 Module (M1.1-M1.10) → 🔵 Planned → [Spec](/features/PROJ-10-content-klasse1.md)
+- [PROJ-11] Content: Klasse 2 Module (M2.1-M2.8) → 🔵 Planned → [Spec](/features/PROJ-11-content-klasse2.md)
+- [PROJ-12] Content: Klasse 3 Module (M3.1-M3.9) → ⚪ Backlog
+- [PROJ-13] Content: Klasse 4 Module (M4.1-M4.8) → ⚪ Backlog
+
+### Empfohlene Build-Reihenfolge
+1. PROJ-2 (Onboarding) → 2. PROJ-4 (Aufgaben-Engine) → 3. PROJ-9 (Navigation) → 4. PROJ-10 (Content K1)
+5. PROJ-5 (Hilfe) → 6. PROJ-6 (Belohnungen) → 7. PROJ-7 (Pausen) → 8. PROJ-3 (Einstufung)
+9. PROJ-8 (Eltern) → 10. PROJ-11 (Content K2)
 
 ---
 
