@@ -5,13 +5,28 @@ export type SensoryProfile = "reizarm" | "standard" | "reizreich";
 export type Grade = 1 | 2 | 3 | 4;
 export type FontSize = "normal" | "gross" | "sehr-gross";
 
+export type PauseInterval = 5 | 10 | 15 | 20;
+
+export interface FrustrationThresholds {
+  warn: number;
+  offer: number;
+  auto: number;
+}
+
 export interface NdSettings {
   confirmationStep: boolean;
   readAloud: boolean;
   permanentTools: boolean;
   lowStimulusWordProblems: boolean;
   helpAllStagesImmediate: boolean;
+  hyperfokusMode: boolean;
+  pauseInterval: PauseInterval;
+  frustrationThresholds: FrustrationThresholds;
 }
+
+export type NdBooleanKey = {
+  [K in keyof NdSettings]: NdSettings[K] extends boolean ? K : never;
+}[keyof NdSettings];
 
 export interface ProfileState {
   name: string;
@@ -28,7 +43,9 @@ export interface ProfileState {
   setSensoryProfile: (profile: SensoryProfile) => void;
   setFontSize: (size: FontSize) => void;
   setPreferredSessionLength: (length: number) => void;
-  setNdSetting: (key: keyof NdSettings, value: boolean) => void;
+  setNdSetting: (key: NdBooleanKey, value: boolean) => void;
+  setPauseInterval: (interval: PauseInterval) => void;
+  setFrustrationThresholds: (thresholds: FrustrationThresholds) => void;
   completeOnboarding: () => void;
   resetProfile: () => void;
 }
@@ -39,6 +56,9 @@ const defaultNdSettings: NdSettings = {
   permanentTools: false,
   lowStimulusWordProblems: false,
   helpAllStagesImmediate: false,
+  hyperfokusMode: false,
+  pauseInterval: 10,
+  frustrationThresholds: { warn: 2, offer: 3, auto: 5 },
 };
 
 export const useProfileStore = create<ProfileState>()(
@@ -63,6 +83,14 @@ export const useProfileStore = create<ProfileState>()(
         set((state) => ({
           ndSettings: { ...state.ndSettings, [key]: value },
         })),
+      setPauseInterval: (interval) =>
+        set((state) => ({
+          ndSettings: { ...state.ndSettings, pauseInterval: interval },
+        })),
+      setFrustrationThresholds: (thresholds) =>
+        set((state) => ({
+          ndSettings: { ...state.ndSettings, frustrationThresholds: thresholds },
+        })),
       completeOnboarding: () =>
         set({
           onboardingCompleted: true,
@@ -82,7 +110,7 @@ export const useProfileStore = create<ProfileState>()(
     }),
     {
       name: "mathe-app-profile",
-      version: 2,
+      version: 3,
       migrate: (persisted: unknown, version: number) => {
         const state = persisted as Record<string, unknown>;
         if (version < 2) {
@@ -92,6 +120,21 @@ export const useProfileStore = create<ProfileState>()(
             ndSettings: {
               ...nd,
               helpAllStagesImmediate: nd.helpAllStagesImmediate ?? false,
+              hyperfokusMode: false,
+              pauseInterval: 10,
+              frustrationThresholds: { warn: 2, offer: 3, auto: 5 },
+            },
+          };
+        }
+        if (version < 3) {
+          const nd = (state.ndSettings ?? {}) as Record<string, unknown>;
+          return {
+            ...state,
+            ndSettings: {
+              ...nd,
+              hyperfokusMode: nd.hyperfokusMode ?? false,
+              pauseInterval: nd.pauseInterval ?? 10,
+              frustrationThresholds: nd.frustrationThresholds ?? { warn: 2, offer: 3, auto: 5 },
             },
           };
         }

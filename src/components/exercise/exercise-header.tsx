@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { PauseButton } from "@/components/pause/pause-button";
 import type { Schwierigkeit } from "@/lib/types/exercise";
 
 interface ExerciseHeaderProps {
@@ -12,6 +13,7 @@ interface ExerciseHeaderProps {
   totalCount: number;
   schwierigkeit: Schwierigkeit;
   onExit: () => void;
+  onPause: () => void;
 }
 
 const schwierigkeitColors: Record<Schwierigkeit, string> = {
@@ -26,6 +28,7 @@ export function ExerciseHeader({
   totalCount,
   schwierigkeit,
   onExit,
+  onPause,
 }: ExerciseHeaderProps) {
   const progress = ((currentIndex + 1) / totalCount) * 100;
 
@@ -50,6 +53,8 @@ export function ExerciseHeader({
             {schwierigkeit}
           </Badge>
         </div>
+
+        <PauseButton onClick={onPause} />
       </div>
 
       <div className="flex items-center gap-3">

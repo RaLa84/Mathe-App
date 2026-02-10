@@ -8,6 +8,7 @@ import { useProfileStore } from "@/stores/profile-store";
 import { useSessionStore } from "@/stores/session-store";
 import { useProgressStore } from "@/stores/progress-store";
 import { useHelpStore } from "@/stores/help-store";
+import { usePauseStore } from "@/stores/pause-store";
 import { useSensoryAnimation } from "@/hooks/use-sensory-animation";
 import { loadModule, loadFeedbackTexts } from "@/lib/content-loader";
 import {
@@ -28,6 +29,12 @@ import { InputDragDrop } from "@/components/exercise/input-drag-drop";
 import { ToolToolbar } from "@/components/tools/tool-toolbar";
 import { HelpButton } from "@/components/help/help-button";
 import { HelpPanel } from "@/components/help/help-panel";
+import { PauseMenu } from "@/components/pause/pause-menu";
+import { PauseReminder } from "@/components/pause/pause-reminder";
+import {
+  FrustrationDialog,
+  type FrustrationAction,
+} from "@/components/pause/frustration-dialog";
 import type { Schwierigkeit, FeedbackTexts } from "@/lib/types/exercise";
 
 interface ExerciseSessionProps {
@@ -50,6 +57,8 @@ export function ExerciseSession({
   const [currentErrorFeedback, setCurrentErrorFeedback] = useState<string | null>(null);
   const [endFeedback, setEndFeedback] = useState("");
   const [helpOpen, setHelpOpen] = useState(false);
+  const [showFrustrationDialog, setShowFrustrationDialog] = useState(false);
+  const [showReminder, setShowReminder] = useState(false);
 
   const grade = useProfileStore((s) => s.grade);
   const ndSettings = useProfileStore((s) => s.ndSettings);
@@ -73,7 +82,92 @@ export function ExerciseSession({
   const markHelpExhausted = useSessionStore((s) => s.markHelpExhausted);
   const finishHelpTracking = useHelpStore((s) => s.finishTracking);
 
+  // Pause store
+  const isPaused = usePauseStore((s) => s.isPaused);
+  const elapsedMinutes = usePauseStore((s) => s.elapsedMinutes);
+  const openPause = usePauseStore((s) => s.openPause);
+  const closePause = usePauseStore((s) => s.closePause);
+  const startTimer = usePauseStore((s) => s.startTimer);
+  const tickTimer = usePauseStore((s) => s.tickTimer);
+  const dismissReminder = usePauseStore((s) => s.dismissReminder);
+  const sessionFailCount = usePauseStore((s) => s.sessionFailCount);
+  const incrementFailCount = usePauseStore((s) => s.incrementFailCount);
+  const resetFailCount = usePauseStore((s) => s.resetFailCount);
+  const saveMoodEntry = usePauseStore((s) => s.saveMoodEntry);
+
   const { duration } = useSensoryAnimation();
+
+  // Start session timer
+  useEffect(() => {
+    startTimer();
+  }, [startTimer]);
+
+  // Tick timer every minute
+  useEffect(() => {
+    const interval = setInterval(() => {
+      tickTimer();
+    }, 60000);
+    return () => clearInterval(interval);
+  }, [tickTimer]);
+
+  // Check if pause reminder should show (AC-7.5)
+  useEffect(() => {
+    if (
+      elapsedMinutes >= ndSettings.pauseInterval &&
+      !ndSettings.hyperfokusMode && // AC-7.8: suppress in hyperfocus mode
+      !isPaused &&
+      phase !== "active" // AC: Wait until exercise is answered (E-7.5)
+    ) {
+      setShowReminder(true);
+    }
+  }, [elapsedMinutes, ndSettings.pauseInterval, ndSettings.hyperfokusMode, isPaused, phase]);
+
+  // Track wrong answers for frustration cascade (AC-7.17-7.19)
+  useEffect(() => {
+    if (phase === "feedback" && lastAnswerCorrect === false) {
+      incrementFailCount();
+    }
+    // Reset fail count on correct answers
+    if (phase === "feedback" && lastAnswerCorrect === true) {
+      resetFailCount();
+    }
+  }, [phase, lastAnswerCorrect, incrementFailCount, resetFailCount]);
+
+  // AC-7.17: After warn threshold, show encouraging feedback + open help proactively
+  useEffect(() => {
+    if (
+      phase === "feedback" &&
+      lastAnswerCorrect === false &&
+      currentAttempts >= ndSettings.frustrationThresholds.warn &&
+      currentAttempts < ndSettings.frustrationThresholds.offer &&
+      !frustrationTriggered
+    ) {
+      setHelpOpen(true);
+    }
+  }, [phase, lastAnswerCorrect, currentAttempts, ndSettings.frustrationThresholds.warn, ndSettings.frustrationThresholds.offer, frustrationTriggered]);
+
+  // Show frustration dialog based on configurable thresholds (AC-7.18)
+  useEffect(() => {
+    if (
+      phase === "feedback" &&
+      lastAnswerCorrect === false &&
+      currentAttempts >= ndSettings.frustrationThresholds.offer &&
+      !frustrationTriggered
+    ) {
+      setShowFrustrationDialog(true);
+    }
+  }, [phase, lastAnswerCorrect, currentAttempts, ndSettings.frustrationThresholds.offer, frustrationTriggered]);
+
+  // AC-7.19: After auto threshold (session-wide consecutive failures), show frustration dialog
+  useEffect(() => {
+    if (
+      phase === "feedback" &&
+      lastAnswerCorrect === false &&
+      sessionFailCount >= ndSettings.frustrationThresholds.auto
+    ) {
+      setShowFrustrationDialog(true);
+    }
+  }, [phase, lastAnswerCorrect, sessionFailCount, ndSettings.frustrationThresholds.auto]);
 
   // Close help panel when moving to next exercise
   useEffect(() => {
@@ -192,6 +286,13 @@ export function ExerciseSession({
     }
   }, [phase, feedbackTexts]);
 
+  // Save mood entry when session ends
+  useEffect(() => {
+    if (phase === "summary" && currentSession) {
+      saveMoodEntry(currentSession.id);
+    }
+  }, [phase, currentSession, saveMoodEntry]);
+
   const handleSubmit = useCallback(
     (answer: string) => {
       submitAnswer(answer);
@@ -200,12 +301,48 @@ export function ExerciseSession({
   );
 
   const handleWeiter = useCallback(() => {
+    setShowFrustrationDialog(false);
     nextExercise();
   }, [nextExercise]);
 
   const handleRetry = useCallback(() => {
     retryExercise();
   }, [retryExercise]);
+
+  const handlePause = useCallback(() => {
+    setShowReminder(false);
+    openPause();
+  }, [openPause]);
+
+  const handlePauseClose = useCallback(() => {
+    closePause();
+  }, [closePause]);
+
+  const handleReminderDismiss = useCallback(() => {
+    setShowReminder(false);
+    dismissReminder();
+  }, [dismissReminder]);
+
+  const handleFrustrationAction = useCallback(
+    (action: FrustrationAction) => {
+      setShowFrustrationDialog(false);
+      resetFailCount();
+      switch (action) {
+        case "tip":
+          setHelpOpen(true);
+          break;
+        case "easier":
+        case "skip":
+          // Move to next exercise
+          nextExercise();
+          break;
+        case "pause":
+          openPause();
+          break;
+      }
+    },
+    [nextExercise, openPause, resetFailCount]
+  );
 
   const saveProgress = useCallback(() => {
     const session = useSessionStore.getState().currentSession;
@@ -231,6 +368,13 @@ export function ExerciseSession({
   }, [saveProgress, endSession]);
 
   const handleZurueck = useCallback(() => {
+    saveProgress();
+    endSession();
+    onExit();
+  }, [saveProgress, endSession, onExit]);
+
+  // Session abort handler (AC-7.21, AC-7.22, AC-7.23)
+  const handleSessionAbort = useCallback(() => {
     saveProgress();
     endSession();
     onExit();
@@ -270,7 +414,7 @@ export function ExerciseSession({
 
   const currentAufgabe = currentSession.aufgaben[currentIndex];
 
-  // Summary phase
+  // Summary phase (AC-7.22: positive message on end)
   if (phase === "summary") {
     return (
       <div className="w-full max-w-2xl mx-auto">
@@ -292,7 +436,8 @@ export function ExerciseSession({
         currentIndex={currentIndex}
         totalCount={currentSession.aufgabenAnzahl}
         schwierigkeit={schwierigkeit}
-        onExit={handleZurueck}
+        onExit={handleSessionAbort}
+        onPause={handlePause}
       />
 
       <Card className="mt-4">
@@ -350,7 +495,11 @@ export function ExerciseSession({
                   feedbackText={
                     frustrationTriggered
                       ? "Das ist schwierig, oder? Kein Problem - lass uns die naechste Aufgabe versuchen!"
-                      : currentFeedbackText
+                      : lastAnswerCorrect === false &&
+                          currentAttempts >= ndSettings.frustrationThresholds.warn &&
+                          currentAttempts < ndSettings.frustrationThresholds.offer
+                        ? "Kein Problem! Schau dir den Tipp an - der hilft bestimmt!"
+                        : currentFeedbackText
                   }
                   errorFeedback={
                     frustrationTriggered ? null : currentErrorFeedback
@@ -398,6 +547,26 @@ export function ExerciseSession({
         onHelpUsed={markHilfeGenutzt}
         onAllStagesUsed={markHelpExhausted}
         exerciseId={currentAufgabe.id}
+      />
+
+      {/* Pause Menu (AC-7.1 - AC-7.12) */}
+      <PauseMenu open={isPaused} onClose={handlePauseClose} />
+
+      {/* Pause Reminder (AC-7.5 - AC-7.8) */}
+      <AnimatePresence>
+        {showReminder && !isPaused && (
+          <PauseReminder
+            onPause={handlePause}
+            onDismiss={handleReminderDismiss}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Frustration Dialog (AC-7.17 - AC-7.19) */}
+      <FrustrationDialog
+        open={showFrustrationDialog}
+        isFirstExercise={currentIndex === 0}
+        onAction={handleFrustrationAction}
       />
     </div>
   );

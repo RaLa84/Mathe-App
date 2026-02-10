@@ -274,3 +274,123 @@ src/
 └── lib/
     └── session-timer          ← Timer-Logik fuer Pausen-Erinnerungen
 ```
+
+---
+
+## QA Test Results
+
+**Tested:** 2026-02-10
+**Tester:** QA Engineer (Code Review)
+**Build:** Erfolgreich (Next.js 16.1.6 Turbopack)
+**Methode:** Statische Code-Analyse gegen alle Acceptance Criteria, Edge Cases, Regression
+
+## Acceptance Criteria Status
+
+### Pause jederzeit (AC-7.1 bis AC-7.4)
+- [x] AC-7.1: Pausen-Button ist waehrend jeder Aufgabe sichtbar und erreichbar (`exercise-header.tsx:57` PauseButton, Lucide Pause-Icon, auf Mobile nur Icon sichtbar)
+- [x] AC-7.2: Bei Klick auf Pause: Aktuelle Aufgabe wird gespeichert und kann fortgesetzt werden (Session-State bleibt in session-store erhalten, `openPause()` aendert nur Pausen-State)
+- [x] AC-7.3: Kein Fortschrittsverlust bei Pause (session-store ist persistiert via Zustand persist, Serie/Sterne/Index bleiben erhalten)
+- [x] AC-7.4: Positive Bestaetigung: "Gute Pause! Ausgeruhte Koepfe rechnen besser." (`pause-menu.tsx:49+95` zeigt beides im "rest"-State)
+
+### Pausen-Erinnerung (AC-7.5 bis AC-7.8)
+- [x] AC-7.5: Nach X Minuten erscheint sanfte Erinnerung (Timer in `exercise-session.tsx:101-111`, Check gegen `ndSettings.pauseInterval`, Standard: 10, konfigurierbar: 5/10/15/20)
+- [x] AC-7.6: Erinnerung ist nicht blockierend (`pause-reminder.tsx` als fixed-position Banner, Buttons: [Pause] [Weiter ueben])
+- [x] AC-7.7: Erinnerungstext positiv: "Du uebst schon toll! Moechtest du eine Pause machen?" (`pause-reminder.tsx:28-32`)
+- [x] AC-7.8: Hyperfokus-Modus unterdrueckt Erinnerung (`exercise-session.tsx:117`: `!ndSettings.hyperfokusMode`)
+
+### Pausen-Aktivitaeten (AC-7.9 bis AC-7.12)
+- [x] AC-7.9: Atemuebung mit Animation (Kreis groesser/kleiner), Dauer ~48s (6 Zyklen x 8s), Sensorik-Profil-Anpassung (reizarm/standard/reizreich mit Partikeln) (`breathing-exercise.tsx`)
+- [x] AC-7.10: Bewegungspause mit wechselnden Anweisungen alle 8s, 6 Uebungen ~48s, Emoji-Illustrationen, Progress-Dots (`movement-break.tsx`)
+- [x] AC-7.11: Kind kann zwischen 3 Aktivitaeten waehlen: Atemuebung, Bewegungspause, Einfach nur Pause (`pause-menu.tsx:60-88`)
+- [x] AC-7.12: Am Ende: "Bereit fuer die naechste Aufgabe?" mit [Ja, weiter!] [Noch etwas Pause] (`pause-menu.tsx:97-117`)
+
+### Stimmungscheck (AC-7.13 bis AC-7.16)
+- [x] AC-7.13: Vor Session-Start: "Wie fuehlst du dich?" mit 5 Emojis (sehr gut/gut/okay/nicht so gut/schlecht) (`mood-check.tsx`, `ueben/page.tsx:139-146`)
+- [x] AC-7.14: Nach Session-Ende: "Wie fuehlst du dich jetzt?" mit gleichen 5 Emojis (`ueben/page.tsx:152-159`, Trigger bei summary-Phase)
+- [x] AC-7.15: Stimmungsdaten werden gespeichert in moodHistory (persistiert via Zustand persist, `pause-store.ts:139-150+180-182`)
+- [x] AC-7.16: Stimmungscheck ueberspringbar ("Ueberspringen"-Button in `mood-check.tsx:68-73`)
+
+### Frustrations-Kaskade (AC-7.17 bis AC-7.20)
+- [x] AC-7.17: Nach 2 Fehlversuchen: Ermutigendes Feedback "Kein Problem! Schau dir den Tipp an - der hilft bestimmt!" + Hilfe-Panel oeffnet sich automatisch (BUG-1 FIXED)
+- [x] AC-7.18: Nach 3 Fehlversuchen: Auswahl anbieten [Tipp nutzen] [Leichtere Aufgabe] [Pause machen] [Ueberspringen] (`frustration-dialog.tsx`)
+- [x] AC-7.19: Nach 5 Session-Fehlern: Frustrations-Dialog wird automatisch angezeigt, `sessionFailCount` wird gegen `frustrationThresholds.auto` geprueft (BUG-2 FIXED)
+- [x] AC-7.20: Frustrations-Schwellenwerte sind konfigurierbar (Datenmodell mit warn/offer/auto in profile-store, `setFrustrationThresholds` Action vorhanden, UI kommt mit PROJ-8)
+
+### Abbruch ohne Strafe (AC-7.21 bis AC-7.23)
+- [x] AC-7.21: Kind kann jederzeit Session beenden (Zurueck-Button im Header, `handleSessionAbort` in `exercise-session.tsx`)
+- [x] AC-7.22: Bei Abbruch: Goodbye-Screen "Toll, dass du heute geuebt hast! Bis bald!" wird angezeigt (`onExit` setzt `uebenPhase` auf "goodbye") (BUG-3 FIXED)
+- [x] AC-7.23: Bereits geloeste Aufgaben werden gespeichert (`saveProgress()` wird vor `endSession()` aufgerufen)
+
+## Edge Cases Status
+
+### E-7.1: Atemuebung nicht fertig machen
+- [x] X-Button bricht ab und geht zurueck zur Pause-Auswahl (Menu). "Weiter"-Button nach Abschluss geht zu "rest"-Screen. Separater `onCancel`-Callback implementiert. (BUG-4 FIXED)
+
+### E-7.2: Frustrations-Kaskade bei allererster Aufgabe
+- [x] FrustrationDialog prueft `isFirstExercise={currentIndex === 0}` und zeigt angepassten Text: "Diese Aufgabe ist neu fuer dich! Lass uns mit einer leichteren anfangen!"
+
+### E-7.3: Kind ueberspringt Stimmungscheck immer
+- [x] Kein Problem - Skip-Button vorhanden, keine Erinnerung/Aufforderung, mood wird als `null` gespeichert.
+
+### E-7.4: Kind waehlt "schlecht" als Stimmung
+- [x] Ermutigender Zwischen-Screen: "Das ist okay. Mathe soll Spass machen." mit [Ja, ich probiere!] und [Lieber spaeter] Buttons. Neue `mood-encourage` Phase in `ueben/page.tsx`. (BUG-5 FIXED)
+
+### E-7.5: Pausen-Erinnerung waehrend Aufgabe
+- [x] Erinnerung wartet bis Aufgabe beantwortet (`exercise-session.tsx`: `phase !== "active"`, Erinnerung erscheint erst in feedback-Phase)
+
+## Bugs Found & Fixed
+
+### BUG-1: `warn`-Schwellenwert (2 Fehlversuche) nicht implementiert - FIXED
+- **Severity:** High
+- **Fix:** Neuer useEffect in `exercise-session.tsx` prueft `currentAttempts >= frustrationThresholds.warn`. Oeffnet Hilfe-Panel automatisch + zeigt ermutigenden Text "Kein Problem! Schau dir den Tipp an - der hilft bestimmt!"
+
+### BUG-2: `auto`-Schwellenwert (5 Session-Fehler) nicht implementiert - FIXED
+- **Severity:** High
+- **Fix:** Neuer useEffect in `exercise-session.tsx` prueft `sessionFailCount >= frustrationThresholds.auto`. Zeigt Frustrations-Dialog automatisch. `sessionFailCount` wird nach Frustrations-Aktion zurueckgesetzt.
+
+### BUG-3: Kein Abschiedstext bei Session-Abbruch - FIXED
+- **Severity:** Medium
+- **Fix:** `onExit` in `ueben/page.tsx` setzt `uebenPhase` auf "goodbye" statt direkt zu `/learn` zu navigieren. Goodbye-Screen wird jetzt auch bei Abbruch angezeigt.
+
+### BUG-4: Aktivitaet abbrechen geht zu "rest" statt "menu" - FIXED
+- **Severity:** Low
+- **Fix:** Neuer `onCancel`-Callback in `BreathingExercise` und `MovementBreak`. X-Button nutzt `onCancel` (-> menu), "Weiter"-Button nutzt `onClose` (-> rest). `pause-menu.tsx` hat separaten `handleActivityCancel`.
+
+### BUG-5: Kein ermutigender Text bei schlechter Stimmung - FIXED
+- **Severity:** Medium
+- **Fix:** Neue `mood-encourage` Phase in `ueben/page.tsx`. Bei Stimmung <= 2 wird Zwischen-Screen gezeigt: "Das ist okay. Mathe soll Spass machen." mit [Ja, ich probiere!] und [Lieber spaeter].
+
+## Regression Test
+
+- [x] PROJ-4 (Aufgaben-Engine): Session-Flow, Aufgaben-Anzeige, Eingabe, Feedback funktionieren weiterhin
+- [x] PROJ-5 (Hilfe-System): HelpButton und HelpPanel weiterhin integriert und funktional
+- [x] PROJ-9 (Lernpfad-Navigation): Navigation zu /ueben und /learn unveraendert
+- [x] PROJ-10 (Content): Content-Loader und Module unberuehrt
+- [x] PROJ-2 (Onboarding): ND-Settings erweitert (pauseInterval, hyperfokusMode, frustrationThresholds) mit korrekter Migration (version 2->3)
+- [x] Build: Erfolgreich, keine TypeScript-Fehler
+
+## Security Check
+
+- [x] Keine offensichtlichen Security-Issues
+- [x] Keine externen API-Calls, alle Daten lokal in localStorage
+- [x] Kein User-Input der injiziert werden koennte (nur Button-Klicks und Emoji-Auswahl)
+- [x] Mood-Daten und Session-Daten nur lokal gespeichert
+
+## Performance Check
+
+- [x] Timer-Intervall 60s (nicht zu haeufig)
+- [x] framer-motion Animationen mit ease-Funktionen (GPU-beschleunigt)
+- [x] Pause-Store partialize: Nur moodHistory wird persistiert (minimaler localStorage-Overhead)
+- [x] Breathing-Exercise: CSS-basierte Animation, kein Canvas/WebGL
+
+## Summary
+
+- **23 von 23 Acceptance Criteria bestanden**
+- **5 von 5 Edge Cases bestanden**
+- **5 Bugs gefunden und ALLE gefixt:** 2 High, 2 Medium, 1 Low
+- **Regression:** Keine Regressionen gefunden
+- **Build:** Erfolgreich nach allen Fixes
+
+## Recommendation
+
+**Feature ist production-ready.** Alle Acceptance Criteria und Edge Cases bestanden nach Bug-Fixes.

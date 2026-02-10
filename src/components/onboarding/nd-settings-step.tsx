@@ -11,14 +11,14 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useProfileStore } from "@/stores/profile-store";
-import type { NdSettings } from "@/stores/profile-store";
+import type { NdBooleanKey } from "@/stores/profile-store";
 
 interface NdSettingsStepProps {
   onNext: () => void;
 }
 
 const ND_OPTIONS: {
-  key: keyof NdSettings;
+  key: NdBooleanKey;
   label: string;
   tag: string;
   description: string;
