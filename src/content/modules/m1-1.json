@@ -132,9 +132,10 @@
       "id": "m1-1-s-001",
       "modul": "M1.1",
       "schwierigkeit": "Silber",
-      "typ": "Vergleich",
+      "typ": "MultipleChoice",
       "aufgabentext": "Welche Zahl ist groesser: 7 oder 4?",
       "korrekt": ["7"],
+      "antwortOptionen": ["4", "7"],
       "hilfe": {
         "stufe1": "Groessere Zahlen kommen spaeter beim Zaehlen.",
         "stufe2": "numberline",
@@ -373,6 +374,145 @@
       ],
       "vorlesen": true,
       "antwortOptionen": ["2", "7", "8", "10"]
+    },
+    {
+      "id": "m1-1-b-006", "modul": "M1.1", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "Wie viele Punkte siehst du?\n\no o o o",
+      "korrekt": ["4"],
+      "hilfe": { "stufe1": "Zaehle jeden Punkt einzeln.", "stufe2": "tenframe", "stufe3": "Zaehle: 1, 2, 3, 4. Es sind 4 Punkte." },
+      "fehlermuster": [{ "falsch": "3", "feedback": "Fast! Zaehle nochmal ganz genau." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-b-007", "modul": "M1.1", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl kommt nach der 7?",
+      "korrekt": ["8"], "antwortOptionen": ["6", "7", "8", "9"],
+      "hilfe": { "stufe1": "Zaehle weiter: ...6, 7, und dann?", "stufe2": "numberline", "stufe3": "Nach der 7 kommt die 8." },
+      "fehlermuster": [{ "falsch": "6", "feedback": "Die 6 kommt VOR der 7. Wir suchen NACH der 7." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-b-008", "modul": "M1.1", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "Wie viele Sterne siehst du?\n\n* *",
+      "korrekt": ["2"],
+      "hilfe": { "stufe1": "Zaehle die Sterne.", "stufe2": "tenframe", "stufe3": "Es sind 2 Sterne: 1, 2." },
+      "fehlermuster": [{ "falsch": "1", "feedback": "Schau genau hin! Da sind 2 Sterne." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-b-009", "modul": "M1.1", "schwierigkeit": "Bronze", "typ": "DragDrop",
+      "aufgabentext": "Ziehe die richtige Zahl zu den Sternen.\n\n* * * * * * * *",
+      "korrekt": ["8"], "dragItems": ["6", "7", "8", "9"], "dropZones": ["Sterne"],
+      "hilfe": { "stufe1": "Zaehle die Sterne.", "stufe2": "tenframe", "stufe3": "Es sind 8 Sterne. Ziehe die 8." },
+      "fehlermuster": [{ "falsch": "7", "feedback": "Fast! Zaehle nochmal genau." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-b-010", "modul": "M1.1", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl kommt nach der 9?",
+      "korrekt": ["10"], "antwortOptionen": ["8", "9", "10", "11"],
+      "hilfe": { "stufe1": "Zaehle weiter: ...8, 9, und dann?", "stufe2": "numberline", "stufe3": "Nach der 9 kommt die 10!" },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Die 8 kommt VOR der 9. Wir suchen NACH der 9." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-b-011", "modul": "M1.1", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "Wie viele Herzen siehst du?\n\n♡ ♡ ♡ ♡ ♡ ♡",
+      "korrekt": ["6"],
+      "hilfe": { "stufe1": "Zaehle jedes Herz.", "stufe2": "tenframe", "stufe3": "1, 2, 3, 4, 5, 6. Es sind 6 Herzen." },
+      "fehlermuster": [{ "falsch": "5", "feedback": "Fast! Zaehle nochmal genau." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-b-012", "modul": "M1.1", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "Welche Zahl kommt VOR der 3?",
+      "korrekt": ["2"],
+      "hilfe": { "stufe1": "Zaehle: 1, 2, 3. Was kommt vor der 3?", "stufe2": "numberline", "stufe3": "Vor der 3 kommt die 2." },
+      "fehlermuster": [{ "falsch": "4", "feedback": "4 kommt NACH der 3. Wir suchen die Zahl VOR der 3." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-s-006", "modul": "M1.1", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "Setze das richtige Zeichen ein: 5 __ 5",
+      "korrekt": ["="],
+      "hilfe": { "stufe1": "Sind 5 und 5 gleich?", "stufe2": "numberline", "stufe3": "5 und 5 sind gleich. Also: 5 = 5." },
+      "fehlermuster": [{ "falsch": "<", "feedback": "5 ist nicht kleiner als 5! Beide sind gleich." }],
+      "vorlesen": true,
+      "antwortOptionen": ["<", ">", "="]
+    },
+    {
+      "id": "m1-1-s-007", "modul": "M1.1", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "Welche Zahl liegt zwischen 7 und 9?",
+      "korrekt": ["8"],
+      "hilfe": { "stufe1": "Zaehle: 7, ?, 9.", "stufe2": "numberline", "stufe3": "7, 8, 9. Die 8 liegt zwischen 7 und 9." },
+      "fehlermuster": [{ "falsch": "7", "feedback": "7 ist der Anfang, nicht dazwischen!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-s-008", "modul": "M1.1", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "Setze das richtige Zeichen ein: 9 __ 6",
+      "korrekt": [">"],
+      "hilfe": { "stufe1": "Ist 9 groesser oder kleiner als 6?", "stufe2": "numberline", "stufe3": "9 ist groesser als 6. Also: 9 > 6." },
+      "fehlermuster": [{ "falsch": "<", "feedback": "9 ist groesser, nicht kleiner! Das Zeichen zeigt zur kleineren Zahl." }],
+      "vorlesen": true,
+      "antwortOptionen": ["<", ">", "="]
+    },
+    {
+      "id": "m1-1-s-009", "modul": "M1.1", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl ist die kleinste: 8, 3, 6?",
+      "korrekt": ["3"], "antwortOptionen": ["3", "6", "8"],
+      "hilfe": { "stufe1": "Die kleinste Zahl kommt beim Zaehlen zuerst.", "stufe2": "numberline", "stufe3": "3 kommt vor 6 und 8. Also ist 3 die kleinste." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "8 ist die groesste! Wir suchen die kleinste." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-s-010", "modul": "M1.1", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "Welche Zahl kommt direkt vor der 10?",
+      "korrekt": ["9"],
+      "hilfe": { "stufe1": "Zaehle: ...8, 9, 10. Was kommt vor der 10?", "stufe2": "numberline", "stufe3": "Vor der 10 kommt die 9." },
+      "fehlermuster": [{ "falsch": "11", "feedback": "11 kommt NACH der 10. Wir suchen DAVOR." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-g-006", "modul": "M1.1", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Ich bin groesser als 6 und kleiner als 8. Wer bin ich?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Welche Zahl liegt zwischen 6 und 8?", "stufe2": "numberline", "stufe3": "Groesser als 6 und kleiner als 8: Das ist die 7!" },
+      "fehlermuster": [{ "falsch": "6", "feedback": "6 ist nicht groesser als 6! Eins weiter." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-g-007", "modul": "M1.1", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl fehlt: 1, 2, 3, __, 5, 6?",
+      "korrekt": ["4"], "antwortOptionen": ["3", "4", "5", "7"],
+      "hilfe": { "stufe1": "Zaehle: 1, 2, 3, dann?, dann 5.", "stufe2": "numberline", "stufe3": "1, 2, 3, 4, 5, 6. Die 4 fehlt." },
+      "fehlermuster": [{ "falsch": "3", "feedback": "Die 3 ist schon da! Welche Zahl kommt nach der 3?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-g-008", "modul": "M1.1", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Ich bin groesser als 8 und kleiner als 10. Wer bin ich?",
+      "korrekt": ["9"],
+      "hilfe": { "stufe1": "Zwischen 8 und 10 liegt...", "stufe2": "numberline", "stufe3": "Groesser als 8 und kleiner als 10: Das ist die 9!" },
+      "fehlermuster": [{ "falsch": "8", "feedback": "8 ist nicht groesser als 8! Eins weiter." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-g-009", "modul": "M1.1", "schwierigkeit": "Gold", "typ": "DragDrop",
+      "aufgabentext": "Vervollstaendige: 5, __, 7, 8, __, 10",
+      "korrekt": ["6", "9"],
+      "dragItems": ["4", "6", "9", "11"], "dropZones": ["Luecke 1", "Luecke 2"],
+      "hilfe": { "stufe1": "Zaehle von 5 bis 10.", "stufe2": "numberline", "stufe3": "5, 6, 7, 8, 9, 10. Es fehlen 6 und 9." },
+      "fehlermuster": [{ "falsch": "4, 11", "feedback": "4 kommt vor der 5, und 11 nach der 10. Welche Zahlen liegen dazwischen?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-1-g-010", "modul": "M1.1", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl ist gerade: 3, 5, 6, 9?",
+      "korrekt": ["6"], "antwortOptionen": ["3", "5", "6", "9"],
+      "hilfe": { "stufe1": "Gerade Zahlen: 2, 4, 6, 8, 10.", "stufe2": "numberline", "stufe3": "Von 3, 5, 6, 9 ist nur die 6 gerade (2, 4, 6, 8, 10)." },
+      "fehlermuster": [{ "falsch": "9", "feedback": "9 ist ungerade. Gerade Zahlen kann man in zwei gleiche Teile teilen." }],
+      "vorlesen": true
     }
   ]
 }

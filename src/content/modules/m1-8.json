@@ -1,0 +1,254 @@
+{
+  "modul": "M1.8",
+  "name": "Subtraktion mit Zehnuebergang",
+  "aufgaben": [
+    {
+      "id": "m1-8-b-001", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "11 - 2 = ?", "korrekt": ["9"],
+      "hilfe": { "stufe1": "11 - 1 = 10. Dann noch 1 weg.", "stufe2": "tenframe", "stufe3": "11 - 2: Zerlege 2 in 1 und 1. 11-1=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist nur der Zwischenschritt! Noch 1 muss weg." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-002", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "11 - 3 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "Erst zur 10: 11-1=10. Dann noch 2 weg.", "stufe2": "tenframe", "stufe3": "11-3: Zerlege 3 in 1 und 2. 11-1=10, 10-2=8." },
+      "fehlermuster": [{ "falsch": "9", "feedback": "Ganz knapp! 11-1=10, dann 10-2=8." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-003", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "12 - 3 = ?", "korrekt": ["9"], "antwortOptionen": ["8", "9", "10", "11"],
+      "hilfe": { "stufe1": "12-2=10. Dann noch 1 weg.", "stufe2": "tenframe", "stufe3": "12-3: Zerlege 3 in 2 und 1. 12-2=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist der Zwischenschritt! Noch 1 weg = 9." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-004", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "12 - 4 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "12-2=10. Dann noch 2 weg.", "stufe2": "tenframe", "stufe3": "12-4: Zerlege 4 in 2 und 2. 12-2=10, 10-2=8." },
+      "fehlermuster": [{ "falsch": "9", "feedback": "Fast! 12-2=10, dann 10-2=8." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-005", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "13 - 4 = ?", "korrekt": ["9"], "antwortOptionen": ["7", "8", "9", "10"],
+      "hilfe": { "stufe1": "13-3=10. Dann noch 1 weg.", "stufe2": "tenframe", "stufe3": "13-4: Zerlege 4 in 3 und 1. 13-3=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist der Zwischenschritt! 10-1=9." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-006", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "13 - 5 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "13-3=10. Dann noch 2 weg.", "stufe2": "tenframe", "stufe3": "13-5: Zerlege 5 in 3 und 2. 13-3=10, 10-2=8." },
+      "fehlermuster": [{ "falsch": "9", "feedback": "Ganz knapp! 13-3=10, dann 10-2=8." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-007", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "11 - 4 = ?", "korrekt": ["7"],
+      "hilfe": { "stufe1": "11-1=10. Dann noch 3 weg.", "stufe2": "tenframe", "stufe3": "11-4: Zerlege 4 in 1 und 3. 11-1=10, 10-3=7." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Fast! 11-1=10, dann 10-3=7." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-008", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "14 - 5 = ?", "korrekt": ["9"], "antwortOptionen": ["7", "8", "9", "10"],
+      "hilfe": { "stufe1": "14-4=10. Dann noch 1 weg.", "stufe2": "tenframe", "stufe3": "14-5: Zerlege 5 in 4 und 1. 14-4=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Ganz knapp! 14-4=10, 10-1=9." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-009", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "12 - 5 = ?", "korrekt": ["7"],
+      "hilfe": { "stufe1": "12-2=10. Dann noch 3 weg.", "stufe2": "tenframe", "stufe3": "12-5: Zerlege 5 in 2 und 3. 12-2=10, 10-3=7." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Fast! 12-2=10, dann 10-3=7." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-010", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "13 - 6 = ?", "korrekt": ["7"],
+      "hilfe": { "stufe1": "13-3=10. Dann noch 3 weg.", "stufe2": "tenframe", "stufe3": "13-6: Zerlege 6 in 3 und 3. 13-3=10, 10-3=7." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Ganz knapp! 13-3=10, dann 10-3=7." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-011", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "15 - 7 = ?", "korrekt": ["8"], "antwortOptionen": ["6", "7", "8", "9"],
+      "hilfe": { "stufe1": "15-5=10. Dann noch 2 weg.", "stufe2": "tenframe", "stufe3": "15-7: Zerlege 7 in 5 und 2. 15-5=10, 10-2=8." },
+      "fehlermuster": [{ "falsch": "7", "feedback": "Fast! 15-5=10, dann 10-2=8." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-b-012", "modul": "M1.8", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "14 - 6 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "14-4=10. Dann noch 2 weg.", "stufe2": "tenframe", "stufe3": "14-6: Zerlege 6 in 4 und 2. 14-4=10, 10-2=8." },
+      "fehlermuster": [{ "falsch": "9", "feedback": "Ganz knapp! 14-4=10, dann 10-2=8." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-001", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "15 - 8 = ?", "korrekt": ["7"],
+      "hilfe": { "stufe1": "15-5=10. Dann noch 3 weg.", "stufe2": "numberline", "stufe3": "15-8: Zerlege 8 in 5 und 3. 15-5=10, 10-3=7." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Ganz knapp! 15-5=10, dann 10-3=7." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-002", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "16 - 8 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "16-6=10. Dann noch 2 weg.", "stufe2": "numberline", "stufe3": "16-8: Zerlege 8 in 6 und 2. 16-6=10, 10-2=8." },
+      "fehlermuster": [{ "falsch": "9", "feedback": "Fast! 16-6=10, dann 10-2=8." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-003", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "14 - 7 = ?", "korrekt": ["7"], "antwortOptionen": ["5", "6", "7", "8"],
+      "hilfe": { "stufe1": "14-4=10. Dann noch 3 weg.", "stufe2": "numberline", "stufe3": "14-7: Zerlege 7 in 4 und 3. 14-4=10, 10-3=7." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Ganz knapp! 14-4=10, dann 10-3=7." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-004", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "17 - 9 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "17-7=10. Dann noch 2 weg.", "stufe2": "numberline", "stufe3": "17-9: Zerlege 9 in 7 und 2. 17-7=10, 10-2=8." },
+      "fehlermuster": [{ "falsch": "9", "feedback": "Fast! 17-7=10, dann 10-2=8." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-005", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "13 - 5 ? 11 - 4",
+      "korrekt": [">"],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "13-5=8 und 11-4=7. 8 > 7." },
+      "fehlermuster": [{ "falsch": "=", "feedback": "Rechne genau: 13-5=? und 11-4=?" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-006", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "16 - 7 = ?", "korrekt": ["9"],
+      "hilfe": { "stufe1": "16-6=10. Dann noch 1 weg.", "stufe2": "numberline", "stufe3": "16-7: Zerlege 7 in 6 und 1. 16-6=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Ganz knapp! 16-6=10, dann 10-1=9." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-007", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "18 - 9 = ?", "korrekt": ["9"],
+      "hilfe": { "stufe1": "18-8=10. Dann noch 1 weg.", "stufe2": "numberline", "stufe3": "18-9: Zerlege 9 in 8 und 1. 18-8=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Fast! 18-8=10, dann 10-1=9." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-008", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "15 - 6 = ?", "korrekt": ["9"], "antwortOptionen": ["7", "8", "9", "10"],
+      "hilfe": { "stufe1": "15-5=10. Dann noch 1 weg.", "stufe2": "numberline", "stufe3": "15-6: Zerlege 6 in 5 und 1. 15-5=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Fast! 15-5=10, dann 10-1=9." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-009", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "16 - 9 ? 13 - 6",
+      "korrekt": ["="],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "16-9=7 und 13-6=7. Beide gleich!" },
+      "fehlermuster": [{ "falsch": ">", "feedback": "Rechne genau: 16-9=? und 13-6=?" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-010", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "14 - 8 = ?", "korrekt": ["6"],
+      "hilfe": { "stufe1": "14-4=10. Dann noch 4 weg.", "stufe2": "numberline", "stufe3": "14-8: Zerlege 8 in 4 und 4. 14-4=10, 10-4=6." },
+      "fehlermuster": [{ "falsch": "7", "feedback": "Ganz knapp! 14-4=10, dann 10-4=6." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-011", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "17 - 8 = ?", "korrekt": ["9"],
+      "hilfe": { "stufe1": "17-7=10. Dann noch 1 weg.", "stufe2": "numberline", "stufe3": "17-8: Zerlege 8 in 7 und 1. 17-7=10, 10-1=9." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Fast! 17-7=10, dann 10-1=9." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-s-012", "modul": "M1.8", "schwierigkeit": "Silber", "typ": "DragDrop",
+      "aufgabentext": "Ordne von klein nach gross: 14-6, 12-5, 17-8",
+      "korrekt": ["12-5", "14-6", "17-8"],
+      "dragItems": ["14-6", "12-5", "17-8"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": { "stufe1": "Rechne alle Aufgaben aus.", "stufe2": "numberline", "stufe3": "12-5=7, 14-6=8, 17-8=9. Von klein: 7, 8, 9." },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-8-g-001", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "14 - ? = 6", "korrekt": ["8"],
+      "hilfe": { "stufe1": "Was musst du von 14 wegnehmen um 6 zu bekommen?", "stufe2": "numberline", "stufe3": "Von 6 bis 14: 7,8,9,10,11,12,13,14 = 8 Schritte. Also ?=8." },
+      "fehlermuster": [{ "falsch": "20", "feedback": "Du hast 14+6 gerechnet! Lies nochmal: 14-?=6." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-g-002", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "15 - 8 = 7. Pruefe: 7 + 8 = ?", "korrekt": ["15"],
+      "hilfe": { "stufe1": "7 + 8 = ? Kommt 15 raus?", "stufe2": "numberline", "stufe3": "7 + 8 = 15. Ja, stimmt! 15-8=7 ist richtig." },
+      "fehlermuster": [{ "falsch": "14", "feedback": "Ganz knapp! 7+8=15, nicht 14." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-g-003", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "20 - 7 - 5 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "Rechne Schritt fuer Schritt: 20-7=?, dann -5.", "stufe2": "numberline", "stufe3": "20-7=13, dann 13-5=8." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "13 ist nur der Zwischenschritt! Noch 5 wegnehmen." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-g-004", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Vergleich",
+      "aufgabentext": "16 - 9 ? 13 - 5",
+      "korrekt": ["<"],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "16-9=7 und 13-5=8. 7 < 8." },
+      "fehlermuster": [{ "falsch": "=", "feedback": "Rechne genau: 16-9=7 und 13-5=8. Nicht gleich!" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-g-005", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "? - 6 = 8", "korrekt": ["14"],
+      "hilfe": { "stufe1": "Welche Zahl minus 6 ergibt 8? Nutze Plus!", "stufe2": "numberline", "stufe3": "8 + 6 = 14. Also ? = 14. Pruefe: 14-6=8!" },
+      "fehlermuster": [{ "falsch": "2", "feedback": "Du hast 8-6 gerechnet. Die Zahl steht vorne!" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-g-006", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "Welche Aufgabe ergibt 6?", "korrekt": ["15 - 9"],
+      "antwortOptionen": ["15 - 9", "14 - 7", "13 - 6", "16 - 8"],
+      "hilfe": { "stufe1": "Rechne jede Aufgabe aus.", "stufe2": "numberline", "stufe3": "15-9=6, 14-7=7, 13-6=7, 16-8=8. Nur 15-9=6!" },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-8-g-007", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "18 - ? = 9", "korrekt": ["9"],
+      "hilfe": { "stufe1": "Was musst du von 18 wegnehmen um 9 zu bekommen?", "stufe2": "numberline", "stufe3": "18 - 9 = 9. Also ? = 9." },
+      "fehlermuster": [{ "falsch": "27", "feedback": "Du hast 18+9 gerechnet! Minus, nicht Plus." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-g-008", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "17 - 4 - 6 = ?", "korrekt": ["7"],
+      "hilfe": { "stufe1": "Erst 17-4, dann -6.", "stufe2": "numberline", "stufe3": "17-4=13, dann 13-6=7." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "13 ist nur der Zwischenschritt! Noch 6 weg." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-8-g-009", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "DragDrop",
+      "aufgabentext": "Ordne von gross nach klein: 16-9, 13-4, 15-9",
+      "korrekt": ["13-4", "16-9", "15-9"],
+      "dragItems": ["16-9", "13-4", "15-9"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": { "stufe1": "Rechne alle aus.", "stufe2": "numberline", "stufe3": "13-4=9, 16-9=7, 15-9=6. Von gross: 9, 7, 6." },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-8-g-010", "modul": "M1.8", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "? - 7 = 9", "korrekt": ["16"],
+      "hilfe": { "stufe1": "Welche Zahl minus 7 ergibt 9?", "stufe2": "numberline", "stufe3": "9 + 7 = 16. Also ? = 16." },
+      "fehlermuster": [{ "falsch": "2", "feedback": "Du hast 9-7 gerechnet. Nutze Plus: 9+7=?" }],
+      "vorlesen": false
+    }
+  ]
+}

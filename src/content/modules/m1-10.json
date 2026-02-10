@@ -1,0 +1,286 @@
+{
+  "modul": "M1.10",
+  "name": "Sachaufgaben bis 20",
+  "aufgaben": [
+    {
+      "id": "m1-10-b-001", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "5 Schmetterlinge sitzen auf einer Blume. 3 fliegen weg. Wie viele bleiben?",
+      "korrekt": ["2"],
+      "hilfe": { "stufe1": "Fliegen weg heisst: wegnehmen. Minus!", "stufe2": "tenframe", "stufe3": "5 Schmetterlinge - 3 fliegen weg = 5 - 3 = 2 bleiben." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Fliegen weg heisst Minus, nicht Plus! 5 - 3 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-002", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "3 Aepfel und 4 Aepfel. Wie viele zusammen?",
+      "korrekt": ["7"], "antwortOptionen": ["1", "5", "7", "12"],
+      "hilfe": { "stufe1": "Zusammen heisst: dazuzaehlen. Plus!", "stufe2": "tenframe", "stufe3": "3 Aepfel + 4 Aepfel = 3 + 4 = 7 Aepfel." },
+      "fehlermuster": [{ "falsch": "1", "feedback": "Zusammen heisst Plus! 3 + 4 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-003", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "8 Kekse liegen auf dem Tisch. 2 werden gegessen. Wie viele sind noch da?",
+      "korrekt": ["6"],
+      "hilfe": { "stufe1": "Gegessen heisst: weg! Minus!", "stufe2": "tenframe", "stufe3": "8 Kekse - 2 gegessen = 8 - 2 = 6 Kekse uebrig." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "Gegessen heisst Minus! 8 - 2 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-004", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "2 Voegel sitzen auf einem Ast. 5 kommen dazu. Wie viele sind es jetzt?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Dazukommen heisst: Plus!", "stufe2": "tenframe", "stufe3": "2 Voegel + 5 dazu = 2 + 5 = 7 Voegel." },
+      "fehlermuster": [{ "falsch": "3", "feedback": "Dazukommen heisst Plus, nicht Minus! 2 + 5 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-005", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "6 Stifte liegen in der Kiste. 4 werden herausgenommen. Wie viele bleiben?",
+      "korrekt": ["2"], "antwortOptionen": ["2", "4", "6", "10"],
+      "hilfe": { "stufe1": "Herausnehmen heisst: Minus!", "stufe2": "tenframe", "stufe3": "6 Stifte - 4 raus = 6 - 4 = 2 Stifte." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "Herausnehmen heisst Minus! 6 - 4 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-006", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "4 Baelle und 3 Baelle. Wie viele insgesamt?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Insgesamt heisst: zusammenzaehlen.", "stufe2": "tenframe", "stufe3": "4 + 3 = 7 Baelle insgesamt." },
+      "fehlermuster": [{ "falsch": "1", "feedback": "Insgesamt heisst Plus! 4 + 3 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-007", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "7 Blumen stehen in der Vase. 3 welken. Wie viele sind noch schoen?",
+      "korrekt": ["4"],
+      "hilfe": { "stufe1": "Welken heisst: weniger werden. Minus!", "stufe2": "tenframe", "stufe3": "7 - 3 = 4 Blumen sind noch schoen." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "Welken heisst weniger! 7 - 3 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-008", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "1 Katze und 5 Katzen. Wie viele Katzen?",
+      "korrekt": ["6"], "antwortOptionen": ["4", "5", "6", "7"],
+      "hilfe": { "stufe1": "Zaehle alle Katzen zusammen.", "stufe2": "tenframe", "stufe3": "1 + 5 = 6 Katzen." },
+      "fehlermuster": [{ "falsch": "5", "feedback": "Du hast die eine Katze vergessen! 1 + 5 = 6." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-009", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "9 Sterne am Himmel. 4 verschwinden. Wie viele leuchten noch?",
+      "korrekt": ["5"],
+      "hilfe": { "stufe1": "Verschwinden heisst: weniger! Minus!", "stufe2": "tenframe", "stufe3": "9 - 4 = 5 Sterne leuchten noch." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "Verschwinden heisst Minus! 9 - 4 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-010", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "3 Bausteine und 6 Bausteine. Wie viele zusammen?",
+      "korrekt": ["9"],
+      "hilfe": { "stufe1": "Zusammen heisst Plus!", "stufe2": "tenframe", "stufe3": "3 + 6 = 9 Bausteine zusammen." },
+      "fehlermuster": [{ "falsch": "3", "feedback": "Du hast nur eine Gruppe gezaehlt! 3 + 6 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-011", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "10 Perlen in der Dose. 7 werden rausgenommen. Wie viele bleiben drin?",
+      "korrekt": ["3"], "antwortOptionen": ["3", "5", "7", "17"],
+      "hilfe": { "stufe1": "Rausnehmen heisst Minus!", "stufe2": "tenframe", "stufe3": "10 - 7 = 3 Perlen bleiben." },
+      "fehlermuster": [{ "falsch": "17", "feedback": "Rausnehmen heisst Minus, nicht Plus! 10 - 7 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-b-012", "modul": "M1.10", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "5 Autos und 5 Autos. Wie viele zusammen?",
+      "korrekt": ["10"],
+      "hilfe": { "stufe1": "5 + 5 = ? Das Doppelte!", "stufe2": "tenframe", "stufe3": "5 + 5 = 10 Autos." },
+      "fehlermuster": [{ "falsch": "0", "feedback": "Wir zaehlen zusammen, nicht wegnehmen! 5 + 5 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-001", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "In der Kiste sind 12 Baelle. 5 werden herausgenommen. Wie viele sind noch drin?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Herausnehmen heisst Minus. 12 - 5 = ?", "stufe2": "numberline", "stufe3": "12 - 5 = 7. Es sind noch 7 Baelle in der Kiste." },
+      "fehlermuster": [{ "falsch": "17", "feedback": "Herausnehmen heisst Minus! 12 - 5 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-002", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "Auf dem Tisch liegen 7 Stifte. Es kommen 6 dazu. Wie viele sind es jetzt?",
+      "korrekt": ["13"], "antwortOptionen": ["1", "11", "13", "14"],
+      "hilfe": { "stufe1": "Dazukommen heisst Plus. 7 + 6 = ?", "stufe2": "numberline", "stufe3": "7 + 6 = 13 Stifte." },
+      "fehlermuster": [{ "falsch": "1", "feedback": "Dazukommen heisst Plus! 7 + 6 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-003", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "Im Regal stehen 15 Buecher. 8 werden ausgeliehen. Wie viele stehen noch da?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Ausleihen heisst: weniger. 15 - 8 = ?", "stufe2": "numberline", "stufe3": "15 - 8 = 7 Buecher stehen noch im Regal." },
+      "fehlermuster": [{ "falsch": "23", "feedback": "Ausleihen heisst Minus! 15 - 8 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-004", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "8 Murmeln in der Tasche. 9 kommen dazu. Wie viele sind es jetzt?",
+      "korrekt": ["17"],
+      "hilfe": { "stufe1": "Dazukommen heisst Plus. 8 + 9 = ?", "stufe2": "numberline", "stufe3": "8 + 9 = 17 Murmeln." },
+      "fehlermuster": [{ "falsch": "16", "feedback": "Ganz knapp! 8 + 9 = 17, nicht 16." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-005", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "In einem Korb liegen 14 Nuesse. Ein Eichhoernchen nimmt 6 mit. Wie viele bleiben?",
+      "korrekt": ["8"], "antwortOptionen": ["6", "7", "8", "20"],
+      "hilfe": { "stufe1": "Mitnehmen heisst Minus. 14 - 6 = ?", "stufe2": "numberline", "stufe3": "14 - 6 = 8 Nuesse bleiben." },
+      "fehlermuster": [{ "falsch": "20", "feedback": "Mitnehmen heisst Minus! 14 - 6 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-006", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "Auf einem Ast sitzen 6 Voegel. 8 fliegen dazu. Wie viele sitzen jetzt da?",
+      "korrekt": ["14"],
+      "hilfe": { "stufe1": "Dazufliegen heisst Plus. 6 + 8 = ?", "stufe2": "numberline", "stufe3": "6 + 8 = 14 Voegel." },
+      "fehlermuster": [{ "falsch": "2", "feedback": "Dazufliegen heisst Plus, nicht Minus! 6 + 8 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-007", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "16 Buntstifte in der Dose. 9 werden rausgenommen. Wie viele sind noch drin?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Rausnehmen heisst Minus. 16 - 9 = ?", "stufe2": "numberline", "stufe3": "16 - 9 = 7 Stifte." },
+      "fehlermuster": [{ "falsch": "25", "feedback": "Rausnehmen heisst Minus! 16 - 9 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-008", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "In der Dose sind 5 rote und 8 blaue Perlen. Wie viele Perlen insgesamt?",
+      "korrekt": ["13"],
+      "hilfe": { "stufe1": "Insgesamt heisst zusammenzaehlen. 5 + 8 = ?", "stufe2": "numberline", "stufe3": "5 + 8 = 13 Perlen insgesamt." },
+      "fehlermuster": [{ "falsch": "3", "feedback": "Insgesamt heisst Plus! 5 + 8 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-009", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "11 Kirschen am Baum. 5 fallen runter. Wie viele haengen noch?",
+      "korrekt": ["6"], "antwortOptionen": ["5", "6", "7", "16"],
+      "hilfe": { "stufe1": "Runterfallen heisst Minus. 11 - 5 = ?", "stufe2": "numberline", "stufe3": "11 - 5 = 6 Kirschen." },
+      "fehlermuster": [{ "falsch": "16", "feedback": "Runterfallen heisst Minus! 11 - 5 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-010", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "9 Bausteine im Turm. 7 kommen dazu. Wie hoch ist der Turm jetzt?",
+      "korrekt": ["16"],
+      "hilfe": { "stufe1": "Dazukommen heisst Plus. 9 + 7 = ?", "stufe2": "numberline", "stufe3": "9 + 7 = 16 Bausteine." },
+      "fehlermuster": [{ "falsch": "2", "feedback": "Dazukommen heisst Plus! 9 + 7 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-001", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Im Regal stehen 12 Buecher. 5 werden weggenommen und 3 neue dazugestellt. Wie viele stehen jetzt im Regal?",
+      "korrekt": ["10"],
+      "hilfe": { "stufe1": "Erst wegnehmen, dann dazustellen. Zwei Schritte!", "stufe2": "numberline", "stufe3": "12 - 5 = 7. Dann 7 + 3 = 10 Buecher." },
+      "fehlermuster": [{ "falsch": "7", "feedback": "7 ist nach dem ersten Schritt. Dann kommen noch 3 dazu!" }, { "falsch": "20", "feedback": "Nicht alles zusammenzaehlen! Erst 12-5, dann +3." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-002", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Im Korb sind 15 Aepfel, in der Kiste 8 Aepfel. Wie viele mehr sind im Korb?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Wie viele mehr = Unterschied. Minus!", "stufe2": "numberline", "stufe3": "15 - 8 = 7. Im Korb sind 7 Aepfel mehr." },
+      "fehlermuster": [{ "falsch": "23", "feedback": "Wir suchen den Unterschied! 15 - 8 = ?" }, { "falsch": "8", "feedback": "8 sind in der Kiste. Der Unterschied: 15 - 8 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-003", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Nach dem Essen liegen noch 6 Kekse auf dem Teller. 4 wurden gegessen. Wie viele waren es vorher?",
+      "korrekt": ["10"],
+      "hilfe": { "stufe1": "6 sind noch da, 4 wurden gegessen. Zusammen?", "stufe2": "numberline", "stufe3": "6 noch da + 4 gegessen = 6 + 4 = 10 Kekse waren es vorher." },
+      "fehlermuster": [{ "falsch": "2", "feedback": "Nicht minus! Wir suchen die Gesamtzahl: 6 + 4 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-004", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "In einer Dose sind 18 Perlen. 9 rote und der Rest blau. Wie viele blaue?",
+      "korrekt": ["9"], "antwortOptionen": ["7", "8", "9", "27"],
+      "hilfe": { "stufe1": "18 insgesamt, 9 rot. Der Rest ist blau.", "stufe2": "numberline", "stufe3": "18 - 9 = 9 blaue Perlen." },
+      "fehlermuster": [{ "falsch": "27", "feedback": "Nicht zusammenzaehlen! 18 - 9 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-005", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Auf dem Parkplatz stehen 8 Autos. 4 fahren weg und 7 neue kommen. Wie viele stehen jetzt da?",
+      "korrekt": ["11"],
+      "hilfe": { "stufe1": "Erst wegfahren (Minus), dann kommen (Plus).", "stufe2": "numberline", "stufe3": "8 - 4 = 4. Dann 4 + 7 = 11 Autos." },
+      "fehlermuster": [{ "falsch": "4", "feedback": "4 ist nach dem ersten Schritt. Dann kommen noch 7 dazu!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-006", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "In der einen Kiste sind 13 Baelle, in der anderen 6 Baelle. Wie viele weniger in der zweiten?",
+      "korrekt": ["7"],
+      "hilfe": { "stufe1": "Wie viele weniger = Unterschied. 13 - 6 = ?", "stufe2": "numberline", "stufe3": "13 - 6 = 7. In der zweiten Kiste sind 7 weniger." },
+      "fehlermuster": [{ "falsch": "19", "feedback": "Wir suchen den Unterschied! 13 - 6 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-007", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Im Glas sind 20 Bonbons. Erst werden 5 rausgenommen, dann nochmal 3. Wie viele sind noch im Glas?",
+      "korrekt": ["12"],
+      "hilfe": { "stufe1": "Zwei Mal wegnehmen! 20-5-3.", "stufe2": "numberline", "stufe3": "20 - 5 = 15. Dann 15 - 3 = 12 Bonbons." },
+      "fehlermuster": [{ "falsch": "15", "feedback": "15 ist nach dem ersten Rausnehmen. Dann nochmal 3 weg!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-008", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "7 Tassen im Schrank. 5 dazu und dann 4 raus. Wie viele sind jetzt im Schrank?",
+      "korrekt": ["8"], "antwortOptionen": ["6", "7", "8", "16"],
+      "hilfe": { "stufe1": "Erst dazu (Plus), dann raus (Minus).", "stufe2": "numberline", "stufe3": "7 + 5 = 12. Dann 12 - 4 = 8 Tassen." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "12 ist nach dem Dazutun. Dann nochmal 4 raus!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-009", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "In der Tasche waren Murmeln. 6 wurden rausgenommen. Jetzt sind noch 8 drin. Wie viele waren vorher in der Tasche?",
+      "korrekt": ["14"],
+      "hilfe": { "stufe1": "8 noch drin + 6 rausgenommen = vorher?", "stufe2": "numberline", "stufe3": "8 + 6 = 14. Es waren 14 Murmeln in der Tasche." },
+      "fehlermuster": [{ "falsch": "2", "feedback": "Nicht Minus! 8 sind noch da + 6 rausgenommen = wie viele waren es?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-010", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Im Aquarium sind 11 Fische. 3 werden in ein anderes Becken gesetzt und 5 neue kommen. Wie viele sind jetzt im Aquarium?",
+      "korrekt": ["13"],
+      "hilfe": { "stufe1": "Erst wegnehmen, dann dazutun.", "stufe2": "numberline", "stufe3": "11 - 3 = 8. Dann 8 + 5 = 13 Fische." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "8 ist nach dem ersten Schritt! Dann kommen noch 5 dazu." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-s-011", "modul": "M1.10", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "5 Aepfel und 3 Birnen ? 4 Aepfel und 6 Birnen",
+      "korrekt": ["<"],
+      "antwortOptionen": ["<", ">", "="],
+      "hilfe": { "stufe1": "Zaehle links alles zusammen, dann rechts.", "stufe2": "numberline", "stufe3": "Links: 5 + 3 = 8. Rechts: 4 + 6 = 10. 8 ist kleiner als 10, also <." },
+      "fehlermuster": [
+        { "falsch": ">", "feedback": "Rechne nochmal: Links sind es 5 + 3 = 8 und rechts 4 + 6 = 10." },
+        { "falsch": "=", "feedback": "Links: 5 + 3 = 8. Rechts: 4 + 6 = 10. Das ist nicht gleich!" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-10-g-011", "modul": "M1.10", "schwierigkeit": "Gold", "typ": "Vergleich",
+      "aufgabentext": "12 Buntstifte minus 4 ? 6 Buntstifte plus 3",
+      "korrekt": ["<"],
+      "antwortOptionen": ["<", ">", "="],
+      "hilfe": { "stufe1": "Rechne erst links, dann rechts aus.", "stufe2": "numberline", "stufe3": "Links: 12 - 4 = 8. Rechts: 6 + 3 = 9. 8 ist kleiner als 9, also <." },
+      "fehlermuster": [
+        { "falsch": ">", "feedback": "Links: 12 - 4 = 8. Rechts: 6 + 3 = 9. 8 ist kleiner als 9." },
+        { "falsch": "=", "feedback": "Links ergibt 8, rechts ergibt 9. Das ist nicht gleich!" }
+      ],
+      "vorlesen": true
+    }
+  ]
+}

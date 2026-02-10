@@ -270,3 +270,356 @@ src/
 └── scripts/
     └── validate-content      ← Build-Script: Alle JSON-Dateien pruefen
 ```
+
+---
+
+## QA Test Results
+
+**Tested:** 2026-02-10
+**Tester:** QA Engineer Agent (Claude Opus 4.6)
+**Build:** `npm run build` PASSED
+**Validation Script:** `npx tsx scripts/validate-content.ts` PASSED (0 Errors, 0 Warnings)
+**Total Exercises:** 326 (across 10 modules)
+**Unique IDs:** 326 (no duplicates)
+
+---
+
+### Acceptance Criteria Status
+
+#### AC-10.1: Mind. 10 Aufgaben pro Schwierigkeitsstufe
+- [x] M1.1: Bronze=12, Silber=10, Gold=10 (32 total)
+- [x] M1.2: Bronze=12, Silber=10, Gold=10 (32 total)
+- [x] M1.3: Bronze=12, Silber=12, Gold=10 (34 total)
+- [x] M1.4: Bronze=12, Silber=12, Gold=10 (34 total)
+- [x] M1.5: Bronze=10, Silber=10, Gold=10 (30 total)
+- [x] M1.6: Bronze=12, Silber=10, Gold=10 (32 total)
+- [x] M1.7: Bronze=12, Silber=12, Gold=10 (34 total)
+- [x] M1.8: Bronze=12, Silber=12, Gold=10 (34 total)
+- [x] M1.9: Bronze=10, Silber=10, Gold=10 (30 total)
+- [x] M1.10: Bronze=12, Silber=11, Gold=11 (34 total)
+- Ergebnis: ALLE Module erfuellen das Minimum von 10 pro Stufe.
+
+#### AC-10.2: Mind. 3 verschiedene Aufgabentypen pro Modul
+- [x] M1.1: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.2: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.3: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.4: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.5: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.6: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.7: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.8: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.9: Zahleneingabe, MultipleChoice, DragDrop, Vergleich (4 Typen)
+- [x] M1.10: Zahleneingabe, MultipleChoice, Vergleich (3 Typen, kein DragDrop)
+- Ergebnis: ALLE Module haben mind. 3 Aufgabentypen.
+
+#### AC-10.3: Mind. 1 Tipp-Text (Hilfe-Stufe 1)
+- [x] Jede Aufgabe hat hilfe.stufe1 mit inhaltlichem Text.
+
+#### AC-10.4: Mind. 1 Visualisierung pro Modul (Hilfe-Stufe 2)
+- [x] Jede Aufgabe hat hilfe.stufe2 (Werte: "tenframe" oder "numberline").
+
+#### AC-10.5: Mind. 1 Schritt-fuer-Schritt-Loesung (Hilfe-Stufe 3)
+- [x] Jede Aufgabe hat hilfe.stufe3 mit ausfuehrlicher Schritt-fuer-Schritt-Erklaerung.
+
+#### AC-10.6: Mind. 3 Feedback-Texte richtig/falsch
+- [x] feedback-texts.json: 10 positive ("richtig"), 6 negative ("falsch"), 4 "sessionEnde".
+
+#### AC-10.7-10.16: Modul-spezifische Inhalte
+- [x] AC-10.7: M1.1 - Zahlen entdecken (0-10): Zaehlen, Menge-Zahl, Vorgaenger/Nachfolger, Luecken
+- [x] AC-10.8: M1.2 - Mengen und Zaehlen: Mengen zaehlen, Subitizing, Vergleiche
+- [x] AC-10.9: M1.3 - Addition bis 10: Direktrechnung, Lueckenaufgaben, Vergleiche
+- [x] AC-10.10: M1.4 - Subtraktion bis 10: Wegnehmen, Plus/Minus unterscheiden, Luecken
+- [x] AC-10.11: M1.5 - Umkehraufgaben: Paare erkennen, Familien bilden, Pruefen
+- [x] AC-10.12: M1.6 - Zahlenraum bis 20: Buendeln, Zerlegen, Nachbarzehner
+- [x] AC-10.13: M1.7 - Addition Zehnuebergang: Zerlegung zur 10, Luecken
+- [x] AC-10.14: M1.8 - Subtraktion Zehnuebergang: Ueber 10 zurueck, Ergaenzen, Luecken
+- [x] AC-10.15: M1.9 - Verdoppeln/Halbieren: Verdoppeln mit Bild, +/-1, Halbieren
+- [x] AC-10.16: M1.10 - Sachaufgaben: Bronze=Bild+Text, Silber=Text, Gold=Zwei-Schritt
+
+#### AC-10.17: Alle Aufgaben haben korrekte Loesungen
+- [ ] BUG-1 (siehe unten): Einige "Vergleich"-Aufgaben haben Antworten die nicht <, >, = sind
+- [x] Alle arithmetischen Aufgaben (a+b=?, a-b=?) sind mathematisch korrekt
+- [x] Alle MultipleChoice-Aufgaben enthalten korrekte Antwort in antwortOptionen
+- [x] Vergleichszeichen bei Standard-Vergleichen stimmen (<, >, =)
+
+#### AC-10.18: Sachaufgaben max. 8-10 Woerter pro Satz
+- [x] Bronze-Sachaufgaben: kurze Saetze, kindgerecht
+- [ ] BUG-5 (siehe unten): Einige Gold-Sachaufgaben ueberschreiten die Wortgrenze leicht (bis 15-18 Woerter pro Satz) - fuer Gold-Stufe aber vertretbar
+
+#### AC-10.19: ASS-Alternativen (keine sozialen Szenarien)
+- [x] Bronze-Sachaufgaben nutzen ueberwiegend Objekte (Schmetterlinge, Aepfel, Kekse, Baelle, Sterne)
+- [ ] BUG-6 (siehe unten): M1.2 s-002 verwendet soziale Personennamen "Lisa" und "Tom" als Vergleich
+- [ ] BUG-6b: M1.2 s-008 verwendet "Tim" und "Lisa" sozial vergleichend
+- [x] M1.10 Bronze-Sachaufgaben sind objektbasiert und ASS-freundlich
+- [ ] BUG-6c: M1.10 s-005 nutzt ein soziales Szenario (Eichhoernchen) - grenzwertig ok, da Tier
+
+#### AC-10.20: Fehlermuster definiert
+- [x] Jede Aufgabe hat mindestens 1 Fehlermuster (Ausnahme: einige DragDrop/MC mit leerem Array)
+- [x] Fehlermuster decken typische Fehler ab (Plus statt Minus, Verzaehlen, Stellenwert-Verwechslung)
+
+#### AC-10.21: Stellenwert-Farbcodierung
+- [x] M1.6 hat stellenwertFarben=true bei allen relevanten Stellenwert-Aufgaben
+- [x] Andere Module nutzen stellenwertFarben nicht (korrekt, da nicht relevant)
+
+#### AC-10.22: Strukturiertes JSON-Format
+- [x] 10 JSON-Dateien, eine pro Modul
+- [x] Zod-Schema-Validierung in content-loader.ts und validate-content.ts
+
+#### AC-10.23: Pflichtfelder vorhanden
+- [x] Jede Aufgabe hat: ID, Modul, Schwierigkeit, Typ, Aufgabentext, korrekt, Hilfe, Fehlermuster, Vorlesen
+
+#### AC-10.24: Content erweiterbar
+- [x] JSON-Dateien koennen ohne Code-Aenderung erweitert werden
+- [x] Content-Loader mappt alle 10 Module korrekt
+
+---
+
+### Edge Cases Status
+
+#### E-10.1: Alle Aufgaben bearbeitet
+- [x] exercise-engine.ts selectExercises() waehlt zufaellig aus Pool
+- Nicht direkt testbar ohne UI (Content-Scope)
+
+#### E-10.2: Fehler im Content
+- [x] validate-content.ts prueft Schema, Math, IDs, Pflichtfelder
+- [ ] BUG-3 (siehe unten): Validation Script prueft NICHT auf Typ-Konsistenz (Vergleich mit Nicht-Zeichen-Antworten)
+
+#### E-10.3: Bilder laden nicht
+- [x] Kein Modul referenziert Bilder die nicht existieren (bild-Feld ist optional und wird nicht genutzt)
+
+#### E-10.4: Aufgaben-Auswahl pro Session
+- [x] selectExercises() in exercise-engine.ts waehlt zufaellig
+
+#### E-10.5: Content spaeter ergaenzen
+- [x] JSON-Format ist erweiterbar. Neue Aufgaben werden automatisch aufgenommen.
+
+---
+
+### Bugs Found
+
+#### BUG-1: Vergleich-Aufgaben mit inkompatiblen Antwortformaten (CRITICAL)
+
+- **Severity:** Critical
+- **Betroffene Aufgaben:**
+  - m1-1-s-001 (M1.1): "Welche Zahl ist groesser: 7 oder 4?" - korrekt=["7"]
+  - m1-2-s-001 (M1.2): "Wo sind mehr Sterne?" - korrekt=["links"]
+  - m1-2-s-004 (M1.2): "Vergleiche die Mengen" - korrekt=["gleich viel"]
+  - m1-2-s-005 (M1.2): "Wo sind weniger Punkte?" - korrekt=["rechts"]
+- **Steps to Reproduce:**
+  1. Starte Session mit M1.1 Silber oder M1.2 Silber
+  2. Warte auf eine der betroffenen Aufgaben
+  3. Die InputComparison-Komponente zeigt NUR <, =, > als Buttons
+  4. Die korrekte Antwort ("7", "links", "rechts", "gleich viel") ist nicht auswaehlbar
+- **Expected:** Aufgabe ist loesbar
+- **Actual:** Aufgabe ist NICHT loesbar, da die UI nur <, =, > anbietet
+- **Root Cause:** Diese Aufgaben nutzen "Vergleich" als Typ, aber die Antworten sind keine Vergleichszeichen. Die InputComparison-Komponente (src/components/exercise/input-comparison.tsx Zeile 14-18) ist hartcodiert auf "<", "=", ">".
+- **Fix-Vorschlag:** Diese Aufgaben sollten entweder als "MultipleChoice" typisiert werden (mit antwortOptionen), oder die InputComparison-Komponente muss erweitert werden um auch custom antwortOptionen anzuzeigen.
+- **Priority:** Critical (Aufgaben sind nicht spielbar)
+
+#### BUG-2: M1.5 s-006 - MultipleChoice akzeptiert nur eine von zwei korrekten Antworten (Medium)
+
+- **Severity:** Medium
+- **Betroffene Aufgabe:** m1-5-s-006
+- **Steps to Reproduce:**
+  1. Aufgabentext: "7 - 3 = 4. Welche Plusaufgabe passt?"
+  2. korrekt = ["4 + 3 = 7"]
+  3. antwortOptionen enthaelt auch "3 + 4 = 7"
+  4. hilfe.stufe3 sagt: "Umkehrung: 4 + 3 = 7 (oder 3 + 4 = 7)"
+  5. Kind waehlt "3 + 4 = 7" und bekommt "Falsch"
+- **Expected:** Beide Antworten ("4 + 3 = 7" und "3 + 4 = 7") sollten als korrekt gelten
+- **Actual:** Nur "4 + 3 = 7" wird als korrekt gewertet
+- **Fix-Vorschlag:** korrekt-Array um "3 + 4 = 7" erweitern: korrekt: ["4 + 3 = 7", "3 + 4 = 7"]
+- **Priority:** Medium (frustrierend fuer Kind, mathematisch unfair)
+
+#### BUG-3: Validation Script erkennt Typ-Inkompatibilitaet nicht (Medium)
+
+- **Severity:** Medium
+- **File:** scripts/validate-content.ts
+- **Steps to Reproduce:**
+  1. Fuehre `npx tsx scripts/validate-content.ts` aus
+  2. Script meldet 0 Errors, 0 Warnings
+  3. Aber BUG-1 (Vergleich mit Nicht-Zeichen-Antworten) wird NICHT erkannt
+- **Expected:** Script warnt wenn eine Vergleich-Aufgabe keine Antwort aus [<, >, =] hat
+- **Actual:** Keine Warnung
+- **Root Cause:** validateTypeFields() prueft bei Vergleich-Typ nicht ob korrekt-Werte valide Vergleichszeichen sind
+- **Fix-Vorschlag:** In validateTypeFields() hinzufuegen:
+  ```
+  if (aufgabe.typ === "Vergleich") {
+    const validComparisons = ["<", ">", "="];
+    const hasValidAnswer = aufgabe.korrekt.some(k => validComparisons.includes(k));
+    if (!hasValidAnswer) {
+      error(`${aufgabe.id}: Vergleich exercise answer must be <, > or =`);
+    }
+  }
+  ```
+- **Priority:** Medium (Tooling-Bug, verhindert fruehe Fehlererkennung)
+
+#### BUG-4: DragDrop-Aufgaben mit nicht-deterministischer Sortierung (Low)
+
+- **Severity:** Low
+- **Betroffene Aufgaben:**
+  - m1-4-s-011: "Ordne: 9-2, 8-6, 10-3" - korrekt=["8-6", "9-2", "10-3"] aber 9-2=7 und 10-3=7 (gleich!)
+  - m1-8-s-012: "Ordne: 14-6, 12-5, 16-8" - korrekt=["12-5", "14-6", "16-8"] aber 14-6=8 und 16-8=8 (gleich!)
+  - m1-8-g-009: "Ordne: 16-9, 13-4, 15-8" - korrekt=["13-4", "16-9", "15-8"] aber 16-9=7 und 15-8=7 (gleich!)
+- **Problem:** Die korrekte Reihenfolge ist nicht eindeutig wenn zwei Aufgaben das gleiche Ergebnis haben. Kind koennte die "Gleichwertigen" anders sortieren und bekommt "Falsch".
+- **Fix-Vorschlag:** Aufgaben so anpassen, dass alle Ergebnisse unterschiedlich sind, oder die Engine tolerant gegen gleichwertige Permutationen machen.
+- **Priority:** Low (selten, aber potenziell frustrierend)
+
+#### BUG-5: Gold-Sachaufgaben ueberschreiten Wortgrenze (Low)
+
+- **Severity:** Low
+- **Betroffene Aufgaben (Beispiele):**
+  - m1-10-g-001: "Im Regal stehen 12 Buecher. 5 werden weggenommen und 3 neue dazugestellt. Wie viele stehen jetzt im Regal?" (18 Woerter)
+  - m1-10-g-005: "Auf dem Parkplatz stehen 8 Autos. 4 fahren weg und 7 neue kommen. Wie viele stehen jetzt da?" (16 Woerter)
+  - m1-10-g-009: "In der Tasche waren Murmeln. 6 wurden rausgenommen. Jetzt sind noch 8 drin. Wie viele waren vorher in der Tasche?" (16 Woerter)
+- **Expected:** Max. 8-10 Woerter pro Satz (AC-10.18)
+- **Actual:** Gold-Aufgaben haben bis zu 18 Woerter pro Satz
+- **Bemerkung:** Fuer Gold-Stufe (fortgeschrittene Kinder) ist dies vertretbar, da Zwei-Schritt-Aufgaben inherent laenger sind. Aber formal ueberschritten.
+- **Priority:** Low (didaktisch vertretbar fuer Gold)
+
+#### BUG-6: Fehlende ASS-Alternativen bei sozialen Szenarien (Low)
+
+- **Severity:** Low
+- **Betroffene Aufgaben:**
+  - m1-2-s-002: "Lisa hat 7 Aepfel. Tom hat 4 Aepfel. Wer hat mehr?" - Sozialer Vergleich
+  - m1-2-s-008: "Tim hat 5 Murmeln. Lisa hat 8 Murmeln." - Sozialer Vergleich
+- **Expected:** ASS-Alternativen ohne soziale Szenarien (AC-10.19)
+- **Actual:** Kein ASS-Alternativfeld vorhanden. Aufgabe nutzt Personen-Vergleich.
+- **Bemerkung:** Die meisten Aufgaben sind bereits objektbasiert. Nur diese 2 nutzen soziale Vergleiche.
+- **Fix-Vorschlag:** Alternative Aufgabentexte ohne Personennamen: z.B. "Im linken Korb liegen 7 Aepfel. Im rechten Korb 4. Welcher Korb hat mehr?"
+- **Priority:** Low (nur 2 Aufgaben betroffen)
+
+#### BUG-7: Dateistruktur weicht von Spec ab (Low)
+
+- **Severity:** Low
+- **Expected (laut Spec):** `src/content/modules/klasse-1/m1-1-zahlen-entdecken.json`
+- **Actual:** `src/content/modules/m1-1.json`
+- **Impact:** Kein funktionaler Fehler. Der Content-Loader referenziert die korrekten Pfade. Aber die Struktur weicht von der dokumentierten Spec ab.
+- **Bemerkung:** Die flache Struktur ist fuer Klasse 1 akzeptabel. Wenn Klasse 2-4 hinzukommen (PROJ-11 bis PROJ-13), braucht es Unterordner oder wird unuebersichtlich.
+- **Priority:** Low (Doku vs. Implementierung divergiert)
+
+#### BUG-8: M1.10 b-010 - Grammatikfehler "Bausteinen" (Low)
+
+- **Severity:** Low
+- **File:** src/content/modules/m1-10.json, Aufgabe m1-10-b-010
+- **Aufgabentext:** "3 Bausteinen und 6 Bausteine. Wie viele zusammen?"
+- **Expected:** "3 Bausteine und 6 Bausteine."
+- **Actual:** "3 Bausteinen" (Dativ statt Nominativ)
+- **Priority:** Low (Grammatikfehler, verwirrt Kinder beim Lesen)
+
+#### BUG-9: M1.3 ID-Reihenfolge inkonsistent (Info)
+
+- **Severity:** Info (kein funktionaler Fehler)
+- **File:** src/content/modules/m1-3.json
+- **Detail:** m1-3-g-006 (Zeile 287) erscheint VOR m1-3-g-005 (Zeile 304) in der Datei
+- **Impact:** Kein funktionaler Fehler, IDs sind eindeutig. Aber verwirrend bei manueller Pruefung.
+- **Priority:** Info
+
+#### BUG-10: Validation Script prueft keine Umlaut-Verletzungen (Low)
+
+- **Severity:** Low
+- **File:** scripts/validate-content.ts
+- **Detail:** Das Script prueft nicht ob Umlaute (ae, oe, ue, ss) korrekt ersetzt wurden. Aktuell sind KEINE Umlaute vorhanden (geprueft via grep), aber das Script wuerde sie auch nicht finden.
+- **Fix-Vorschlag:** Regex-Check auf /[aeoeueAeOeUess]/ in allen String-Feldern hinzufuegen.
+- **Priority:** Low (aktuell kein Problem, aber Praevention fuer zukuenftige Content-Aenderungen)
+
+#### BUG-11: Kein content-validator.ts Modul (Info)
+
+- **Severity:** Info
+- **Detail:** Die Spec nennt `src/lib/content-validator` als separate Datei. Es gibt nur die Zod-Schemas in content-loader.ts und das separate validate-content.ts Script. Kein dediziertes content-validator Modul.
+- **Impact:** Kein funktionaler Fehler. Die Validierung ist verteilt auf zwei Files statt einem dedizierten.
+- **Priority:** Info (Architektur-Divergenz von Spec)
+
+---
+
+### Didaktische Qualitaet
+
+#### Schwierigkeitsstufung
+- [x] Bronze: Einfache, direkte Aufgaben (Zaehlen, einfache +/-, Zuordnung)
+- [x] Silber: Komplexere Aufgaben (groessere Zahlen, Vergleiche, Muster)
+- [x] Gold: Anspruchsvolle Aufgaben (Lueckenaufgaben, Umkehr-Pruefung, Zwei-Schritt)
+- [x] Progression ist konsistent ueber alle Module
+
+#### Hilfe-Texte
+- [x] stufe1: Kurze, kindgerechte Tipps (1 Satz)
+- [x] stufe2: Verweis auf Werkzeug (tenframe/numberline)
+- [x] stufe3: Vollstaendige Schritt-fuer-Schritt-Loesung
+- [x] Hilfe-Texte sind inhaltlich korrekt und passend
+
+#### Fehlermuster
+- [x] Decken typische Fehler ab: Plus/Minus verwechselt, Verzaehlen, Stellenwert
+- [x] Feedback ist ermutigend und nicht wertend
+- [x] Feedback gibt konkreten Hinweis zur Korrektur
+
+---
+
+### Mathematische Korrektheit (Detail-Pruefung)
+
+Alle 326 Aufgaben wurden einzeln auf mathematische Korrektheit geprueft:
+
+- [x] M1.1: 32 Aufgaben - Alle korrekt (Zahlen, Reihenfolge, Vorgaenger/Nachfolger)
+- [x] M1.2: 32 Aufgaben - Alle korrekt (Mengen, Vergleiche, Zuordnungen)
+- [x] M1.3: 34 Aufgaben - Alle Additionen korrekt (3+4=7, 5+5=10, etc.)
+- [x] M1.4: 34 Aufgaben - Alle Subtraktionen korrekt (8-3=5, 10-7=3, etc.)
+- [x] M1.5: 30 Aufgaben - Umkehraufgaben logisch korrekt
+- [x] M1.6: 32 Aufgaben - Stellenwerte korrekt (1Z+3E=13, etc.)
+- [x] M1.7: 34 Aufgaben - Zehnuebergang-Additionen korrekt (9+2=11, 8+7=15, etc.)
+- [x] M1.8: 34 Aufgaben - Zehnuebergang-Subtraktionen korrekt (11-2=9, 15-8=7, etc.)
+- [x] M1.9: 30 Aufgaben - Verdoppeln/Halbieren korrekt (Doppel 7=14, Haelfte 16=8, etc.)
+- [x] M1.10: 34 Aufgaben - Sachaufgaben mathematisch korrekt
+
+---
+
+### Umlaut-Pruefung
+- [x] Keine Umlaute (ae, oe, ue, ss) in ALLEN 10 Modul-Dateien gefunden
+- [x] Keine Umlaute in feedback-texts.json
+
+---
+
+### Schema & Struktur
+- [x] Alle Pflichtfelder vorhanden in jeder Aufgabe
+- [x] Zod-Schema-Validierung bestanden
+- [x] ID-Format korrekt: m{X}-{Y}-{b|s|g}-{NNN}
+- [x] Keine doppelten IDs (326 unique von 326 total)
+- [x] Content-Loader mappt alle 10 Module (M1.1-M1.10)
+- [x] TypeScript Build ohne Fehler
+
+---
+
+### Regression Test
+- [x] PROJ-2 (Onboarding): Keine Aenderungen an Onboarding-Code
+- [x] PROJ-4 (Aufgaben-Engine): exercise-session.tsx, exercise-engine.ts unveraendert
+- [x] Build kompiliert erfolgreich
+- [x] Bestehende Routen (/, /ueben) weiterhin vorhanden
+
+---
+
+### Summary
+
+- **Total Aufgaben:** 326 (Spec erwartet 324 - leicht uebertroffen)
+- Passed Acceptance Criteria: 22 von 24
+- Failed Acceptance Criteria: 2 (AC-10.17 teilweise, AC-10.19 teilweise)
+- **Bugs gefunden: 11**
+  - Critical: 1 (BUG-1: Vergleich-Aufgaben nicht spielbar)
+  - Medium: 2 (BUG-2: MC-Akzeptanz, BUG-3: Validation Script)
+  - Low: 5 (BUG-4 bis BUG-8, BUG-10)
+  - Info: 2 (BUG-9, BUG-11)
+
+---
+
+### Recommendation
+
+**Status: NOT PRODUCTION-READY**
+
+Vor Deployment MUSS BUG-1 gefixt werden:
+- 4 Aufgaben (m1-1-s-001, m1-2-s-001, m1-2-s-004, m1-2-s-005) sind mit dem aktuellen InputComparison-UI nicht spielbar.
+- Entweder die Aufgaben auf "MultipleChoice" umtypisieren oder die InputComparison-Komponente erweitern.
+
+Empfohlene Fix-Reihenfolge:
+1. **BUG-1** (Critical) - Vergleich-Aufgaben mit inkompatiblen Antworten
+2. **BUG-2** (Medium) - M1.5 s-006 zweite korrekte Antwort
+3. **BUG-3** (Medium) - Validation Script erweitern
+4. **BUG-4** (Low) - DragDrop mit gleichen Ergebnissen
+5. **BUG-8** (Low) - Grammatikfehler "Bausteinen"
+6. **BUG-6** (Low) - ASS-Alternativen fuer 2 Aufgaben
+7. Rest nach Prioritaet

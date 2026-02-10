@@ -130,7 +130,7 @@
       "id": "m1-2-s-001",
       "modul": "M1.2",
       "schwierigkeit": "Silber",
-      "typ": "Vergleich",
+      "typ": "MultipleChoice",
       "aufgabentext": "Wo sind mehr Sterne?\n\nLinks: * * * * *\nRechts: * * *",
       "korrekt": ["links"],
       "antwortOptionen": ["links", "rechts", "gleich viel"],
@@ -156,22 +156,22 @@
       "modul": "M1.2",
       "schwierigkeit": "Silber",
       "typ": "MultipleChoice",
-      "aufgabentext": "Lisa hat 7 Aepfel. Tom hat 4 Aepfel. Wer hat mehr Aepfel?",
-      "korrekt": ["Lisa"],
-      "antwortOptionen": ["Lisa", "Tom", "beide gleich viel"],
+      "aufgabentext": "Im linken Korb liegen 7 Aepfel. Im rechten Korb liegen 4 Aepfel. Welcher Korb hat mehr?",
+      "korrekt": ["linker Korb"],
+      "antwortOptionen": ["linker Korb", "rechter Korb", "beide gleich viel"],
       "hilfe": {
         "stufe1": "Vergleiche die Zahlen 7 und 4. Welche Zahl ist groesser?",
         "stufe2": "numberline",
-        "stufe3": "Lisa hat 7 Aepfel, Tom hat 4 Aepfel. 7 ist groesser als 4. Also hat Lisa mehr Aepfel."
+        "stufe3": "Links liegen 7 Aepfel, rechts liegen 4 Aepfel. 7 ist groesser als 4. Also hat der linke Korb mehr."
       },
       "fehlermuster": [
         {
-          "falsch": "Tom",
-          "feedback": "Hmm, schau nochmal genau: Lisa hat 7, Tom hat 4. Wer hat mehr?"
+          "falsch": "rechter Korb",
+          "feedback": "Schau nochmal genau: Links sind 7, rechts sind 4. Wo sind mehr?"
         },
         {
           "falsch": "beide gleich viel",
-          "feedback": "Nein, sie haben unterschiedlich viele. Vergleiche 7 und 4."
+          "feedback": "Nein, die Koerbe haben unterschiedlich viele. Vergleiche 7 und 4."
         }
       ],
       "vorlesen": true
@@ -206,7 +206,7 @@
       "id": "m1-2-s-004",
       "modul": "M1.2",
       "schwierigkeit": "Silber",
-      "typ": "Vergleich",
+      "typ": "MultipleChoice",
       "aufgabentext": "Vergleiche die Mengen:\n\nOben: o o o o o o\nUnten: o o o o o o",
       "korrekt": ["gleich viel"],
       "antwortOptionen": ["oben mehr", "unten mehr", "gleich viel"],
@@ -385,6 +385,442 @@
         {
           "falsch": "3",
           "feedback": "3 + 3 = 6, nicht 9. Ueberlege nochmal."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-006",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Zaehle die Punkte: \ud83c\udfb2\ud83c\udfb2\ud83c\udfb2\ud83c\udfb2\ud83c\udfb2\ud83c\udfb2\ud83c\udfb2",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Zaehle jeden Wuerfel einzeln. Zeige mit dem Finger auf jeden Wuerfel.",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle von links nach rechts: 1, 2, 3, 4, 5, 6, 7. Es sind 7 Punkte."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "6",
+          "feedback": "Fast! Du hast einen Punkt vergessen. Zaehle nochmal ganz langsam."
+        },
+        {
+          "falsch": "8",
+          "feedback": "Das sind ein bisschen zu viele. Zaehle nochmal von vorne."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-007",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Wie viele Finger zeigt eine Hand?",
+      "antwortOptionen": ["3", "4", "5", "6"],
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Schau dir deine eigene Hand an. Zaehle alle Finger.",
+        "stufe2": "tenframe",
+        "stufe3": "Eine Hand hat 5 Finger: Daumen, Zeigefinger, Mittelfinger, Ringfinger, kleiner Finger. Das sind 5."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Hast du den Daumen vergessen? Der zaehlt auch! Zaehle nochmal alle Finger."
+        },
+        {
+          "falsch": "6",
+          "feedback": "Das sind zu viele! Schau dir deine Hand an und zaehle nochmal."
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-b-008",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Zaehle die Sterne: \u2b50\u2b50\u2b50\u2b50",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Zaehle die Sterne einen nach dem anderen. Zeige auf jeden Stern.",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle von links nach rechts: 1, 2, 3, 4. Es sind 4 Sterne."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "3",
+          "feedback": "Fast! Du hast einen Stern vergessen. Zaehle nochmal genau."
+        },
+        {
+          "falsch": "5",
+          "feedback": "Das sind ein bisschen zu viele. Zaehle nochmal langsam."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-009",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Was kommt nach der 6?",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Zaehle weiter: 1, 2, 3, 4, 5, 6, ...?",
+        "stufe2": "numberline",
+        "stufe3": "Nach der 6 kommt die 7. Die Zahlenreihe geht: 5, 6, 7, 8."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "5",
+          "feedback": "5 kommt vor der 6, nicht danach. Was kommt nach der 6?"
+        },
+        {
+          "falsch": "8",
+          "feedback": "Fast! Du hast eine Zahl uebersprungen. Was kommt direkt nach der 6?"
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-b-010",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Zahl kommt vor der 5?",
+      "antwortOptionen": ["3", "4", "5", "6"],
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Zaehle: 1, 2, 3, ?, 5. Welche Zahl fehlt?",
+        "stufe2": "numberline",
+        "stufe3": "Vor der 5 kommt die 4. Die Zahlenreihe geht: 3, 4, 5, 6."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "3",
+          "feedback": "3 kommt vor der 4, nicht direkt vor der 5. Welche Zahl kommt direkt vor der 5?"
+        },
+        {
+          "falsch": "5",
+          "feedback": "5 ist die Zahl selbst. Die Frage ist: Was kommt davor?"
+        },
+        {
+          "falsch": "6",
+          "feedback": "6 kommt nach der 5, nicht davor. Zaehle rueckwaerts: 5, ...?"
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-b-011",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne: 2, 5, 3 von klein nach gross!",
+      "korrekt": ["2,3,5"],
+      "dragItems": ["5", "2", "3"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": {
+        "stufe1": "Finde zuerst die kleinste Zahl. Dann die naechste. Dann die groesste.",
+        "stufe2": "numberline",
+        "stufe3": "Die kleinste Zahl ist 2. Dann kommt 3. Die groesste Zahl ist 5. Also: 2, 3, 5."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "5,3,2",
+          "feedback": "Du hast von gross nach klein sortiert! Die Aufgabe fragt: von klein nach gross."
+        },
+        {
+          "falsch": "2,5,3",
+          "feedback": "Die 2 ist richtig vorne. Aber schau nochmal: Welche Zahl ist groesser, 3 oder 5?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-b-012",
+      "modul": "M1.2",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Zaehle die Herzen: \u2764\u2764\u2764\u2764\u2764\u2764\u2764\u2764",
+      "korrekt": ["8"],
+      "hilfe": {
+        "stufe1": "Zaehle jedes Herz einzeln. Zeige mit dem Finger auf jedes Herz.",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle von links nach rechts: 1, 2, 3, 4, 5, 6, 7, 8. Es sind 8 Herzen."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "7",
+          "feedback": "Fast! Du hast ein Herz vergessen. Zaehle nochmal ganz langsam."
+        },
+        {
+          "falsch": "9",
+          "feedback": "Das sind ein bisschen zu viele. Zaehle nochmal von vorne."
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-s-006",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Welche Zahl fehlt? 1, 2, ?, 4, 5",
+      "korrekt": ["3"],
+      "hilfe": {
+        "stufe1": "Zaehle langsam: 1, 2, ...? Was kommt nach der 2?",
+        "stufe2": "numberline",
+        "stufe3": "Die Zahlenreihe geht: 1, 2, 3, 4, 5. Die fehlende Zahl ist die 3."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "Die 4 steht schon in der Reihe! Schau nochmal: 1, 2, ?, 4, 5. Was fehlt zwischen 2 und 4?"
+        },
+        {
+          "falsch": "6",
+          "feedback": "Die 6 wuerde am Ende kommen. Aber hier fehlt eine Zahl in der Mitte. Zaehle: 1, 2, ...?"
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-s-007",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "6 Aepfel ? 4 Birnen",
+      "korrekt": [">"],
+      "antwortOptionen": ["<", ">", "="],
+      "hilfe": {
+        "stufe1": "Vergleiche die Zahlen 6 und 4. Welche ist groesser?",
+        "stufe2": "numberline",
+        "stufe3": "6 ist groesser als 4. Das Zeichen > bedeutet 'groesser als'. Also: 6 > 4."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "<",
+          "feedback": "Dieses Zeichen bedeutet 'kleiner als'. Aber 6 ist groesser als 4! Welches Zeichen passt?"
+        },
+        {
+          "falsch": "=",
+          "feedback": "6 und 4 sind nicht gleich. Eine Zahl ist groesser. Welche?"
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-s-008",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Im linken Beutel sind 5 Murmeln. Im rechten Beutel sind 8 Murmeln. Wie viele mehr sind im rechten Beutel?",
+      "korrekt": ["3"],
+      "hilfe": {
+        "stufe1": "Im rechten Beutel sind mehr. Rechne den Unterschied aus: 8 - 5.",
+        "stufe2": "numberline",
+        "stufe3": "Rechts sind 8 Murmeln, links sind 5 Murmeln. 8 - 5 = 3. Rechts sind 3 Murmeln mehr."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "13",
+          "feedback": "Du hast die Zahlen zusammengezaehlt! Aber die Frage ist: Wie viele MEHR? Rechne den Unterschied: 8 - 5."
+        },
+        {
+          "falsch": "2",
+          "feedback": "Fast! Rechne nochmal genau: 8 - 5 = ?"
+        },
+        {
+          "falsch": "8",
+          "feedback": "8 ist die Anzahl von Lisas Murmeln. Aber wie viele mehr hat sie als Tim?"
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-s-009",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Gruppe hat genau 6?",
+      "antwortOptionen": ["\u2b50\u2b50\u2b50\u2b50\u2b50", "\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50", "\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50", "\u2b50\u2b50\u2b50\u2b50"],
+      "korrekt": ["\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50"],
+      "hilfe": {
+        "stufe1": "Zaehle die Sterne in jeder Gruppe. Welche Gruppe hat genau 6 Sterne?",
+        "stufe2": "tenframe",
+        "stufe3": "Zaehle jede Gruppe: 5 Sterne, 6 Sterne, 7 Sterne, 4 Sterne. Die Gruppe mit 6 Sternen ist die richtige Antwort."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "\u2b50\u2b50\u2b50\u2b50\u2b50",
+          "feedback": "Diese Gruppe hat 5 Sterne, nicht 6. Zaehle nochmal genau."
+        },
+        {
+          "falsch": "\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50",
+          "feedback": "Diese Gruppe hat 7 Sterne, das ist einer zu viel. Welche Gruppe hat genau 6?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-s-010",
+      "modul": "M1.2",
+      "schwierigkeit": "Silber",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Mengen von wenig nach viel!",
+      "korrekt": ["1 Stift,3 Stifte,5 Stifte,7 Stifte"],
+      "dragItems": ["7 Stifte", "3 Stifte", "5 Stifte", "1 Stift"],
+      "dropZones": ["1.", "2.", "3.", "4."],
+      "hilfe": {
+        "stufe1": "Finde zuerst die kleinste Menge. Dann die naechstgroessere. Bis zur groessten.",
+        "stufe2": "numberline",
+        "stufe3": "Die kleinste Menge ist 1 Stift. Dann 3 Stifte, dann 5 Stifte, dann 7 Stifte. Also: 1, 3, 5, 7."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "7 Stifte,5 Stifte,3 Stifte,1 Stift",
+          "feedback": "Du hast von viel nach wenig sortiert! Die Aufgabe fragt: von wenig nach viel."
+        },
+        {
+          "falsch": "1 Stift,5 Stifte,3 Stifte,7 Stifte",
+          "feedback": "Der Anfang stimmt! Aber schau nochmal: Sind 5 Stifte weniger als 3 Stifte?"
+        }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-2-g-006",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Zaehle rueckwaerts von 10 bis 7. Wie viele Zahlen sagst du?",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Zaehle rueckwaerts: 10, 9, 8, 7. Wie viele Zahlen hast du gesagt?",
+        "stufe2": "numberline",
+        "stufe3": "Rueckwaerts von 10 bis 7: 10, 9, 8, 7. Das sind 4 Zahlen."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "3",
+          "feedback": "Hast du die 10 oder die 7 vergessen? Zaehle nochmal: 10, 9, 8, 7. Wie viele sind das?"
+        },
+        {
+          "falsch": "7",
+          "feedback": "7 ist die letzte Zahl beim Zaehlen. Aber die Frage ist: Wie viele Zahlen sagst du insgesamt?"
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-g-007",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Welche Zahl liegt genau zwischen 4 und 6?",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Zaehle: 4, ?, 6. Welche Zahl fehlt in der Mitte?",
+        "stufe2": "numberline",
+        "stufe3": "Zwischen 4 und 6 liegt die 5. Die Zahlenreihe geht: 4, 5, 6."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "4",
+          "feedback": "4 ist die Startzahl. Welche Zahl liegt dazwischen?"
+        },
+        {
+          "falsch": "6",
+          "feedback": "6 ist die Endzahl. Welche Zahl liegt genau in der Mitte?"
+        },
+        {
+          "falsch": "10",
+          "feedback": "10 ist zu gross. Denke an die Zahlen zwischen 4 und 6."
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-g-008",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Ich bin groesser als 7 und kleiner als 9. Welche Zahl bin ich?",
+      "antwortOptionen": ["6", "7", "8", "9"],
+      "korrekt": ["8"],
+      "hilfe": {
+        "stufe1": "Welche Zahl liegt zwischen 7 und 9?",
+        "stufe2": "numberline",
+        "stufe3": "Groesser als 7 und kleiner als 9: Die einzige Zahl dazwischen ist die 8."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "7",
+          "feedback": "Die Zahl soll groesser als 7 sein. 7 ist nicht groesser als 7."
+        },
+        {
+          "falsch": "9",
+          "feedback": "Die Zahl soll kleiner als 9 sein. 9 ist nicht kleiner als 9."
+        },
+        {
+          "falsch": "6",
+          "feedback": "6 ist kleiner als 7. Die Zahl soll groesser als 7 sein."
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-g-009",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "Vergleich",
+      "aufgabentext": "8 Baelle ? 10 Baelle",
+      "korrekt": ["<"],
+      "antwortOptionen": ["<", ">", "="],
+      "hilfe": {
+        "stufe1": "Vergleiche die Zahlen 8 und 10. Welche ist kleiner?",
+        "stufe2": "numberline",
+        "stufe3": "8 ist kleiner als 10. Das Zeichen < bedeutet 'kleiner als'. Also: 8 < 10."
+      },
+      "fehlermuster": [
+        {
+          "falsch": ">",
+          "feedback": "Dieses Zeichen bedeutet 'groesser als'. Aber 8 ist kleiner als 10! Welches Zeichen passt?"
+        },
+        {
+          "falsch": "=",
+          "feedback": "8 und 10 sind nicht gleich. Eine Zahl ist kleiner. Welche?"
+        }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-2-g-010",
+      "modul": "M1.2",
+      "schwierigkeit": "Gold",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne von gross nach klein: 9, 3, 7, 1",
+      "korrekt": ["9,7,3,1"],
+      "dragItems": ["3", "9", "1", "7"],
+      "dropZones": ["1.", "2.", "3.", "4."],
+      "hilfe": {
+        "stufe1": "Finde zuerst die groesste Zahl. Dann die naechstkleinere. Bis zur kleinsten.",
+        "stufe2": "numberline",
+        "stufe3": "Die groesste Zahl ist 9. Dann kommt 7, dann 3, dann 1. Also: 9, 7, 3, 1."
+      },
+      "fehlermuster": [
+        {
+          "falsch": "1,3,7,9",
+          "feedback": "Du hast von klein nach gross sortiert! Die Aufgabe fragt: von gross nach klein."
+        },
+        {
+          "falsch": "9,3,7,1",
+          "feedback": "Die 9 ist richtig vorne! Aber schau nochmal: Ist 3 groesser als 7?"
         }
       ],
       "vorlesen": true

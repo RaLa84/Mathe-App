@@ -316,6 +316,296 @@
         { "falsch": "7", "feedback": "Die Zahl muss kleiner oder gleich 6 sein." }
       ],
       "vorlesen": false
+    },
+    {
+      "id": "m1-3-b-007",
+      "modul": "M1.3",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "1 + 3 = ?",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Starte bei 1 und zaehle 3 weiter.",
+        "stufe2": "numberline",
+        "stufe3": "1 + 3: Starte bei 1, zaehle weiter: 2, 3, 4. Also 1 + 3 = 4!"
+      },
+      "fehlermuster": [
+        { "falsch": "3", "feedback": "Fast! Du hast vielleicht einen Schritt vergessen. Zaehle nochmal: 1... 2, 3, 4." },
+        { "falsch": "5", "feedback": "Einen Schritt zu viel! Zaehle genau 3 weiter ab der 1." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-b-008",
+      "modul": "M1.3",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "2 + 2 = ?",
+      "korrekt": ["4"],
+      "antwortOptionen": ["2", "3", "4", "5"],
+      "hilfe": {
+        "stufe1": "2 und nochmal 2 - das ist ein Doppel!",
+        "stufe2": "tenframe",
+        "stufe3": "2 + 2: Zwei Finger links und zwei Finger rechts. Zaehle alle: 1, 2, 3, 4!"
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Du hast nur eine der beiden Zahlen genommen. Zaehle beide zusammen!" },
+        { "falsch": "3", "feedback": "Fast! Zaehle nochmal genau: 2 und noch 2 dazu." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-b-009",
+      "modul": "M1.3",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "3 + 1 = ?",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Plus 1 heisst: eine Zahl weiter.",
+        "stufe2": "numberline",
+        "stufe3": "3 + 1: Eine Zahl nach der 3 ist die 4!"
+      },
+      "fehlermuster": [
+        { "falsch": "3", "feedback": "Du hast die 3 nochmal genommen. Plus 1 heisst eins weiter!" },
+        { "falsch": "5", "feedback": "Einen Schritt zu viel! Plus 1 heisst nur eine Zahl weiter." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-b-010",
+      "modul": "M1.3",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "4 + 3 = ?",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Starte bei 4 und zaehle 3 weiter.",
+        "stufe2": "numberline",
+        "stufe3": "4 + 3: Starte bei 4, zaehle weiter: 5, 6, 7. Also 4 + 3 = 7!"
+      },
+      "fehlermuster": [
+        { "falsch": "6", "feedback": "Fast! Zaehle nochmal genau: 4... 5, 6, 7." },
+        { "falsch": "8", "feedback": "Einen Schritt zu viel! Zaehle genau 3 weiter ab der 4." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-b-011",
+      "modul": "M1.3",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "0 + 5 = ?",
+      "korrekt": ["5"],
+      "antwortOptionen": ["0", "4", "5", "6"],
+      "hilfe": {
+        "stufe1": "Null heisst: nichts dazu. Die Zahl bleibt gleich!",
+        "stufe2": "tenframe",
+        "stufe3": "0 + 5: Null heisst nichts. Wenn du nichts zu 5 dazutust, bleibt es 5!"
+      },
+      "fehlermuster": [
+        { "falsch": "0", "feedback": "0 ist die erste Zahl, nicht das Ergebnis. 0 plus 5 heisst: nichts und dann 5." },
+        { "falsch": "4", "feedback": "Fast! Plus 0 heisst: die Zahl bleibt wie sie ist." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-b-012",
+      "modul": "M1.3",
+      "schwierigkeit": "Bronze",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Ergebnisse von klein nach gross: 1+1, 2+3, 0+4",
+      "korrekt": ["1+1,0+4,2+3"],
+      "dragItems": ["2+3", "1+1", "0+4"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": {
+        "stufe1": "Rechne zuerst jede Aufgabe aus. Dann ordne die Ergebnisse.",
+        "stufe2": "numberline",
+        "stufe3": "1+1=2, 0+4=4, 2+3=5. Von klein nach gross: 1+1, 0+4, 2+3!"
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-3-s-007",
+      "modul": "M1.3",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "3 + 6 = ?",
+      "korrekt": ["9"],
+      "hilfe": {
+        "stufe1": "Nimm die groessere Zahl (6) und zaehle 3 weiter.",
+        "stufe2": "numberline",
+        "stufe3": "3 + 6: Nimm die 6. Zaehle weiter: 7, 8, 9. Also 3 + 6 = 9!"
+      },
+      "fehlermuster": [
+        { "falsch": "8", "feedback": "Fast! Zaehle nochmal genau: 6... 7, 8, 9." },
+        { "falsch": "10", "feedback": "Einen Schritt zu viel! Zaehle genau 3 weiter ab der 6." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-s-008",
+      "modul": "M1.3",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "4 + 4 = ?",
+      "korrekt": ["8"],
+      "hilfe": {
+        "stufe1": "4 und nochmal 4 - das ist ein Doppel!",
+        "stufe2": "tenframe",
+        "stufe3": "4 + 4: Vier Finger links und vier Finger rechts. Zaehle alle: 1, 2, 3, 4, 5, 6, 7, 8!"
+      },
+      "fehlermuster": [
+        { "falsch": "7", "feedback": "Ganz nah! Zaehle nochmal: 4 und nochmal 4 dazu." },
+        { "falsch": "9", "feedback": "Einen zu viel! 4 + 4 ist ein Doppel. Zaehle genau." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-s-009",
+      "modul": "M1.3",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "2 + 7 = ?",
+      "korrekt": ["9"],
+      "antwortOptionen": ["7", "8", "9", "10"],
+      "hilfe": {
+        "stufe1": "Nimm die groessere Zahl (7) und zaehle 2 weiter.",
+        "stufe2": "numberline",
+        "stufe3": "2 + 7: Nimm die 7. Zaehle weiter: 8, 9. Also 2 + 7 = 9!"
+      },
+      "fehlermuster": [
+        { "falsch": "8", "feedback": "Fast! Du hast nur 1 weitergezaehlt statt 2. Versuch es nochmal." },
+        { "falsch": "7", "feedback": "Du hast nur eine der beiden Zahlen genommen. Zaehle beide zusammen!" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-s-010",
+      "modul": "M1.3",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "1 + 8 = ?",
+      "korrekt": ["9"],
+      "hilfe": {
+        "stufe1": "Plus 1 heisst: eine Zahl weiter. Nimm die 8 und zaehle 1 weiter.",
+        "stufe2": "numberline",
+        "stufe3": "1 + 8: Nimm die 8. Eine Zahl weiter ist 9. Also 1 + 8 = 9!"
+      },
+      "fehlermuster": [
+        { "falsch": "8", "feedback": "Du hast die 8 nochmal genommen. Plus 1 heisst eins weiter: 9!" },
+        { "falsch": "10", "feedback": "Einen Schritt zu viel! Plus 1 heisst nur eine Zahl weiter." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-s-011",
+      "modul": "M1.3",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "3 + 5 ? 4 + 3",
+      "korrekt": [">"],
+      "hilfe": {
+        "stufe1": "Rechne zuerst beide Seiten aus. Dann vergleiche.",
+        "stufe2": "numberline",
+        "stufe3": "3 + 5 = 8 und 4 + 3 = 7. 8 ist groesser als 7, also: >"
+      },
+      "fehlermuster": [
+        { "falsch": "<", "feedback": "Rechne nochmal: Links: 3 + 5 = ? Rechts: 4 + 3 = ?" },
+        { "falsch": "=", "feedback": "Die Ergebnisse sind nicht gleich. Rechne beide Seiten nochmal aus." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-s-012",
+      "modul": "M1.3",
+      "schwierigkeit": "Silber",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Ergebnisse von klein nach gross: 2+6, 1+3, 5+4",
+      "korrekt": ["1+3,2+6,5+4"],
+      "dragItems": ["2+6", "5+4", "1+3"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": {
+        "stufe1": "Rechne zuerst jede Aufgabe aus. Dann ordne die Ergebnisse.",
+        "stufe2": "numberline",
+        "stufe3": "1+3=4, 2+6=8, 5+4=9. Von klein nach gross: 1+3, 2+6, 5+4!"
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-3-g-007",
+      "modul": "M1.3",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "? + 5 = 9",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Was plus 5 ergibt 9? Zaehle von 5 bis 9.",
+        "stufe2": "numberline",
+        "stufe3": "Von 5 bis 9: 6, 7, 8, 9 - das sind 4 Schritte. Also ? = 4!"
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "Probiere: 5 + 5 = 10. Wir brauchen aber 9." },
+        { "falsch": "14", "feedback": "Du hast 5 und 9 zusammengezaehlt. Lies die Aufgabe nochmal: ? + 5 = 9" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-g-008",
+      "modul": "M1.3",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "3 + ? = 8",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Was fehlt von 3 bis 8? Zaehle von 3 bis 8.",
+        "stufe2": "numberline",
+        "stufe3": "Von 3 bis 8: 4, 5, 6, 7, 8 - das sind 5 Schritte. Also ? = 5!"
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Ganz nah! Zaehle nochmal von 3 bis 8. Wie viele Schritte sind das?" },
+        { "falsch": "11", "feedback": "Du hast 3 und 8 zusammengezaehlt. Lies nochmal: 3 + ? = 8" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-3-g-009",
+      "modul": "M1.3",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Aufgabe ergibt 10?",
+      "korrekt": ["4 + 6"],
+      "antwortOptionen": ["4 + 6", "3 + 6", "5 + 4", "2 + 7"],
+      "hilfe": {
+        "stufe1": "Rechne jede Aufgabe einzeln aus. Welche ergibt genau 10?",
+        "stufe2": "tenframe",
+        "stufe3": "4+6=10, 3+6=9, 5+4=9, 2+7=9. Nur 4+6 ergibt 10!"
+      },
+      "fehlermuster": [
+        { "falsch": "3 + 6", "feedback": "3 + 6 = 9, nicht 10. Rechne die anderen Aufgaben auch aus." },
+        { "falsch": "5 + 4", "feedback": "5 + 4 = 9, nicht 10. Probiere eine andere Aufgabe." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-3-g-010",
+      "modul": "M1.3",
+      "schwierigkeit": "Gold",
+      "typ": "Vergleich",
+      "aufgabentext": "1 + 9 ? 5 + 5",
+      "korrekt": ["="],
+      "hilfe": {
+        "stufe1": "Rechne beide Seiten aus und vergleiche.",
+        "stufe2": "tenframe",
+        "stufe3": "1 + 9 = 10 und 5 + 5 = 10. Beide sind gleich, also: ="
+      },
+      "fehlermuster": [
+        { "falsch": "<", "feedback": "Rechne genau: 1 + 9 = ? und 5 + 5 = ? Sind die wirklich verschieden?" },
+        { "falsch": ">", "feedback": "Rechne nochmal: 1 + 9 = ? und 5 + 5 = ? Vergleiche die Ergebnisse." }
+      ],
+      "vorlesen": false
     }
   ]
 }

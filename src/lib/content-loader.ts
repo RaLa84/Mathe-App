@@ -47,6 +47,13 @@ const MODULE_MAP: Record<string, ModuleLoader> = {
   "M1.1": () => import("@/content/modules/m1-1.json"),
   "M1.2": () => import("@/content/modules/m1-2.json"),
   "M1.3": () => import("@/content/modules/m1-3.json"),
+  "M1.4": () => import("@/content/modules/m1-4.json"),
+  "M1.5": () => import("@/content/modules/m1-5.json"),
+  "M1.6": () => import("@/content/modules/m1-6.json"),
+  "M1.7": () => import("@/content/modules/m1-7.json"),
+  "M1.8": () => import("@/content/modules/m1-8.json"),
+  "M1.9": () => import("@/content/modules/m1-9.json"),
+  "M1.10": () => import("@/content/modules/m1-10.json"),
 };
 
 export async function loadModule(

@@ -1,0 +1,617 @@
+{
+  "modul": "M1.4",
+  "name": "Subtraktion bis 10",
+  "aufgaben": [
+    {
+      "id": "m1-4-b-001",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "3 - 1 = ?",
+      "korrekt": ["2"],
+      "hilfe": {
+        "stufe1": "Du hast 3. Nimm 1 weg.",
+        "stufe2": "numberline",
+        "stufe3": "3 - 1: Du hast 3, nimmst 1 weg. Es bleiben 2."
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Du hast dazugezaehlt statt weggenommen. Minus heisst wegnehmen!" },
+        { "falsch": "1", "feedback": "Fast! Zaehle nochmal: 3, nimm 1 weg." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-002",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "4 - 2 = ?",
+      "korrekt": ["2"],
+      "hilfe": {
+        "stufe1": "Du hast 4. Nimm 2 weg.",
+        "stufe2": "tenframe",
+        "stufe3": "4 - 2: Starte bei 4, zaehle 2 zurueck: 3, 2. Also 4 - 2 = 2."
+      },
+      "fehlermuster": [
+        { "falsch": "6", "feedback": "Schau auf das Zeichen! Minus (-) heisst wegnehmen, nicht dazutun." },
+        { "falsch": "3", "feedback": "Ganz knapp! Zaehle nochmal genau zurueck." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-003",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "5 - 2 = ?",
+      "korrekt": ["3"],
+      "antwortOptionen": ["2", "3", "4", "7"],
+      "hilfe": {
+        "stufe1": "Starte bei 5 und zaehle 2 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "5 - 2: Starte bei 5, zaehle zurueck: 4, 3. Also 5 - 2 = 3."
+      },
+      "fehlermuster": [
+        { "falsch": "7", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." },
+        { "falsch": "4", "feedback": "Fast! Zaehle nochmal: 5... 4, 3." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-004",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "5 - 3 = ?",
+      "korrekt": ["2"],
+      "hilfe": {
+        "stufe1": "Starte bei 5 und zaehle 3 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "5 - 3: Starte bei 5, zaehle zurueck: 4, 3, 2. Also 5 - 3 = 2."
+      },
+      "fehlermuster": [
+        { "falsch": "3", "feedback": "Ganz knapp! Zaehle nochmal genau: 5... 4, 3, 2." },
+        { "falsch": "8", "feedback": "Du hast plus gerechnet! Schau auf das Minus-Zeichen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-005",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "4 - 1 = ?",
+      "korrekt": ["3"],
+      "antwortOptionen": ["2", "3", "4", "5"],
+      "hilfe": {
+        "stufe1": "Minus 1 heisst: eine Zahl zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "4 - 1: Eine Zahl vor 4 ist 3!"
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "Du hast plus gerechnet! Minus heisst eine Zahl zurueck." },
+        { "falsch": "2", "feedback": "Fast! Du hast 2 weggenommen statt 1." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-006",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "2 - 1 = ?",
+      "korrekt": ["1"],
+      "hilfe": {
+        "stufe1": "Du hast 2 und nimmst 1 weg.",
+        "stufe2": "tenframe",
+        "stufe3": "2 - 1: Du hast 2, nimmst 1 weg. Es bleibt 1."
+      },
+      "fehlermuster": [
+        { "falsch": "3", "feedback": "Minus heisst wegnehmen, nicht dazutun!" },
+        { "falsch": "0", "feedback": "Fast! Du hast zu viel weggenommen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-007",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Ergebnisse von klein nach gross: 5-1, 4-3, 3-1",
+      "korrekt": ["4-3", "3-1", "5-1"],
+      "dragItems": ["5-1", "4-3", "3-1"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": {
+        "stufe1": "Rechne zuerst jede Aufgabe aus.",
+        "stufe2": "numberline",
+        "stufe3": "4-3=1, 3-1=2, 5-1=4. Von klein nach gross: 1, 2, 4."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-4-b-008",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "5 - 5 = ?",
+      "korrekt": ["0"],
+      "hilfe": {
+        "stufe1": "Du nimmst alles weg. Was bleibt uebrig?",
+        "stufe2": "tenframe",
+        "stufe3": "5 - 5: Wenn du alle 5 wegnimmst, bleibt nichts. Also 0!"
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "Du hast gar nichts weggenommen. 5 minus 5 heisst: alles weg!" },
+        { "falsch": "10", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-009",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "3 - 2 = ?",
+      "korrekt": ["1"],
+      "antwortOptionen": ["0", "1", "2", "5"],
+      "hilfe": {
+        "stufe1": "Du hast 3 und nimmst 2 weg.",
+        "stufe2": "numberline",
+        "stufe3": "3 - 2: Starte bei 3, zaehle 2 zurueck: 2, 1. Also 3 - 2 = 1."
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." },
+        { "falsch": "0", "feedback": "Fast! Du hast 1 zu viel weggenommen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-010",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "4 - 3 = ?",
+      "korrekt": ["1"],
+      "hilfe": {
+        "stufe1": "Starte bei 4 und zaehle 3 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "4 - 3: Starte bei 4, zaehle zurueck: 3, 2, 1. Also 4 - 3 = 1."
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Ganz knapp! Zaehle nochmal: 4... 3, 2, 1." },
+        { "falsch": "7", "feedback": "Du hast plus gerechnet! Schau auf das Minus-Zeichen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-011",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "5 - 4 = ?",
+      "korrekt": ["1"],
+      "hilfe": {
+        "stufe1": "Starte bei 5 und zaehle 4 zurueck.",
+        "stufe2": "tenframe",
+        "stufe3": "5 - 4: Du hast 5, nimmst 4 weg. Es bleibt 1."
+      },
+      "fehlermuster": [
+        { "falsch": "9", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." },
+        { "falsch": "2", "feedback": "Fast! Zaehle nochmal genau zurueck." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-b-012",
+      "modul": "M1.4",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "3 - 0 = ?",
+      "korrekt": ["3"],
+      "antwortOptionen": ["0", "1", "3", "4"],
+      "hilfe": {
+        "stufe1": "Minus 0 heisst: nichts wegnehmen!",
+        "stufe2": "tenframe",
+        "stufe3": "3 - 0: Du nimmst nichts weg. Es bleiben 3."
+      },
+      "fehlermuster": [
+        { "falsch": "0", "feedback": "Null heisst nichts wegnehmen. Es bleiben immer noch 3!" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-001",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "8 - 3 = ?",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Starte bei 8 und zaehle 3 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "8 - 3: Starte bei 8, zaehle zurueck: 7, 6, 5. Also 8 - 3 = 5."
+      },
+      "fehlermuster": [
+        { "falsch": "6", "feedback": "Ganz knapp! Zaehle nochmal: 8... 7, 6, 5." },
+        { "falsch": "11", "feedback": "Du hast plus gerechnet! Schau auf das Minus-Zeichen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-002",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "7 - 4 = ?",
+      "korrekt": ["3"],
+      "hilfe": {
+        "stufe1": "Starte bei 7 und zaehle 4 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "7 - 4: Starte bei 7, zaehle zurueck: 6, 5, 4, 3. Also 7 - 4 = 3."
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Fast! Zaehle nochmal genau: 7... 6, 5, 4, 3." },
+        { "falsch": "11", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-003",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "9 - 5 = ?",
+      "korrekt": ["4"],
+      "antwortOptionen": ["3", "4", "5", "14"],
+      "hilfe": {
+        "stufe1": "Starte bei 9 und zaehle 5 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "9 - 5: Starte bei 9, zaehle zurueck: 8, 7, 6, 5, 4. Also 9 - 5 = 4."
+      },
+      "fehlermuster": [
+        { "falsch": "14", "feedback": "Du hast plus gerechnet! Schau auf das Minus-Zeichen." },
+        { "falsch": "3", "feedback": "Ganz knapp! Zaehle nochmal genau zurueck." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-004",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "10 - 4 = ?",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Starte bei 10 und zaehle 4 zurueck.",
+        "stufe2": "tenframe",
+        "stufe3": "10 - 4: Starte bei 10, zaehle zurueck: 9, 8, 7, 6. Also 10 - 4 = 6."
+      },
+      "fehlermuster": [
+        { "falsch": "7", "feedback": "Ganz knapp! Zaehle nochmal: 10... 9, 8, 7, 6." },
+        { "falsch": "5", "feedback": "Fast! Du hast einen Schritt zu viel gemacht." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-005",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "6 - 2 ? 7 - 4",
+      "korrekt": [">"],
+      "hilfe": {
+        "stufe1": "Rechne beide Seiten aus und vergleiche.",
+        "stufe2": "numberline",
+        "stufe3": "6 - 2 = 4 und 7 - 4 = 3. 4 ist groesser als 3, also: >"
+      },
+      "fehlermuster": [
+        { "falsch": "<", "feedback": "Rechne nochmal: Links: 6 - 2 = ? Rechts: 7 - 4 = ?" },
+        { "falsch": "=", "feedback": "Die Ergebnisse sind nicht gleich. Rechne beide Seiten aus." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-006",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "6 - 4 = ?",
+      "korrekt": ["2"],
+      "hilfe": {
+        "stufe1": "Starte bei 6 und zaehle 4 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "6 - 4: Starte bei 6, zaehle zurueck: 5, 4, 3, 2. Also 6 - 4 = 2."
+      },
+      "fehlermuster": [
+        { "falsch": "3", "feedback": "Ganz knapp! Zaehle nochmal: 6... 5, 4, 3, 2." },
+        { "falsch": "10", "feedback": "Du hast plus gerechnet! Schau auf das Minus-Zeichen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-007",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "10 - 7 = ?",
+      "korrekt": ["3"],
+      "antwortOptionen": ["2", "3", "4", "17"],
+      "hilfe": {
+        "stufe1": "Zaehle von 7 bis 10. Wie viele Schritte?",
+        "stufe2": "tenframe",
+        "stufe3": "10 - 7: Von 7 bis 10 sind es 3 Schritte: 8, 9, 10. Also 10 - 7 = 3."
+      },
+      "fehlermuster": [
+        { "falsch": "17", "feedback": "Du hast plus gerechnet! Schau auf das Minus-Zeichen." },
+        { "falsch": "4", "feedback": "Ganz knapp! Zaehle nochmal von 7 bis 10." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-008",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "8 - 5 = ?",
+      "korrekt": ["3"],
+      "hilfe": {
+        "stufe1": "Starte bei 8 und zaehle 5 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "8 - 5: Starte bei 8, zaehle zurueck: 7, 6, 5, 4, 3. Also 8 - 5 = 3."
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Fast! Zaehle nochmal genau: 8... 7, 6, 5, 4, 3." },
+        { "falsch": "13", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-009",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Vergleich",
+      "aufgabentext": "9 - 4 ? 8 - 3",
+      "korrekt": ["="],
+      "hilfe": {
+        "stufe1": "Rechne beide Seiten aus und vergleiche.",
+        "stufe2": "numberline",
+        "stufe3": "9 - 4 = 5 und 8 - 3 = 5. Beide sind gleich, also: ="
+      },
+      "fehlermuster": [
+        { "falsch": ">", "feedback": "Rechne nochmal: 9 - 4 = ? und 8 - 3 = ?" },
+        { "falsch": "<", "feedback": "Rechne nochmal: 9 - 4 = ? und 8 - 3 = ?" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-010",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "7 - 2 = ?",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Starte bei 7 und zaehle 2 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "7 - 2: Starte bei 7, zaehle zurueck: 6, 5. Also 7 - 2 = 5."
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Fast! Du hast einen Schritt zu viel gemacht." },
+        { "falsch": "9", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-s-011",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Ergebnisse von klein nach gross: 9-2, 8-6, 10-4",
+      "korrekt": ["8-6", "10-4", "9-2"],
+      "dragItems": ["9-2", "8-6", "10-4"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": {
+        "stufe1": "Rechne zuerst jede Aufgabe aus.",
+        "stufe2": "numberline",
+        "stufe3": "8-6=2, 10-4=6, 9-2=7. Von klein nach gross: 8-6, 10-4, 9-2."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-4-s-012",
+      "modul": "M1.4",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "10 - 6 = ?",
+      "korrekt": ["4"],
+      "antwortOptionen": ["3", "4", "5", "16"],
+      "hilfe": {
+        "stufe1": "Zaehle von 6 bis 10. Wie viele Schritte?",
+        "stufe2": "tenframe",
+        "stufe3": "10 - 6: Von 6 bis 10: 7, 8, 9, 10. Das sind 4 Schritte. Also 10 - 6 = 4."
+      },
+      "fehlermuster": [
+        { "falsch": "16", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." },
+        { "falsch": "5", "feedback": "Ganz knapp! Zaehle nochmal genau." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-g-001",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "9 - ? = 4",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Was musst du von 9 wegnehmen, damit 4 bleibt?",
+        "stufe2": "numberline",
+        "stufe3": "Von 4 bis 9: 5, 6, 7, 8, 9. Das sind 5 Schritte. Also ? = 5."
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Probiere: 9 - 4 = 5. Wir brauchen aber 4 als Ergebnis." },
+        { "falsch": "13", "feedback": "Du hast 9 und 4 zusammengezaehlt. Lies die Aufgabe nochmal." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-g-002",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "? - 3 = 5",
+      "korrekt": ["8"],
+      "hilfe": {
+        "stufe1": "Welche Zahl minus 3 ergibt 5?",
+        "stufe2": "numberline",
+        "stufe3": "5 + 3 = 8. Also muss die fehlende Zahl 8 sein. Pruefe: 8 - 3 = 5!"
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Du hast 5 - 3 gerechnet. Aber die fehlende Zahl steht vorne!" },
+        { "falsch": "7", "feedback": "Ganz knapp! Rechne nochmal: 5 + 3 = ?" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-g-003",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Aufgabe hat das Ergebnis 3?",
+      "korrekt": ["8 - 5"],
+      "antwortOptionen": ["8 - 5", "7 - 5", "9 - 5", "6 - 4"],
+      "hilfe": {
+        "stufe1": "Rechne jede Aufgabe aus. Welche ergibt genau 3?",
+        "stufe2": "numberline",
+        "stufe3": "8-5=3, 7-5=2, 9-5=4, 6-4=2. Nur 8-5 ergibt 3!"
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-4-g-004",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "10 - ? = 3",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Was musst du von 10 wegnehmen, damit 3 bleibt?",
+        "stufe2": "tenframe",
+        "stufe3": "Von 3 bis 10: 4, 5, 6, 7, 8, 9, 10. Das sind 7 Schritte. Also ? = 7."
+      },
+      "fehlermuster": [
+        { "falsch": "3", "feedback": "Probiere: 10 - 3 = 7. Wir brauchen aber 3 als Ergebnis." },
+        { "falsch": "13", "feedback": "Du hast 10 und 3 zusammengezaehlt. Lies nochmal: 10 - ? = 3." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-g-005",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "5 - 3 = 2, also 2 + 3 = ?",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Wenn du 3 wegnimmst und 2 bekommst, was passiert wenn du 3 wieder dazutust?",
+        "stufe2": "numberline",
+        "stufe3": "5 - 3 = 2. Das Gegenteil: 2 + 3 = 5. Plus macht Minus rueckgaengig!"
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Schau genau: 2 + 3 = ? Du musst jetzt zusammenzaehlen!" },
+        { "falsch": "3", "feedback": "Fast! 2 + 3 ist mehr als 3. Zaehle ab der 2 drei weiter." }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-g-006",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "Vergleich",
+      "aufgabentext": "10 - 6 ? 8 - 3",
+      "korrekt": ["<"],
+      "hilfe": {
+        "stufe1": "Rechne beide Seiten aus und vergleiche.",
+        "stufe2": "numberline",
+        "stufe3": "10 - 6 = 4 und 8 - 3 = 5. 4 ist kleiner als 5, also: <"
+      },
+      "fehlermuster": [
+        { "falsch": ">", "feedback": "Rechne nochmal: 10 - 6 = ? und 8 - 3 = ?" },
+        { "falsch": "=", "feedback": "Die Ergebnisse sind nicht gleich. Rechne genau!" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-g-007",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "? - 6 = 4",
+      "korrekt": ["10"],
+      "hilfe": {
+        "stufe1": "Welche Zahl minus 6 ergibt 4? Nutze Plus!",
+        "stufe2": "numberline",
+        "stufe3": "4 + 6 = 10. Also ? = 10. Pruefe: 10 - 6 = 4!"
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Du hast 6 - 4 gerechnet. Dreh es um: 4 + 6 = ?" },
+        { "falsch": "9", "feedback": "Ganz knapp! Rechne nochmal: 4 + 6 = ?" }
+      ],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-4-g-008",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche zwei Aufgaben haben das gleiche Ergebnis?",
+      "korrekt": ["7-2 und 9-4"],
+      "antwortOptionen": ["7-2 und 9-4", "8-3 und 6-2", "10-5 und 7-3", "9-6 und 8-4"],
+      "hilfe": {
+        "stufe1": "Rechne jede Aufgabe aus. Welche Paare sind gleich?",
+        "stufe2": "numberline",
+        "stufe3": "7-2=5, 9-4=5 → Gleich! 8-3=5, 6-2=4 → Nicht gleich. 10-5=5, 7-3=4 → Nicht gleich."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-4-g-009",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Ergebnisse von gross nach klein: 10-2, 9-6, 7-1",
+      "korrekt": ["10-2", "7-1", "9-6"],
+      "dragItems": ["10-2", "9-6", "7-1"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": {
+        "stufe1": "Rechne zuerst alle Aufgaben aus. Dann ordne von gross nach klein.",
+        "stufe2": "numberline",
+        "stufe3": "10-2=8, 9-6=3, 7-1=6. Von gross nach klein: 8, 6, 3."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-4-g-010",
+      "modul": "M1.4",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "8 - ? = 2",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Was musst du von 8 wegnehmen, damit 2 bleibt?",
+        "stufe2": "numberline",
+        "stufe3": "Von 2 bis 8: 3, 4, 5, 6, 7, 8. Das sind 6 Schritte. Also ? = 6."
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Probiere: 8 - 2 = 6. Wir brauchen aber 2 als Ergebnis." },
+        { "falsch": "10", "feedback": "Du hast 8 und 2 zusammengezaehlt. Lies nochmal: 8 - ? = 2." }
+      ],
+      "vorlesen": false
+    }
+  ]
+}

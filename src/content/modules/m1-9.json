@@ -1,0 +1,225 @@
+{
+  "modul": "M1.9",
+  "name": "Verdoppeln und Halbieren",
+  "aufgaben": [
+    {
+      "id": "m1-9-b-001", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "Was ist das Doppelte von 3?", "korrekt": ["6"],
+      "hilfe": { "stufe1": "Doppelt heisst: 2 mal die gleiche Zahl.", "stufe2": "tenframe", "stufe3": "Das Doppelte von 3 = 3 + 3 = 6." },
+      "fehlermuster": [{ "falsch": "3", "feedback": "Du hast die 3 nur einmal genommen. Doppelt heisst 3+3!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-002", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "Was ist das Doppelte von 4?", "korrekt": ["8"], "antwortOptionen": ["4", "6", "8", "10"],
+      "hilfe": { "stufe1": "4 + 4 = ?", "stufe2": "tenframe", "stufe3": "Das Doppelte von 4 = 4 + 4 = 8." },
+      "fehlermuster": [{ "falsch": "4", "feedback": "Das ist nur die Zahl selbst! Doppelt = 4 + 4." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-003", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "2 + 2 = ?", "korrekt": ["4"],
+      "hilfe": { "stufe1": "2 und nochmal 2.", "stufe2": "tenframe", "stufe3": "2 + 2 = 4. Das Doppelte von 2!" },
+      "fehlermuster": [{ "falsch": "3", "feedback": "Fast! 2 + 2 = 4, nicht 3." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-004", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "5 + 5 = ?", "korrekt": ["10"],
+      "hilfe": { "stufe1": "5 und nochmal 5.", "stufe2": "tenframe", "stufe3": "5 + 5 = 10. Zwei Haende voll!" },
+      "fehlermuster": [{ "falsch": "9", "feedback": "Ganz knapp! 5 + 5 = 10." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-005", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "Was ist das Doppelte von 1?", "korrekt": ["2"], "antwortOptionen": ["1", "2", "3", "4"],
+      "hilfe": { "stufe1": "1 + 1 = ?", "stufe2": "tenframe", "stufe3": "1 + 1 = 2. Das Doppelte von 1!" },
+      "fehlermuster": [{ "falsch": "1", "feedback": "Das ist die Zahl selbst! Doppelt = 1+1 = 2." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-006", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "Was ist das Doppelte von 6?", "korrekt": ["12"],
+      "hilfe": { "stufe1": "6 + 6 = ?", "stufe2": "tenframe", "stufe3": "6 + 6 = 12. Das Doppelte von 6!" },
+      "fehlermuster": [{ "falsch": "11", "feedback": "Ganz knapp! 6 + 6 = 12." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-007", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "Was ist das Doppelte von 7?", "korrekt": ["14"], "antwortOptionen": ["12", "13", "14", "15"],
+      "hilfe": { "stufe1": "7 + 7 = ?", "stufe2": "tenframe", "stufe3": "7 + 7 = 14." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "Fast! 7 + 7 = 14, nicht 13." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-008", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "8 + 8 = ?", "korrekt": ["16"],
+      "hilfe": { "stufe1": "8 und nochmal 8.", "stufe2": "tenframe", "stufe3": "8 + 8 = 16. Das Doppelte von 8!" },
+      "fehlermuster": [{ "falsch": "15", "feedback": "Ganz knapp! 8 + 8 = 16." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-009", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "DragDrop",
+      "aufgabentext": "Ordne die Verdopplungen zu: 3→?, 5→?, 2→?",
+      "korrekt": ["6", "10", "4"],
+      "dragItems": ["4", "6", "8", "10"],
+      "dropZones": ["3→?", "5→?", "2→?"],
+      "hilfe": { "stufe1": "Rechne jedes Doppelte: 3+3, 5+5, 2+2.", "stufe2": "tenframe", "stufe3": "3+3=6, 5+5=10, 2+2=4." },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-b-010", "modul": "M1.9", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "9 + 9 = ?", "korrekt": ["18"],
+      "hilfe": { "stufe1": "9 und nochmal 9.", "stufe2": "numberline", "stufe3": "9 + 9 = 18. Das Doppelte von 9!" },
+      "fehlermuster": [{ "falsch": "17", "feedback": "Ganz knapp! 9 + 9 = 18." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-001", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "6 + 7 = ? Tipp: 6 + 6 = 12, also 6 + 7 = ?", "korrekt": ["13"],
+      "hilfe": { "stufe1": "6+6=12. 7 ist eins mehr als 6.", "stufe2": "numberline", "stufe3": "6+6=12, also 6+7=12+1=13. Verdoppeln plus 1!" },
+      "fehlermuster": [{ "falsch": "12", "feedback": "12 ist 6+6. Aber 7 ist eins MEHR als 6, also +1!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-002", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "5 + 4 = ? Tipp: 5 + 5 = 10, also 5 + 4 = ?", "korrekt": ["9"],
+      "hilfe": { "stufe1": "5+5=10. 4 ist eins weniger als 5.", "stufe2": "numberline", "stufe3": "5+5=10, also 5+4=10-1=9. Verdoppeln minus 1!" },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist 5+5. Aber 4 ist eins WENIGER als 5, also -1!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-003", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "7 + 8 = ? Nutze: 7 + 7 = 14", "korrekt": ["15"], "antwortOptionen": ["13", "14", "15", "16"],
+      "hilfe": { "stufe1": "7+7=14. 8 ist eins mehr als 7.", "stufe2": "numberline", "stufe3": "7+7=14, also 7+8=14+1=15." },
+      "fehlermuster": [{ "falsch": "14", "feedback": "14 ist 7+7. Die 8 ist eins mehr, also 14+1=15!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-004", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "4 + 4 ? 3 + 5",
+      "korrekt": ["="],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "4+4=8 und 3+5=8. Gleich!" },
+      "fehlermuster": [{ "falsch": ">", "feedback": "Rechne genau: 4+4=8 und 3+5=8. Gleich!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-005", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "8 + 9 = ? Tipp: 8 + 8 = 16", "korrekt": ["17"],
+      "hilfe": { "stufe1": "8+8=16. 9 ist eins mehr.", "stufe2": "numberline", "stufe3": "8+8=16, also 8+9=16+1=17." },
+      "fehlermuster": [{ "falsch": "16", "feedback": "16 ist 8+8. Die 9 ist eins mehr! 16+1=17." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-006", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "9 + 8 = ? Tipp: 9 + 9 = 18", "korrekt": ["17"],
+      "hilfe": { "stufe1": "9+9=18. 8 ist eins weniger.", "stufe2": "numberline", "stufe3": "9+9=18, also 9+8=18-1=17." },
+      "fehlermuster": [{ "falsch": "18", "feedback": "18 ist 9+9. Die 8 ist eins weniger! 18-1=17." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-007", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "3 + 4 ist fast ein Doppel. Welches Doppel hilft?", "korrekt": ["3 + 3 = 6"],
+      "antwortOptionen": ["3 + 3 = 6", "4 + 4 = 8", "2 + 2 = 4"],
+      "hilfe": { "stufe1": "3+4 ist fast wie 3+3, nur 1 mehr.", "stufe2": "numberline", "stufe3": "3+3=6, also 3+4=6+1=7. Das Doppel von 3 hilft!" },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-008", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "4 + 5 = ? Nutze: 4 + 4 = 8", "korrekt": ["9"],
+      "hilfe": { "stufe1": "4+4=8. 5 ist eins mehr als 4.", "stufe2": "numberline", "stufe3": "4+4=8, also 4+5=8+1=9." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "8 ist 4+4. Die 5 ist eins mehr! 8+1=9." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-009", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "6 + 6 ? 5 + 7",
+      "korrekt": ["="],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "6+6=12 und 5+7=12. Gleich!" },
+      "fehlermuster": [{ "falsch": ">", "feedback": "Rechne genau: 6+6=12 und 5+7=12. Gleich!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-s-010", "modul": "M1.9", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "5 + 6 = ? Nutze: 5 + 5 = 10", "korrekt": ["11"],
+      "hilfe": { "stufe1": "5+5=10. 6 ist eins mehr.", "stufe2": "numberline", "stufe3": "5+5=10, also 5+6=10+1=11." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist 5+5. Die 6 ist eins mehr! 10+1=11." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-001", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Die Haelfte von 16 = ?", "korrekt": ["8"],
+      "hilfe": { "stufe1": "Halbieren heisst: durch 2 teilen.", "stufe2": "tenframe", "stufe3": "16 geteilt durch 2 = 8. Pruefe: 8+8=16!" },
+      "fehlermuster": [{ "falsch": "32", "feedback": "Du hast verdoppelt statt halbiert! Halbieren = teilen durch 2." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-002", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Die Haelfte von 12 = ?", "korrekt": ["6"],
+      "hilfe": { "stufe1": "Was plus sich selbst ergibt 12?", "stufe2": "tenframe", "stufe3": "6 + 6 = 12. Also ist die Haelfte von 12 = 6." },
+      "fehlermuster": [{ "falsch": "24", "feedback": "Du hast verdoppelt! Halbieren bedeutet teilen." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-003", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "Die Haelfte von 10 = ?", "korrekt": ["5"], "antwortOptionen": ["4", "5", "6", "20"],
+      "hilfe": { "stufe1": "Was + was = 10?", "stufe2": "tenframe", "stufe3": "5 + 5 = 10. Die Haelfte von 10 = 5." },
+      "fehlermuster": [{ "falsch": "20", "feedback": "20 ist das Doppelte! Wir suchen die Haelfte." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-004", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Die Haelfte von 14 = ?", "korrekt": ["7"],
+      "hilfe": { "stufe1": "Was plus sich selbst ergibt 14?", "stufe2": "numberline", "stufe3": "7 + 7 = 14. Die Haelfte von 14 = 7." },
+      "fehlermuster": [{ "falsch": "28", "feedback": "Du hast verdoppelt statt halbiert!" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-005", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "12 Bonbons fair auf 2 Kinder teilen. Jedes bekommt ?", "korrekt": ["6"],
+      "hilfe": { "stufe1": "Fair teilen = halbieren.", "stufe2": "tenframe", "stufe3": "12 geteilt auf 2 = 6. Jedes Kind bekommt 6 Bonbons." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "12 sind alle Bonbons! Jedes Kind bekommt die Haelfte." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-006", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Die Haelfte von 18 = ?", "korrekt": ["9"],
+      "hilfe": { "stufe1": "Was + was = 18?", "stufe2": "numberline", "stufe3": "9 + 9 = 18. Die Haelfte von 18 = 9." },
+      "fehlermuster": [{ "falsch": "8", "feedback": "Ganz knapp! 8+8=16, nicht 18. Probiere 9+9." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-007", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "Die Haelfte von 20 = ?", "korrekt": ["10"], "antwortOptionen": ["8", "9", "10", "12"],
+      "hilfe": { "stufe1": "Was + was = 20?", "stufe2": "tenframe", "stufe3": "10 + 10 = 20. Die Haelfte von 20 = 10." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "12+12=24, nicht 20. Probiere 10+10." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-008", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "? + ? = 18. Beide Zahlen sind gleich. Welche Zahl?", "korrekt": ["9"],
+      "hilfe": { "stufe1": "Halbiere 18.", "stufe2": "numberline", "stufe3": "18 : 2 = 9. Also 9 + 9 = 18." },
+      "fehlermuster": [{ "falsch": "18", "feedback": "Nicht 18+18! Beide Zahlen zusammen ergeben 18." }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-009", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "Das Doppelte von 7, dann halbieren = ?", "korrekt": ["7"],
+      "hilfe": { "stufe1": "Verdoppeln und dann halbieren hebt sich auf!", "stufe2": "numberline", "stufe3": "7 verdoppeln = 14. 14 halbieren = 7. Du kommst zurueck zur 7!" },
+      "fehlermuster": [{ "falsch": "14", "feedback": "14 ist das Doppelte. Jetzt noch halbieren! 14 : 2 = ?" }],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-9-g-010", "modul": "M1.9", "schwierigkeit": "Gold", "typ": "DragDrop",
+      "aufgabentext": "Ordne die Haelften zu: 8→?, 14→?, 20→?",
+      "korrekt": ["4", "7", "10"],
+      "dragItems": ["4", "7", "8", "10"],
+      "dropZones": ["8→?", "14→?", "20→?"],
+      "hilfe": { "stufe1": "Halbiere jede Zahl.", "stufe2": "tenframe", "stufe3": "8:2=4, 14:2=7, 20:2=10." },
+      "fehlermuster": [],
+      "vorlesen": true
+    }
+  ]
+}

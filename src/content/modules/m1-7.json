@@ -1,0 +1,256 @@
+{
+  "modul": "M1.7",
+  "name": "Addition mit Zehnuebergang",
+  "aufgaben": [
+    {
+      "id": "m1-7-b-001", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "9 + 2 = ?", "korrekt": ["11"],
+      "hilfe": { "stufe1": "9 + 1 = 10. Dann noch 1 dazu.", "stufe2": "tenframe", "stufe3": "9 + 2: Erst 9 + 1 = 10, dann 10 + 1 = 11." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "Fast! Du hast nur 1 dazugezaehlt. Es sind aber 2!" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-002", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "9 + 3 = ?", "korrekt": ["12"],
+      "hilfe": { "stufe1": "Erst zur 10: 9 + 1 = 10. Dann noch 2.", "stufe2": "tenframe", "stufe3": "9 + 3: Zerlege 3 in 1 und 2. 9 + 1 = 10, 10 + 2 = 12." },
+      "fehlermuster": [{ "falsch": "11", "feedback": "Ganz knapp! 9 + 1 = 10, dann noch 2 dazu = 12." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-003", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "8 + 3 = ?", "korrekt": ["11"], "antwortOptionen": ["10", "11", "12", "13"],
+      "hilfe": { "stufe1": "Erst zur 10: 8 + 2 = 10. Dann noch 1.", "stufe2": "tenframe", "stufe3": "8 + 3: Zerlege 3 in 2 und 1. 8 + 2 = 10, 10 + 1 = 11." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist nur der Zwischenschritt! Dann kommt noch 1 dazu." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-004", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "8 + 4 = ?", "korrekt": ["12"],
+      "hilfe": { "stufe1": "8 + 2 = 10. Dann noch 2 dazu.", "stufe2": "tenframe", "stufe3": "8 + 4: Zerlege 4 in 2 und 2. 8 + 2 = 10, 10 + 2 = 12." },
+      "fehlermuster": [{ "falsch": "11", "feedback": "Ganz knapp! 8 + 2 = 10, dann noch 2 dazu = 12." }, { "falsch": "14", "feedback": "Pruefe nochmal: 8 + 4 ist weniger als 8 + 6." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-005", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "9 + 4 = ?", "korrekt": ["13"], "antwortOptionen": ["11", "12", "13", "14"],
+      "hilfe": { "stufe1": "9 + 1 = 10. Dann noch 3 dazu.", "stufe2": "tenframe", "stufe3": "9 + 4: Zerlege 4 in 1 und 3. 9 + 1 = 10, 10 + 3 = 13." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "Fast! 9 + 1 = 10, dann noch 3 dazu = 13." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-006", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "7 + 4 = ?", "korrekt": ["11"],
+      "hilfe": { "stufe1": "7 + 3 = 10. Dann noch 1 dazu.", "stufe2": "tenframe", "stufe3": "7 + 4: Zerlege 4 in 3 und 1. 7 + 3 = 10, 10 + 1 = 11." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist der Zwischenschritt! Dann noch 1 dazu = 11." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-007", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "8 + 5 = ?", "korrekt": ["13"],
+      "hilfe": { "stufe1": "8 + 2 = 10. Dann noch 3 dazu.", "stufe2": "tenframe", "stufe3": "8 + 5: Zerlege 5 in 2 und 3. 8 + 2 = 10, 10 + 3 = 13." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "Fast! Hast du den Sprung ueber die 10 gemacht? 8+2=10, dann noch 3." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-008", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "7 + 5 = ?", "korrekt": ["12"], "antwortOptionen": ["11", "12", "13", "14"],
+      "hilfe": { "stufe1": "7 + 3 = 10. Dann noch 2.", "stufe2": "tenframe", "stufe3": "7 + 5: Zerlege 5 in 3 und 2. 7 + 3 = 10, 10 + 2 = 12." },
+      "fehlermuster": [{ "falsch": "11", "feedback": "Ganz knapp! 7+3=10, dann noch 2 dazu = 12." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-009", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "6 + 5 = ?", "korrekt": ["11"],
+      "hilfe": { "stufe1": "6 + 4 = 10. Dann noch 1.", "stufe2": "tenframe", "stufe3": "6 + 5: Zerlege 5 in 4 und 1. 6 + 4 = 10, 10 + 1 = 11." },
+      "fehlermuster": [{ "falsch": "10", "feedback": "10 ist der Zwischenschritt! Dann noch 1 dazu." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-010", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "7 + 6 = ?", "korrekt": ["13"],
+      "hilfe": { "stufe1": "7 + 3 = 10. Dann noch 3.", "stufe2": "tenframe", "stufe3": "7 + 6: Zerlege 6 in 3 und 3. 7 + 3 = 10, 10 + 3 = 13." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "Ganz knapp! 7+3=10, dann 10+3=13." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-011", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "MultipleChoice",
+      "aufgabentext": "6 + 6 = ?", "korrekt": ["12"], "antwortOptionen": ["10", "11", "12", "13"],
+      "hilfe": { "stufe1": "Das ist ein Doppel! 6 + 6.", "stufe2": "tenframe", "stufe3": "6 + 6: Zerlege in 6+4+2. 6+4=10, 10+2=12. Oder: Doppel 6 = 12!" },
+      "fehlermuster": [{ "falsch": "11", "feedback": "Fast! 6+6 ist ein Doppel. 6+4=10, 10+2=12." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-b-012", "modul": "M1.7", "schwierigkeit": "Bronze", "typ": "Zahleneingabe",
+      "aufgabentext": "6 + 7 = ?", "korrekt": ["13"],
+      "hilfe": { "stufe1": "6 + 4 = 10. Dann noch 3.", "stufe2": "tenframe", "stufe3": "6 + 7: Zerlege 7 in 4 und 3. 6 + 4 = 10, 10 + 3 = 13." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "Fast! 6+4=10, dann 10+3=13." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-001", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "7 + 8 = ?", "korrekt": ["15"],
+      "hilfe": { "stufe1": "7 + 3 = 10. Dann noch 5.", "stufe2": "numberline", "stufe3": "7 + 8: Zerlege 8 in 3 und 5. 7+3=10, 10+5=15." },
+      "fehlermuster": [{ "falsch": "14", "feedback": "Ganz knapp! 7+3=10, dann 10+5=15." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-002", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "8 + 7 = ?", "korrekt": ["15"],
+      "hilfe": { "stufe1": "8 + 2 = 10. Dann noch 5.", "stufe2": "numberline", "stufe3": "8 + 7: Zerlege 7 in 2 und 5. 8+2=10, 10+5=15." },
+      "fehlermuster": [{ "falsch": "14", "feedback": "Fast! 8+2=10, dann noch 5 dazu = 15." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-003", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "9 + 5 = ?", "korrekt": ["14"],
+      "hilfe": { "stufe1": "9 + 1 = 10. Dann noch 4.", "stufe2": "numberline", "stufe3": "9 + 5: Zerlege 5 in 1 und 4. 9+1=10, 10+4=14." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "Ganz knapp! 9+1=10, dann 10+4=14." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-004", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "8 + 6 = ?", "korrekt": ["14"], "antwortOptionen": ["12", "13", "14", "15"],
+      "hilfe": { "stufe1": "8 + 2 = 10. Dann noch 4.", "stufe2": "tenframe", "stufe3": "8 + 6: Zerlege 6 in 2 und 4. 8+2=10, 10+4=14." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "Fast! 8+2=10, dann 10+4=14." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-005", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "9 + 3 ? 7 + 6",
+      "korrekt": ["<"],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "9+3=12 und 7+6=13. 12 < 13." },
+      "fehlermuster": [{ "falsch": "=", "feedback": "Rechne nochmal: 9+3=? und 7+6=?" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-006", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "5 + 8 = ?", "korrekt": ["13"],
+      "hilfe": { "stufe1": "5 + 5 = 10. Dann noch 3.", "stufe2": "numberline", "stufe3": "5 + 8: Zerlege 8 in 5 und 3. 5+5=10, 10+3=13." },
+      "fehlermuster": [{ "falsch": "12", "feedback": "Ganz knapp! 5+5=10, dann 10+3=13." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-007", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "9 + 7 = ?", "korrekt": ["16"],
+      "hilfe": { "stufe1": "9 + 1 = 10. Dann noch 6.", "stufe2": "numberline", "stufe3": "9 + 7: Zerlege 7 in 1 und 6. 9+1=10, 10+6=16." },
+      "fehlermuster": [{ "falsch": "15", "feedback": "Fast! 9+1=10, dann 10+6=16." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-008", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "MultipleChoice",
+      "aufgabentext": "7 + 7 = ?", "korrekt": ["14"], "antwortOptionen": ["12", "13", "14", "15"],
+      "hilfe": { "stufe1": "7 + 7 ist ein Doppel!", "stufe2": "tenframe", "stufe3": "7+7: Zerlege: 7+3=10, 10+4=14. Oder: Doppel 7 = 14!" },
+      "fehlermuster": [{ "falsch": "13", "feedback": "Fast! 7+7 ist ein Doppel. 7+3=10, 10+4=14." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-009", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Vergleich",
+      "aufgabentext": "8 + 8 ? 9 + 6",
+      "korrekt": [">"],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "8+8=16 und 9+6=15. 16 > 15." },
+      "fehlermuster": [{ "falsch": "=", "feedback": "Rechne genau: 8+8=? und 9+6=?" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-010", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "6 + 8 = ?", "korrekt": ["14"],
+      "hilfe": { "stufe1": "6 + 4 = 10. Dann noch 4.", "stufe2": "numberline", "stufe3": "6 + 8: Zerlege 8 in 4 und 4. 6+4=10, 10+4=14." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "Ganz knapp! 6+4=10, dann 10+4=14." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-011", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "Zahleneingabe",
+      "aufgabentext": "5 + 7 = ?", "korrekt": ["12"],
+      "hilfe": { "stufe1": "5 + 5 = 10. Dann noch 2.", "stufe2": "numberline", "stufe3": "5 + 7: Zerlege 7 in 5 und 2. 5+5=10, 10+2=12." },
+      "fehlermuster": [{ "falsch": "11", "feedback": "Ganz knapp! 5+5=10, dann 10+2=12." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-s-012", "modul": "M1.7", "schwierigkeit": "Silber", "typ": "DragDrop",
+      "aufgabentext": "Ordne die Ergebnisse von klein nach gross: 9+3, 7+4, 8+6",
+      "korrekt": ["7+4", "9+3", "8+6"],
+      "dragItems": ["9+3", "7+4", "8+6"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": { "stufe1": "Rechne alle Aufgaben aus.", "stufe2": "numberline", "stufe3": "7+4=11, 9+3=12, 8+6=14. Von klein: 11, 12, 14." },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-7-g-001", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "? + 6 = 14", "korrekt": ["8"],
+      "hilfe": { "stufe1": "Was plus 6 ergibt 14?", "stufe2": "numberline", "stufe3": "14 - 6 = 8. Also ? = 8. Pruefe: 8 + 6 = 14!" },
+      "fehlermuster": [{ "falsch": "20", "feedback": "Du hast 14+6 gerechnet. Lies nochmal: ?+6=14." }, { "falsch": "7", "feedback": "Ganz knapp! 7+6=13. Wir brauchen 14." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-g-002", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "5 + 3 + 7 = ?", "korrekt": ["15"],
+      "hilfe": { "stufe1": "Rechne Schritt fuer Schritt: Erst 5+3, dann +7.", "stufe2": "numberline", "stufe3": "5+3=8, dann 8+7=15." },
+      "fehlermuster": [{ "falsch": "14", "feedback": "Ganz knapp! Rechne nochmal: 5+3=8, dann 8+7=?" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-g-003", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "Welche Aufgabe ergibt 13?", "korrekt": ["8 + 5"],
+      "antwortOptionen": ["8 + 5", "9 + 3", "7 + 5", "6 + 6"],
+      "hilfe": { "stufe1": "Rechne jede Aufgabe aus.", "stufe2": "numberline", "stufe3": "8+5=13, 9+3=12, 7+5=12, 6+6=12. Nur 8+5=13!" },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-7-g-004", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "Vergleich",
+      "aufgabentext": "8 + 6 ? 9 + 4",
+      "korrekt": [">"],
+      "hilfe": { "stufe1": "Rechne beide Seiten aus.", "stufe2": "numberline", "stufe3": "8+6=14 und 9+4=13. 14 > 13." },
+      "fehlermuster": [{ "falsch": "=", "feedback": "Rechne genau: 8+6=14 und 9+4=13. Nicht gleich!" }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-g-005", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "? + 8 = 17", "korrekt": ["9"],
+      "hilfe": { "stufe1": "Was plus 8 ergibt 17?", "stufe2": "numberline", "stufe3": "17 - 8 = 9. Also ? = 9." },
+      "fehlermuster": [{ "falsch": "25", "feedback": "Du hast 17+8 gerechnet. Lies nochmal: ?+8=17." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-g-006", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "4 + 7 + 3 = ?", "korrekt": ["14"],
+      "hilfe": { "stufe1": "Rechne Schritt fuer Schritt.", "stufe2": "numberline", "stufe3": "4+7=11, dann 11+3=14." },
+      "fehlermuster": [{ "falsch": "13", "feedback": "Ganz knapp! 4+7=11, dann 11+3=14." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-g-007", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "9 + ? = 15", "korrekt": ["6"],
+      "hilfe": { "stufe1": "Was fehlt von 9 bis 15?", "stufe2": "numberline", "stufe3": "15 - 9 = 6. Also ? = 6." },
+      "fehlermuster": [{ "falsch": "5", "feedback": "Ganz knapp! 9+5=14. Wir brauchen 15." }],
+      "vorlesen": false
+    },
+    {
+      "id": "m1-7-g-008", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "MultipleChoice",
+      "aufgabentext": "Welche zwei Aufgaben haben das gleiche Ergebnis?",
+      "korrekt": ["9+5 und 8+6"],
+      "antwortOptionen": ["9+5 und 8+6", "7+4 und 9+3", "6+5 und 8+4", "8+7 und 9+5"],
+      "hilfe": { "stufe1": "Rechne alle Aufgaben aus.", "stufe2": "numberline", "stufe3": "9+5=14, 8+6=14. Gleich! 7+4=11, 9+3=12, 6+5=11, 8+4=12, 8+7=15." },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-7-g-009", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "DragDrop",
+      "aufgabentext": "Ordne die Ergebnisse von gross nach klein: 6+7, 9+9, 8+4",
+      "korrekt": ["9+9", "6+7", "8+4"],
+      "dragItems": ["6+7", "9+9", "8+4"],
+      "dropZones": ["1.", "2.", "3."],
+      "hilfe": { "stufe1": "Rechne alle Aufgaben aus.", "stufe2": "numberline", "stufe3": "9+9=18, 6+7=13, 8+4=12. Von gross: 18, 13, 12." },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-7-g-010", "modul": "M1.7", "schwierigkeit": "Gold", "typ": "Zahleneingabe",
+      "aufgabentext": "6 + 5 + 4 = ?", "korrekt": ["15"],
+      "hilfe": { "stufe1": "Rechne Schritt fuer Schritt.", "stufe2": "numberline", "stufe3": "6+5=11, dann 11+4=15." },
+      "fehlermuster": [{ "falsch": "14", "feedback": "Ganz knapp! 6+5=11, dann 11+4=15." }],
+      "vorlesen": false
+    }
+  ]
+}

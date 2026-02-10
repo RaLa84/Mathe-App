@@ -1,0 +1,527 @@
+{
+  "modul": "M1.5",
+  "name": "Umkehraufgaben",
+  "aufgaben": [
+    {
+      "id": "m1-5-b-001",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "3 + 4 = 7. Welche Minusaufgabe passt?",
+      "korrekt": ["7 - 4 = 3"],
+      "antwortOptionen": ["7 - 4 = 3", "7 + 4 = 11", "4 - 3 = 1", "7 - 2 = 5"],
+      "hilfe": {
+        "stufe1": "Die gleichen Zahlen kommen in der Minusaufgabe vor.",
+        "stufe2": "numberline",
+        "stufe3": "3 + 4 = 7. Die Umkehrung: 7 - 4 = 3. Die gleichen Zahlen!"
+      },
+      "fehlermuster": [
+        { "falsch": "7 + 4 = 11", "feedback": "Das ist wieder Plus! Wir suchen eine Minus-Aufgabe." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-002",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "2 + 5 = 7, also 7 - 5 = ?",
+      "korrekt": ["2"],
+      "hilfe": {
+        "stufe1": "Wenn du 5 von 7 wegnimmst, was bleibt?",
+        "stufe2": "numberline",
+        "stufe3": "2 + 5 = 7. Das Gegenteil: 7 - 5 = 2. Die 2 bleibt uebrig!"
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "Schau nochmal: Wir nehmen die 5 weg. Was bleibt?" },
+        { "falsch": "12", "feedback": "Du hast 7 + 5 gerechnet. Wir brauchen 7 - 5!" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-003",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "6 + 2 = 8. Welche Minusaufgabe passt?",
+      "korrekt": ["8 - 2 = 6"],
+      "antwortOptionen": ["8 - 2 = 6", "8 - 1 = 7", "6 - 2 = 4", "8 + 2 = 10"],
+      "hilfe": {
+        "stufe1": "Suche die Aufgabe mit den gleichen Zahlen: 6, 2 und 8.",
+        "stufe2": "numberline",
+        "stufe3": "6 + 2 = 8. Die Umkehrung: 8 - 2 = 6."
+      },
+      "fehlermuster": [
+        { "falsch": "6 - 2 = 4", "feedback": "Fast! Aber die Umkehrung startet beim Ergebnis: 8." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-004",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "4 + 3 = 7, also 7 - 3 = ?",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Wenn du 3 von 7 wegnimmst, kommt die 4 zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "4 + 3 = 7. Die Umkehrung: 7 - 3 = 4."
+      },
+      "fehlermuster": [
+        { "falsch": "3", "feedback": "Schau nochmal: Wir nehmen die 3 weg. Die andere Zahl bleibt!" },
+        { "falsch": "10", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-005",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die passenden Paare zu: 2+3=5 gehoert zu ...",
+      "korrekt": ["5-3=2"],
+      "dragItems": ["5-3=2", "5-1=4", "3-2=1"],
+      "dropZones": ["Passt zu 2+3=5"],
+      "hilfe": {
+        "stufe1": "Suche die Minusaufgabe mit den Zahlen 2, 3 und 5.",
+        "stufe2": "numberline",
+        "stufe3": "2 + 3 = 5 passt zu 5 - 3 = 2. Die gleichen Zahlen!"
+      },
+      "fehlermuster": [
+        { "falsch": "3-2=1", "feedback": "Die Zahlen stimmen nicht. 2+3=5, also suche eine Aufgabe mit 5." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-006",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "1 + 6 = 7, also 7 - 6 = ?",
+      "korrekt": ["1"],
+      "hilfe": {
+        "stufe1": "Wenn du 6 von 7 wegnimmst, was bleibt?",
+        "stufe2": "numberline",
+        "stufe3": "1 + 6 = 7. Die Umkehrung: 7 - 6 = 1."
+      },
+      "fehlermuster": [
+        { "falsch": "6", "feedback": "Du hast die falsche Zahl genommen. Wir nehmen die 6 weg!" },
+        { "falsch": "13", "feedback": "Du hast plus gerechnet! 7 - 6 = ?" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-007",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "5 + 4 = 9. Welche Minusaufgabe passt dazu?",
+      "korrekt": ["9 - 5 = 4"],
+      "antwortOptionen": ["9 - 5 = 4", "9 - 1 = 8", "5 - 4 = 1", "9 + 5 = 14"],
+      "hilfe": {
+        "stufe1": "Suche die Aufgabe mit den Zahlen 5, 4 und 9.",
+        "stufe2": "numberline",
+        "stufe3": "5 + 4 = 9. Umkehrung: 9 - 5 = 4 oder 9 - 4 = 5."
+      },
+      "fehlermuster": [
+        { "falsch": "5 - 4 = 1", "feedback": "Fast! Aber die Umkehrung startet mit dem Ergebnis: 9." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-008",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "3 + 5 = 8, also 8 - 5 = ?",
+      "korrekt": ["3"],
+      "hilfe": {
+        "stufe1": "Nimm die 5 von der 8 weg.",
+        "stufe2": "numberline",
+        "stufe3": "3 + 5 = 8. Umkehrung: 8 - 5 = 3."
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "Wir nehmen die 5 weg! Die andere Zahl bleibt: 3." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-009",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche zwei Aufgaben gehoeren zusammen?",
+      "korrekt": ["4+6=10 und 10-6=4"],
+      "antwortOptionen": ["4+6=10 und 10-6=4", "4+6=10 und 10-5=5", "4+6=10 und 6-4=2"],
+      "hilfe": {
+        "stufe1": "Die gleichen drei Zahlen muessen in beiden Aufgaben vorkommen.",
+        "stufe2": "numberline",
+        "stufe3": "4+6=10 und 10-6=4: Beide nutzen die Zahlen 4, 6 und 10!"
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-b-010",
+      "modul": "M1.5",
+      "schwierigkeit": "Bronze",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "2 + 8 = 10, also 10 - 8 = ?",
+      "korrekt": ["2"],
+      "hilfe": {
+        "stufe1": "Nimm die 8 von 10 weg.",
+        "stufe2": "tenframe",
+        "stufe3": "2 + 8 = 10. Umkehrung: 10 - 8 = 2."
+      },
+      "fehlermuster": [
+        { "falsch": "8", "feedback": "Wir nehmen die 8 weg. Was bleibt?" },
+        { "falsch": "18", "feedback": "Du hast plus gerechnet! Minus heisst wegnehmen." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-001",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Bilde die Umkehraufgabe: 6 - 2 = 4. Also 4 + 2 = ?",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Wenn du 2 dazutust, kommst du zurueck zur 6.",
+        "stufe2": "numberline",
+        "stufe3": "6 - 2 = 4. Umkehrung: 4 + 2 = 6. Plus macht Minus rueckgaengig!"
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Rechne: 4 + 2 = ? Das ergibt nicht 2." },
+        { "falsch": "4", "feedback": "Du hast die 4 nochmal genommen. 4 + 2 = ?" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-002",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche 4 Aufgaben gehoeren zur Zahlenfamilie 3, 5, 8?",
+      "korrekt": ["3+5=8, 5+3=8, 8-3=5, 8-5=3"],
+      "antwortOptionen": ["3+5=8, 5+3=8, 8-3=5, 8-5=3", "3+5=8, 8-3=5, 5-3=2, 8+3=11", "3+5=8, 5+3=8, 8-3=5, 3-5=-2"],
+      "hilfe": {
+        "stufe1": "Mit 3, 5 und 8 kannst du 2 Plus- und 2 Minusaufgaben bilden.",
+        "stufe2": "numberline",
+        "stufe3": "Die Familie: 3+5=8, 5+3=8, 8-3=5, 8-5=3. Alles mit 3, 5 und 8!"
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-003",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "4 + ? = 9, also 9 - ? = 4. Welche Zahl fehlt?",
+      "korrekt": ["5"],
+      "hilfe": {
+        "stufe1": "Welche Zahl fehlt von 4 bis 9?",
+        "stufe2": "numberline",
+        "stufe3": "Von 4 bis 9 sind es 5 Schritte. Also ? = 5. Pruefe: 4 + 5 = 9 und 9 - 5 = 4!"
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Probiere: 4 + 4 = 8. Wir brauchen aber 9." },
+        { "falsch": "13", "feedback": "Du hast 4 + 9 gerechnet. Lies nochmal: 4 + ? = 9." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-004",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "DragDrop",
+      "aufgabentext": "Ordne die Aufgaben zur Familie von 2, 6, 8.",
+      "korrekt": ["2+6=8", "6+2=8", "8-2=6", "8-6=2"],
+      "dragItems": ["2+6=8", "6+2=8", "8-2=6", "8-6=2", "6-2=4"],
+      "dropZones": ["Aufgabe 1", "Aufgabe 2", "Aufgabe 3", "Aufgabe 4"],
+      "hilfe": {
+        "stufe1": "Welche 4 Aufgaben nutzen nur die Zahlen 2, 6 und 8?",
+        "stufe2": "numberline",
+        "stufe3": "Die Familie: 2+6=8, 6+2=8, 8-2=6, 8-6=2. Die Aufgabe 6-2=4 gehoert NICHT dazu."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-005",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "9 - 7 = 2. Welche Plusaufgabe passt? 2 + 7 = ?",
+      "korrekt": ["9"],
+      "hilfe": {
+        "stufe1": "Wenn du 7 wieder dazutust, kommst du zurueck.",
+        "stufe2": "numberline",
+        "stufe3": "9 - 7 = 2. Umkehrung: 2 + 7 = 9!"
+      },
+      "fehlermuster": [
+        { "falsch": "7", "feedback": "2 + 7 ist mehr als 7. Zaehle ab der 2 sieben weiter." },
+        { "falsch": "2", "feedback": "Du hast die 2 nochmal genommen. Rechne: 2 + 7 = ?" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-006",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "7 - 3 = 4. Welche Plusaufgabe passt?",
+      "korrekt": ["4 + 3 = 7", "3 + 4 = 7"],
+      "antwortOptionen": ["4 + 3 = 7", "7 + 3 = 10", "3 + 4 = 7", "4 + 4 = 8"],
+      "hilfe": {
+        "stufe1": "Die gleichen drei Zahlen: 7, 3 und 4.",
+        "stufe2": "numberline",
+        "stufe3": "7 - 3 = 4. Umkehrung: 4 + 3 = 7 (oder 3 + 4 = 7)."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-007",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "? + 4 = 10, also 10 - 4 = ?. Welche Zahl fehlt?",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Was plus 4 ergibt 10?",
+        "stufe2": "tenframe",
+        "stufe3": "10 - 4 = 6. Also ? = 6. Pruefe: 6 + 4 = 10!"
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "4 + 4 = 8, nicht 10. Was plus 4 ergibt 10?" },
+        { "falsch": "14", "feedback": "Du hast 10 + 4 gerechnet. Wir brauchen 10 - 4." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-008",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Zahlenfamilie: 1, 9, 10. Wie viele Aufgaben kannst du bilden?",
+      "korrekt": ["4"],
+      "hilfe": {
+        "stufe1": "Es gibt 2 Plusaufgaben und 2 Minusaufgaben.",
+        "stufe2": "numberline",
+        "stufe3": "1+9=10, 9+1=10, 10-1=9, 10-9=1. Das sind 4 Aufgaben!"
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "Es gibt mehr! Denke an Plus UND Minus." },
+        { "falsch": "3", "feedback": "Fast! Es gibt noch eine Aufgabe mehr." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-009",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Aufgabe gehoert NICHT zur Familie 4, 5, 9?",
+      "korrekt": ["9 - 5 = 3"],
+      "antwortOptionen": ["4 + 5 = 9", "9 - 4 = 5", "9 - 5 = 3", "5 + 4 = 9"],
+      "hilfe": {
+        "stufe1": "Pruefe jede Aufgabe: Stimmt das Ergebnis?",
+        "stufe2": "numberline",
+        "stufe3": "9 - 5 = 4, nicht 3! Diese Aufgabe ist falsch und gehoert nicht dazu."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-s-010",
+      "modul": "M1.5",
+      "schwierigkeit": "Silber",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "8 - 6 = 2, also 2 + ? = 8",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Was fehlt von 2 bis 8?",
+        "stufe2": "numberline",
+        "stufe3": "8 - 6 = 2. Umkehrung: 2 + 6 = 8. Also ? = 6."
+      },
+      "fehlermuster": [
+        { "falsch": "2", "feedback": "2 + 2 = 4, nicht 8. Was fehlt von 2 bis 8?" },
+        { "falsch": "8", "feedback": "2 + 8 = 10, nicht 8. Schau nochmal genau." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-001",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "6 - 2 = 4. Stimmt das? Pruefe: 4 + 2 = ?",
+      "korrekt": ["6"],
+      "hilfe": {
+        "stufe1": "Rechne 4 + 2. Kommt 6 raus?",
+        "stufe2": "numberline",
+        "stufe3": "4 + 2 = 6. Und 6 war unsere Startzahl. Also stimmt 6 - 2 = 4!"
+      },
+      "fehlermuster": [
+        { "falsch": "4", "feedback": "Rechne: 4 + 2 = ? Das ist nicht 4." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-002",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Jemand sagt: 8 - 3 = 4. Pruefe mit Plus! 4 + 3 = ?",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "Rechne 4 + 3. Ist das Ergebnis 8?",
+        "stufe2": "numberline",
+        "stufe3": "4 + 3 = 7, nicht 8! Also war 8 - 3 = 4 falsch. Richtig: 8 - 3 = 5."
+      },
+      "fehlermuster": [
+        { "falsch": "8", "feedback": "4 + 3 ist nicht 8. Rechne genau: 4 + 3 = ?" },
+        { "falsch": "4", "feedback": "Du hast die 4 genommen. Rechne: 4 + 3 = ?" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-003",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Welche Aussage stimmt fuer die Zahlen 3, 7, 10?",
+      "korrekt": ["Alle 4 Aufgaben sind richtig"],
+      "antwortOptionen": ["Alle 4 Aufgaben sind richtig", "Nur 3+7=10 stimmt", "Es gibt nur 2 Aufgaben"],
+      "hilfe": {
+        "stufe1": "Pruefe: 3+7=10, 7+3=10, 10-3=7, 10-7=3.",
+        "stufe2": "numberline",
+        "stufe3": "3+7=10 ✓, 7+3=10 ✓, 10-3=7 ✓, 10-7=3 ✓. Alle 4 stimmen!"
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-004",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "9 - 4 = 5. Ist das richtig? Pruefe: 5 + 4 = ?",
+      "korrekt": ["9"],
+      "hilfe": {
+        "stufe1": "5 + 4 = ? Kommt 9 raus?",
+        "stufe2": "numberline",
+        "stufe3": "5 + 4 = 9. Ja, 9 ist unsere Startzahl! Also stimmt 9 - 4 = 5."
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "Rechne: 5 + 4 = ? Das ist mehr als 5." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-005",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Jemand sagt: 10 - 4 = 5. Pruefe! 5 + 4 = ?",
+      "korrekt": ["9"],
+      "hilfe": {
+        "stufe1": "5 + 4 = ? Ist es 10?",
+        "stufe2": "numberline",
+        "stufe3": "5 + 4 = 9, nicht 10! Also war 10 - 4 = 5 falsch. Richtig: 10 - 4 = 6."
+      },
+      "fehlermuster": [
+        { "falsch": "10", "feedback": "Rechne genau: 5 + 4 = ? Es kommt nicht 10 raus." }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-006",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "DragDrop",
+      "aufgabentext": "Bilde alle 4 Aufgaben mit den Zahlen 2, 5, 7.",
+      "korrekt": ["2+5=7", "5+2=7", "7-2=5", "7-5=2"],
+      "dragItems": ["2+5=7", "5+2=7", "7-2=5", "7-5=2", "5-2=3"],
+      "dropZones": ["Aufgabe 1", "Aufgabe 2", "Aufgabe 3", "Aufgabe 4"],
+      "hilfe": {
+        "stufe1": "2 Plus-Aufgaben und 2 Minus-Aufgaben mit 2, 5 und 7.",
+        "stufe2": "numberline",
+        "stufe3": "2+5=7, 5+2=7, 7-2=5, 7-5=2. Nicht: 5-2=3 (falsches Ergebnis fuer die Familie)."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-007",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "MultipleChoice",
+      "aufgabentext": "Warum passt 5 + 3 = 8 zu 8 - 3 = 5?",
+      "korrekt": ["Weil Plus und Minus Gegenteil sind"],
+      "antwortOptionen": ["Weil Plus und Minus Gegenteil sind", "Weil 5 und 3 gerade sind", "Weil 8 eine grosse Zahl ist"],
+      "hilfe": {
+        "stufe1": "Was macht Plus? Was macht Minus?",
+        "stufe2": "numberline",
+        "stufe3": "Plus fuegt zusammen, Minus nimmt weg. Die sind Gegenteile! 5+3=8 und 8-3=5 nutzen die gleichen Zahlen."
+      },
+      "fehlermuster": [],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-008",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "7 - 5 = 2. Die Umkehraufgabe: 2 + 5 = ?",
+      "korrekt": ["7"],
+      "hilfe": {
+        "stufe1": "2 + 5 ergibt wieder die Startzahl.",
+        "stufe2": "numberline",
+        "stufe3": "7 - 5 = 2. Umkehrung: 2 + 5 = 7!"
+      },
+      "fehlermuster": [
+        { "falsch": "5", "feedback": "2 + 5 ist mehr als 5. Zaehle weiter!" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-009",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "Vergleich",
+      "aufgabentext": "3 + 6 ? 6 + 3",
+      "korrekt": ["="],
+      "hilfe": {
+        "stufe1": "Tauschaufgaben! Rechne beide Seiten aus.",
+        "stufe2": "numberline",
+        "stufe3": "3 + 6 = 9 und 6 + 3 = 9. Beide sind gleich! Das ist die Tauschregel."
+      },
+      "fehlermuster": [
+        { "falsch": "<", "feedback": "Rechne: 3 + 6 = ? und 6 + 3 = ? Die Ergebnisse sind gleich!" },
+        { "falsch": ">", "feedback": "Rechne: 3 + 6 = ? und 6 + 3 = ? Die Ergebnisse sind gleich!" }
+      ],
+      "vorlesen": true
+    },
+    {
+      "id": "m1-5-g-010",
+      "modul": "M1.5",
+      "schwierigkeit": "Gold",
+      "typ": "Zahleneingabe",
+      "aufgabentext": "Jemand sagt: 9 - 6 = 2. Pruefe! 2 + 6 = ?",
+      "korrekt": ["8"],
+      "hilfe": {
+        "stufe1": "2 + 6 = ? Ist es 9?",
+        "stufe2": "numberline",
+        "stufe3": "2 + 6 = 8, nicht 9! Also war 9 - 6 = 2 falsch. Richtig: 9 - 6 = 3."
+      },
+      "fehlermuster": [
+        { "falsch": "9", "feedback": "Rechne genau: 2 + 6 = ? Das ist nicht 9." }
+      ],
+      "vorlesen": true
+    }
+  ]
+}
